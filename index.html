@@ -1,1 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>SaltWërk | TrailGuard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            background: #5eb9d1;
+        }
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .page {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+
+            background-image:
+                linear-gradient(
+                    180deg,
+                    rgba(19, 126, 157, 0.18),
+                    rgba(0, 40, 55, 0.28)
+                ),
+                url("mountain-trail.jpg");
+
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        /* =========================================
+           LIGHT BLUE BRAND HEADER
+        ========================================= */
+
+        .top-banner {
+            width: 100%;
+            height: 105px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(172, 229, 239, 0.94),
+                    rgba(99, 190, 211, 0.88)
+                );
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+
+            box-shadow:
+                0 4px 25px rgba(0, 70, 90, 0.12);
+
+            position: relative;
+            z-index: 10;
+
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            width: 155px;
+            height: auto;
+
+            opacity: 0;
+
+            animation:
+                logoFade 1s ease forwards;
+        }
+
+        @keyframes logoFade {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            min-height: calc(100vh - 105px);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 25px 100px;
+
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(255, 255, 255, 0.22),
+                    transparent 35%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            text-shadow:
+                0 4px 25px rgba(0, 30, 40, 0.42);
+        }
+
+        /* =========================================
+           TRAILGUARD
+        ========================================= */
+
+        h1 {
+            font-size: clamp(58px, 10vw, 125px);
+
+            font-weight: 800;
+
+            letter-spacing: 8px;
+
+            line-height: 0.95;
+
+            margin-bottom: 28px;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1s ease 0.25s forwards;
+        }
+
+        .coming-soon {
+            font-size: clamp(17px, 2.2vw, 24px);
+
+            font-weight: 300;
+
+            letter-spacing: 10px;
+
+            margin-bottom: 55px;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1s ease 0.45s forwards;
+        }
+
+        /* =========================================
+           SOCIAL ICONS
+        ========================================= */
+
+        .socials {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 22px;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1s ease 0.65s forwards;
+        }
+
+        .social {
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.18);
+
+            border: 1px solid rgba(255, 255, 255, 0.75);
+
+            box-shadow:
+                0 8px 25px rgba(0, 50, 70, 0.18);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .social:hover {
+            transform:
+                translateY(-7px)
+                scale(1.08);
+
+            background:
+                rgba(255, 255, 255, 0.35);
+
+            box-shadow:
+                0 15px 35px rgba(0, 50, 70, 0.28);
+        }
+
+        .social svg {
+            width: 28px;
+            height: 28px;
+
+            fill: white;
+        }
+
+        /* =========================================
+           SUBTLE OCEAN LIGHT
+        ========================================= */
+
+        .light {
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(132, 232, 245, 0.18),
+                    transparent 70%
+                );
+
+            top: 25%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            pointer-events: none;
+
+            animation:
+                lightPulse 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes lightPulse {
+            from {
+                opacity: 0.5;
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.15);
+            }
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+            position: absolute;
+
+            bottom: 18px;
+
+            width: 100%;
+
+            text-align: center;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            color:
+                rgba(255, 255, 255, 0.72);
+
+            z-index: 8;
+        }
+
+        /* =========================================
+           FADE ANIMATION
+        ========================================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .top-banner {
+                height: 90px;
+            }
+
+            .logo {
+                width: 135px;
+            }
+
+            .hero {
+                min-height:
+                    calc(100vh - 90px);
+
+                padding:
+                    40px 20px 90px;
+            }
+
+            h1 {
+                font-size: 48px;
+
+                letter-spacing: 4px;
+            }
+
+            .coming-soon {
+                font-size: 16px;
+
+                letter-spacing: 6px;
+
+                margin-bottom: 40px;
+            }
+
+            .social {
+                width: 54px;
+                height: 54px;
+            }
+
+            .social svg {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- LIGHT BLUE SALTWËRK HEADER -->
+
+        <header class="top-banner">
+
+            <img
+                src="SW_Stacked_Black.svg"
+                alt="SaltWërk"
+                class="logo"
+            >
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <main class="hero">
+
+            <div class="light"></div>
+
+            <div class="hero-content">
+
+                <h1>
+                    TRAILGUARD
+                </h1>
+
+                <div class="coming-soon">
+                    COMING SOON
+                </div>
+
+
+                <!-- SOCIAL MEDIA -->
+
+                <div class="socials">
+
+                    <!-- INSTAGRAM -->
+
+                    <a
+                        href="https://www.instagram.com/saltwerktrail/"
+                        class="social"
+                        aria-label="SaltWërk Instagram"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <svg viewBox="0 0 24 24">
+
+                            <path d="
+                                M7.8 2h8.4
+                                A5.8 5.8 0 0 1 22 7.8
+                                v8.4
+                                a5.8 5.8 0 0 1-5.8 5.8
+                                H7.8
+                                A5.8 5.8 0 0 1 2 16.2
+                                V7.8
+                                A5.8 5.8 0 0 1 7.8 2z
+
+                                M7.6 4
+                                A3.6 3.6 0 0 0 4 7.6
+                                v8.8
+                                A3.6 3.6 0 0 0 7.6 20
+                                h8.8
+                                a3.6 3.6 0 0 0 3.6-3.6
+                                V7.6
+                                A3.6 3.6 0 0 0 16.4 4
+                                H7.6z
+
+                                M16.5 5.5
+                                a1.4 1.4 0 1 0 0 2.8
+                                1.4 1.4 0 0 0 0-2.8z
+
+                                M12 7
+                                a5 5 0 1 0 0 10
+                                a5 5 0 0 0 0-10z
+
+                                M12 9
+                                a3 3 0 1 1 0 6
+                                a3 3 0 0 1 0-6z
+                            "/>
+
+                        </svg>
+
+                    </a>
+
+
+                    <!-- TIKTOK -->
+
+                    <a
+                        href="https://www.tiktok.com/@saltwerktrail"
+                        class="social"
+                        aria-label="SaltWërk TikTok"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <svg viewBox="0 0 24 24">
+
+                            <path d="
+                                M19.6 7.3
+                                a5.7 5.7 0 0 1-3.4-1.1
+                                v7.1
+                                a5.7 5.7 0 1 1-4.9-5.6
+                                v2.9
+                                a2.8 2.8 0 1 0 2 2.7
+                                V2
+                                h2.9
+                                a5.7 5.7 0 0 0 3.4 2.7
+                                v2.6z
+                            "/>
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <footer class="footer">
+            © 2026 SALTWËRK
+        </footer>
+
+    </div>
+
+</body>
+</html>
