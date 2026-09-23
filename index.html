@@ -23,12 +23,8 @@
             font-family: Arial, Helvetica, sans-serif;
             color: #ffffff;
             overflow-x: hidden;
-            background: #5eb9d1;
+            background: #243541;
         }
-
-        /* =========================================
-           PAGE
-        ========================================= */
 
         .page {
             min-height: 100vh;
@@ -38,8 +34,8 @@
             background-image:
                 linear-gradient(
                     180deg,
-                    rgba(19, 126, 157, 0.18),
-                    rgba(0, 40, 55, 0.28)
+                    rgba(19, 55, 72, 0.18),
+                    rgba(0, 30, 40, 0.30)
                 ),
                 url("mountain-trail.jpg");
 
@@ -48,9 +44,9 @@
             background-repeat: no-repeat;
         }
 
-        /* =========================================
-           LIGHT BLUE BRAND HEADER
-        ========================================= */
+        /* =========================
+           HEADER
+        ========================= */
 
         .top-banner {
             width: 100%;
@@ -63,14 +59,14 @@
             background:
                 linear-gradient(
                     135deg,
-                    rgba(172, 229, 239, 0.94),
-                    rgba(99, 190, 211, 0.88)
+                    rgba(40, 55, 68, 0.96),
+                    rgba(27, 39, 49, 0.94)
                 );
 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 
             box-shadow:
-                0 4px 25px rgba(0, 70, 90, 0.12);
+                0 4px 25px rgba(0, 0, 0, 0.18);
 
             position: relative;
             z-index: 10;
@@ -101,9 +97,9 @@
             }
         }
 
-        /* =========================================
+        /* =========================
            HERO
-        ========================================= */
+        ========================= */
 
         .hero {
             min-height: calc(100vh - 105px);
@@ -130,7 +126,7 @@
             background:
                 radial-gradient(
                     circle at 50% 45%,
-                    rgba(255, 255, 255, 0.22),
+                    rgba(255, 255, 255, 0.18),
                     transparent 35%
                 );
 
@@ -145,19 +141,11 @@
                 0 4px 25px rgba(0, 30, 40, 0.42);
         }
 
-        /* =========================================
-           TRAILGUARD
-        ========================================= */
-
         h1 {
             font-size: clamp(58px, 10vw, 125px);
-
             font-weight: 800;
-
             letter-spacing: 8px;
-
             line-height: 0.95;
-
             margin-bottom: 28px;
 
             opacity: 0;
@@ -168,11 +156,8 @@
 
         .coming-soon {
             font-size: clamp(17px, 2.2vw, 24px);
-
             font-weight: 300;
-
             letter-spacing: 10px;
-
             margin-bottom: 55px;
 
             opacity: 0;
@@ -181,15 +166,13 @@
                 fadeUp 1s ease 0.45s forwards;
         }
 
-        /* =========================================
-           SOCIAL ICONS
-        ========================================= */
+        /* =========================
+           SOCIAL BUTTONS
+        ========================= */
 
         .socials {
             display: flex;
-
             justify-content: center;
-
             gap: 22px;
 
             opacity: 0;
@@ -208,12 +191,14 @@
 
             border-radius: 50%;
 
-            background: rgba(255, 255, 255, 0.18);
+            background:
+                rgba(255, 255, 255, 0.12);
 
-            border: 1px solid rgba(255, 255, 255, 0.75);
+            border:
+                1px solid rgba(255, 255, 255, 0.75);
 
             box-shadow:
-                0 8px 25px rgba(0, 50, 70, 0.18);
+                0 8px 25px rgba(0, 30, 40, 0.25);
 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -230,10 +215,10 @@
                 scale(1.08);
 
             background:
-                rgba(255, 255, 255, 0.35);
+                rgba(255, 255, 255, 0.30);
 
             box-shadow:
-                0 15px 35px rgba(0, 50, 70, 0.28);
+                0 15px 35px rgba(0, 30, 40, 0.35);
         }
 
         .social svg {
@@ -243,9 +228,9 @@
             fill: white;
         }
 
-        /* =========================================
-           SUBTLE OCEAN LIGHT
-        ========================================= */
+        /* =========================
+           LIGHT EFFECT
+        ========================= */
 
         .light {
             position: absolute;
@@ -258,7 +243,7 @@
             background:
                 radial-gradient(
                     circle,
-                    rgba(132, 232, 245, 0.18),
+                    rgba(132, 232, 245, 0.16),
                     transparent 70%
                 );
 
@@ -277,6 +262,7 @@
         @keyframes lightPulse {
             from {
                 opacity: 0.5;
+
                 transform:
                     translate(-50%, -50%)
                     scale(0.9);
@@ -284,15 +270,16 @@
 
             to {
                 opacity: 1;
+
                 transform:
                     translate(-50%, -50%)
                     scale(1.15);
             }
         }
 
-        /* =========================================
+        /* =========================
            FOOTER
-        ========================================= */
+        ========================= */
 
         .footer {
             position: absolute;
@@ -308,14 +295,14 @@
             letter-spacing: 3px;
 
             color:
-                rgba(255, 255, 255, 0.72);
+                rgba(255, 255, 255, 0.78);
 
             z-index: 8;
         }
 
-        /* =========================================
-           FADE ANIMATION
-        ========================================= */
+        /* =========================
+           ANIMATIONS
+        ========================= */
 
         @keyframes fadeUp {
             from {
@@ -333,9 +320,9 @@
             }
         }
 
-        /* =========================================
+        /* =========================
            MOBILE
-        ========================================= */
+        ========================= */
 
         @media (max-width: 600px) {
 
@@ -357,15 +344,12 @@
 
             h1 {
                 font-size: 48px;
-
                 letter-spacing: 4px;
             }
 
             .coming-soon {
                 font-size: 16px;
-
                 letter-spacing: 6px;
-
                 margin-bottom: 40px;
             }
 
@@ -386,12 +370,12 @@
 
     <div class="page">
 
-        <!-- LIGHT BLUE SALTWËRK HEADER -->
+        <!-- HEADER -->
 
         <header class="top-banner">
 
             <img
-                src="SW_Stacked_Black.svg"
+                src="SW_Stacked_White@1200px.png"
                 alt="SaltWërk"
                 class="logo"
             >
@@ -416,7 +400,7 @@
                 </div>
 
 
-                <!-- SOCIAL MEDIA -->
+                <!-- SOCIAL LINKS -->
 
                 <div class="socials">
 
@@ -433,7 +417,8 @@
                         <svg viewBox="0 0 24 24">
 
                             <path d="
-                                M7.8 2h8.4
+                                M7.8 2
+                                h8.4
                                 A5.8 5.8 0 0 1 22 7.8
                                 v8.4
                                 a5.8 5.8 0 0 1-5.8 5.8
@@ -505,6 +490,8 @@
 
         </main>
 
+
+        <!-- FOOTER -->
 
         <footer class="footer">
             © 2026 SALTWËRK
