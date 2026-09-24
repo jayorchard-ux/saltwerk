@@ -50,17 +50,19 @@
 
         .top-banner {
             width: 100%;
-            height: 105px;
+            height: 90px;
 
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            justify-content: center;
+
+            padding: 0 40px;
 
             background:
                 linear-gradient(
                     135deg,
-                    rgba(40, 55, 68, 0.96),
-                    rgba(27, 39, 49, 0.94)
+                    rgba(40, 55, 68, 0.97),
+                    rgba(27, 39, 49, 0.95)
                 );
 
             border-bottom: 1px solid rgba(255, 255, 255, 0.18);
@@ -75,8 +77,18 @@
             -webkit-backdrop-filter: blur(8px);
         }
 
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
         .logo {
-            width: 155px;
+            width: 120px;
             height: auto;
 
             opacity: 0;
@@ -98,11 +110,116 @@
         }
 
         /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav-tabs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 34px;
+        }
+
+        .nav-tab {
+            position: relative;
+
+            color: rgba(255, 255, 255, 0.90);
+
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            padding: 8px 0;
+
+            transition:
+                color 0.25s ease,
+                opacity 0.25s ease;
+        }
+
+        .nav-tab::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            width: 0;
+            height: 1px;
+
+            background: #ffffff;
+
+            transition: width 0.25s ease;
+        }
+
+        .nav-tab:hover {
+            color: #ffffff;
+        }
+
+        .nav-tab:hover::after {
+            width: 100%;
+        }
+
+        .nav-tab.disabled {
+            cursor: pointer;
+        }
+
+        /* =========================
+           SURVEY BUTTON
+        ========================= */
+
+        .survey-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .survey-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            padding: 11px 17px;
+
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            border-radius: 3px;
+
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.04);
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .survey-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .survey-arrow {
+            font-size: 13px;
+            line-height: 1;
+        }
+
+        /* =========================
            HERO
         ========================= */
 
         .hero {
-            min-height: calc(100vh - 105px);
+            min-height: calc(100vh - 90px);
 
             display: flex;
             flex-direction: column;
@@ -137,6 +254,8 @@
             position: relative;
             z-index: 2;
 
+            max-width: 900px;
+
             text-shadow:
                 0 4px 25px rgba(0, 30, 40, 0.42);
         }
@@ -146,7 +265,7 @@
             font-weight: 800;
             letter-spacing: 8px;
             line-height: 0.95;
-            margin-bottom: 28px;
+            margin-bottom: 22px;
 
             opacity: 0;
 
@@ -154,16 +273,42 @@
                 fadeUp 1s ease 0.25s forwards;
         }
 
-        .coming-soon {
-            font-size: clamp(17px, 2.2vw, 24px);
+        /* =========================
+           PRODUCT DESCRIPTION
+        ========================= */
+
+        .description {
+            max-width: 700px;
+            margin: 0 auto 28px;
+
+            font-size: clamp(14px, 1.7vw, 19px);
             font-weight: 300;
-            letter-spacing: 10px;
-            margin-bottom: 55px;
+            line-height: 1.55;
+            letter-spacing: 0.4px;
+
+            color: rgba(255, 255, 255, 0.92);
 
             opacity: 0;
 
             animation:
-                fadeUp 1s ease 0.45s forwards;
+                fadeUp 1s ease 0.40s forwards;
+        }
+
+        /* =========================
+           COMING SOON
+        ========================= */
+
+        .coming-soon {
+            font-size: clamp(17px, 2.2vw, 24px);
+            font-weight: 300;
+            letter-spacing: 9px;
+
+            margin-bottom: 50px;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1s ease 0.55s forwards;
         }
 
         /* =========================
@@ -173,17 +318,17 @@
         .socials {
             display: flex;
             justify-content: center;
-            gap: 22px;
+            gap: 18px;
 
             opacity: 0;
 
             animation:
-                fadeUp 1s ease 0.65s forwards;
+                fadeUp 1s ease 0.70s forwards;
         }
 
         .social {
-            width: 60px;
-            height: 60px;
+            width: 56px;
+            height: 56px;
 
             display: flex;
             align-items: center;
@@ -211,8 +356,8 @@
 
         .social:hover {
             transform:
-                translateY(-7px)
-                scale(1.08);
+                translateY(-5px)
+                scale(1.06);
 
             background:
                 rgba(255, 255, 255, 0.30);
@@ -222,8 +367,8 @@
         }
 
         .social svg {
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
 
             fill: white;
         }
@@ -324,27 +469,71 @@
            MOBILE
         ========================= */
 
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
 
             .top-banner {
-                height: 90px;
+                height: auto;
+                min-height: 100px;
+
+                grid-template-columns: 1fr auto;
+                grid-template-rows: auto auto;
+
+                padding: 15px 20px;
+                gap: 8px 15px;
+            }
+
+            .logo-wrapper {
+                grid-column: 1;
+                grid-row: 1;
             }
 
             .logo {
-                width: 135px;
+                width: 105px;
+            }
+
+            .survey-wrapper {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .survey-button {
+                padding: 9px 12px;
+                font-size: 8px;
+                letter-spacing: 1.3px;
+            }
+
+            .nav-tabs {
+                grid-column: 1 / -1;
+                grid-row: 2;
+
+                gap: 22px;
+                padding-bottom: 4px;
+            }
+
+            .nav-tab {
+                font-size: 9px;
+                letter-spacing: 1.4px;
             }
 
             .hero {
                 min-height:
-                    calc(100vh - 90px);
+                    calc(100vh - 100px);
 
                 padding:
-                    40px 20px 90px;
+                    50px 20px 90px;
             }
 
             h1 {
                 font-size: 48px;
                 letter-spacing: 4px;
+                margin-bottom: 20px;
+            }
+
+            .description {
+                max-width: 500px;
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 25px;
             }
 
             .coming-soon {
@@ -363,6 +552,40 @@
                 height: 25px;
             }
         }
+
+        @media (max-width: 430px) {
+
+            .top-banner {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .nav-tabs {
+                gap: 16px;
+            }
+
+            .nav-tab {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .survey-button {
+                padding: 8px 10px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .description {
+                font-size: 13px;
+            }
+
+            .coming-soon {
+                font-size: 14px;
+                letter-spacing: 4px;
+            }
+        }
     </style>
 </head>
 
@@ -374,11 +597,52 @@
 
         <header class="top-banner">
 
-            <img
-                src="SW_Stacked_White@1200px.png"
-                alt="SaltWërk"
-                class="logo"
-            >
+            <!-- SALTWËRK LOGO -->
+
+            <div class="logo-wrapper">
+
+                <img
+                    src="SW_Stacked_White@1200px.png"
+                    alt="SaltWërk"
+                    class="logo"
+                >
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="nav-tabs" aria-label="Main navigation">
+
+                <a href="#" class="nav-tab disabled">
+                    TrailGuard
+                </a>
+
+                <a href="#" class="nav-tab disabled">
+                    Our Story
+                </a>
+
+                <a href="#" class="nav-tab disabled">
+                    Product
+                </a>
+
+            </nav>
+
+
+            <!-- SURVEY -->
+
+            <div class="survey-wrapper">
+
+                <a
+                    href="#"
+                    class="survey-button"
+                    aria-label="Take our survey"
+                >
+                    Take Our Survey
+                    <span class="survey-arrow">→</span>
+                </a>
+
+            </div>
 
         </header>
 
@@ -395,8 +659,22 @@
                     TRAILGUARD
                 </h1>
 
+
+                <!-- PRODUCT DESCRIPTION -->
+
+                <div class="description">
+
+                    A first-of-its-kind compression calf sleeve
+                    with snake, tick, and abrasion protection
+                    for trail runners and hikers.
+
+                </div>
+
+
+                <!-- COMING SOON -->
+
                 <div class="coming-soon">
-                    COMING SOON
+                    COMING SOON 2027
                 </div>
 
 
