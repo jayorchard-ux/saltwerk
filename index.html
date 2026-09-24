@@ -7,6 +7,24 @@
     <title>SaltWërk | TrailGuard</title>
 
     <style>
+
+        /* =========================
+           CUSTOM SALTWËRK FONT
+        ========================= */
+
+        @font-face {
+            font-family: "Saltwerk";
+            src: url("Saltwerk%20Font") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -26,6 +44,11 @@
             background: #243541;
         }
 
+
+        /* =========================
+           PAGE / BACKGROUND
+        ========================= */
+
         .page {
             min-height: 100vh;
             position: relative;
@@ -43,6 +66,7 @@
             background-position: center center;
             background-repeat: no-repeat;
         }
+
 
         /* =========================
            HEADER
@@ -77,6 +101,7 @@
             -webkit-backdrop-filter: blur(8px);
         }
 
+
         /* =========================
            LOGO
         ========================= */
@@ -108,6 +133,7 @@
                 transform: translateY(0);
             }
         }
+
 
         /* =========================
            NAVIGATION
@@ -166,6 +192,7 @@
             cursor: pointer;
         }
 
+
         /* =========================
            SURVEY BUTTON
         ========================= */
@@ -214,6 +241,7 @@
             line-height: 1;
         }
 
+
         /* =========================
            HERO
         ========================= */
@@ -260,11 +288,20 @@
                 0 4px 25px rgba(0, 30, 40, 0.42);
         }
 
+
+        /* =========================
+           TRAILGUARD TITLE
+        ========================= */
+
         h1 {
-            font-size: clamp(58px, 10vw, 125px);
-            font-weight: 800;
-            letter-spacing: 8px;
+            font-family: "Saltwerk", Arial, Helvetica, sans-serif;
+
+            font-size: clamp(70px, 11vw, 145px);
+            font-weight: normal;
+
+            letter-spacing: 5px;
             line-height: 0.95;
+
             margin-bottom: 22px;
 
             opacity: 0;
@@ -272,6 +309,7 @@
             animation:
                 fadeUp 1s ease 0.25s forwards;
         }
+
 
         /* =========================
            PRODUCT DESCRIPTION
@@ -294,22 +332,27 @@
                 fadeUp 1s ease 0.40s forwards;
         }
 
+
         /* =========================
            COMING SOON
         ========================= */
 
         .coming-soon {
-            font-size: clamp(17px, 2.2vw, 24px);
-            font-weight: 300;
-            letter-spacing: 9px;
+            font-family: "Saltwerk", Arial, Helvetica, sans-serif;
 
-            margin-bottom: 50px;
+            font-size: clamp(24px, 3vw, 38px);
+            font-weight: normal;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 48px;
 
             opacity: 0;
 
             animation:
                 fadeUp 1s ease 0.55s forwards;
         }
+
 
         /* =========================
            SOCIAL BUTTONS
@@ -373,6 +416,7 @@
             fill: white;
         }
 
+
         /* =========================
            LIGHT EFFECT
         ========================= */
@@ -422,6 +466,7 @@
             }
         }
 
+
         /* =========================
            FOOTER
         ========================= */
@@ -445,6 +490,7 @@
             z-index: 8;
         }
 
+
         /* =========================
            ANIMATIONS
         ========================= */
@@ -464,6 +510,7 @@
                     translateY(0);
             }
         }
+
 
         /* =========================
            MOBILE
@@ -524,9 +571,8 @@
             }
 
             h1 {
-                font-size: 48px;
-                letter-spacing: 4px;
-                margin-bottom: 20px;
+                font-size: 60px;
+                letter-spacing: 3px;
             }
 
             .description {
@@ -537,8 +583,8 @@
             }
 
             .coming-soon {
-                font-size: 16px;
-                letter-spacing: 6px;
+                font-size: 25px;
+                letter-spacing: 3px;
                 margin-bottom: 40px;
             }
 
@@ -552,6 +598,7 @@
                 height: 25px;
             }
         }
+
 
         @media (max-width: 430px) {
 
@@ -574,7 +621,7 @@
             }
 
             h1 {
-                font-size: 42px;
+                font-size: 50px;
             }
 
             .description {
@@ -582,10 +629,11 @@
             }
 
             .coming-soon {
-                font-size: 14px;
-                letter-spacing: 4px;
+                font-size: 21px;
+                letter-spacing: 2px;
             }
         }
+
     </style>
 </head>
 
@@ -593,7 +641,9 @@
 
     <div class="page">
 
-        <!-- HEADER -->
+        <!-- =========================
+             HEADER
+        ========================= -->
 
         <header class="top-banner">
 
@@ -634,9 +684,11 @@
             <div class="survey-wrapper">
 
                 <a
-                    href="#"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSf-vGovbamQwFjMfGCLOZwd0sZgm4hum5gCOwHjFR-9tHzAeg/viewform"
                     class="survey-button"
                     aria-label="Take our survey"
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
                     Take Our Survey
                     <span class="survey-arrow">→</span>
@@ -647,13 +699,17 @@
         </header>
 
 
-        <!-- HERO -->
+        <!-- =========================
+             HERO
+        ========================= -->
 
         <main class="hero">
 
             <div class="light"></div>
 
             <div class="hero-content">
+
+                <!-- TRAILGUARD -->
 
                 <h1>
                     TRAILGUARD
@@ -769,7 +825,9 @@
         </main>
 
 
-        <!-- FOOTER -->
+        <!-- =========================
+             FOOTER
+        ========================= -->
 
         <footer class="footer">
             © 2026 SALTWËRK
