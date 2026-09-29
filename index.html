@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,42 +9,7 @@
     <style>
 
         /* =========================
-           GLOBAL
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 90px;
-        }
-
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
-        }
-
-        body {
-            font-family: Helvetica, Arial, sans-serif;
-            color: #ffffff;
-            overflow-x: hidden;
-            background: #243541;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        /* =========================
-           SALTWËRK FONT
-           ONLY TRAILGUARD USES THIS
+           CUSTOM FONT
         ========================= */
 
         @font-face {
@@ -57,126 +21,82 @@
 
 
         /* =========================
-           STICKY HEADER
+           GLOBAL
         ========================= */
 
-        .top-banner {
-            width: 100%;
-            height: 90px;
-
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-
-            padding: 0 45px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(40, 55, 68, 0.96),
-                    rgba(27, 39, 49, 0.94)
-                );
-
-            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-
-            box-shadow:
-                0 4px 25px rgba(0, 0, 0, 0.18);
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
-
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-
-        .logo {
-            width: 125px;
-            height: auto;
-
-            justify-self: start;
-
-            opacity: 0;
-
-            animation:
-                logoFade 1s ease forwards;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            color: white;
+            background: #243541;
+        }
 
-        @keyframes logoFade {
-
-            from {
-                opacity: 0;
-                transform: translateY(-12px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
 
         /* =========================
-           NAVIGATION
+           HEADER
         ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            height: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0 40px;
+
+            background: rgba(20, 30, 35, 0.92);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
 
         .nav {
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             gap: 42px;
         }
 
-
         .nav a {
             font-family: Helvetica, Arial, sans-serif;
 
-            font-size: 11px;
+            font-size: 13px;
+            font-weight: 500;
 
-            font-weight: 600;
+            letter-spacing: 2px;
 
-            letter-spacing: 2.5px;
-
-            color:
-                rgba(255, 255, 255, 0.82);
-
-            position: relative;
+            color: rgba(255, 255, 255, 0.9);
 
             transition:
-                color 0.25s ease;
+                color 0.25s ease,
+                opacity 0.25s ease;
         }
-
-
-        .nav a::after {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            bottom: -8px;
-
-            width: 0;
-            height: 1px;
-
-            background: white;
-
-            transition:
-                width 0.25s ease;
-        }
-
 
         .nav a:hover {
-            color: #ffffff;
-        }
-
-
-        .nav a:hover::after {
-            width: 100%;
+            color: white;
+            opacity: 0.7;
         }
 
 
@@ -184,47 +104,32 @@
            SURVEY BUTTON
         ========================= */
 
-        .survey-container {
-            justify-self: end;
-        }
-
-
-        .survey-button {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            padding: 11px 18px;
-
-            border:
-                1px solid rgba(255, 255, 255, 0.75);
+        .survey-link {
+            position: absolute;
+            right: 40px;
 
             font-family: Helvetica, Arial, sans-serif;
 
-            font-size: 9px;
+            font-size: 12px;
+            font-weight: 500;
 
-            font-weight: 600;
+            letter-spacing: 1.8px;
 
-            letter-spacing: 2px;
+            padding: 12px 18px;
+
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 2px;
 
             color: white;
 
-            background:
-                rgba(255, 255, 255, 0.03);
-
             transition:
                 background 0.25s ease,
-                transform 0.25s ease;
+                color 0.25s ease;
         }
 
-
-        .survey-button:hover {
-            background:
-                rgba(255, 255, 255, 0.14);
-
-            transform:
-                translateY(-2px);
+        .survey-link:hover {
+            background: white;
+            color: #243541;
         }
 
 
@@ -233,11 +138,9 @@
         ========================= */
 
         .hero {
-            min-height:
-                calc(100vh - 90px);
+            min-height: 115vh;
 
             display: flex;
-
             flex-direction: column;
 
             align-items: center;
@@ -245,12 +148,7 @@
 
             text-align: center;
 
-            padding:
-                90px 25px 120px;
-
-            position: relative;
-
-            overflow: hidden;
+            padding: 100px 25px 140px;
 
             background-image:
                 linear-gradient(
@@ -260,62 +158,21 @@
                 url("RedRockTrail.jpg");
 
             background-size: cover;
-
-            background-position:
-                center center;
-
+            background-position: center center;
             background-repeat: no-repeat;
         }
 
 
-        /* subtle light over the photograph */
-
-        .hero::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                radial-gradient(
-                    circle at 50% 45%,
-                    rgba(255, 255, 255, 0.10),
-                    transparent 40%
-                );
-
-            pointer-events: none;
-        }
-
-
-        .hero-content {
-            position: relative;
-
-            z-index: 2;
-
-            width: 100%;
-
-            max-width: 1300px;
-
-            text-shadow:
-                0 4px 25px rgba(0, 0, 0, 0.42);
-        }
-
-
         /* =========================
-           TRAILGUARD
-           SALTWËRK FONT
+           TRAILGUARD TITLE
         ========================= */
 
         h1 {
-            font-family:
-                "Saltwerk",
-                Helvetica,
-                Arial,
-                sans-serif;
+            width: 100%;
 
-            font-size:
-                clamp(55px, 8vw, 105px);
+            font-family: "Saltwerk", Helvetica, Arial, sans-serif;
+
+            font-size: clamp(55px, 8vw, 105px);
 
             font-weight: normal;
 
@@ -323,11 +180,12 @@
 
             line-height: 0.95;
 
-            margin-bottom: 55px;
-
             text-align: center;
 
-            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-bottom: 55px;
 
             opacity: 0;
 
@@ -337,22 +195,18 @@
 
 
         /* =========================
-           DESCRIPTION
+           HERO DESCRIPTION
         ========================= */
 
         .description {
+            width: 100%;
             max-width: 780px;
 
-            margin:
-                0 auto 75px;
+            margin: 0 auto 75px;
 
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
 
-            font-size:
-                clamp(17px, 1.8vw, 22px);
+            font-size: clamp(17px, 1.8vw, 22px);
 
             font-weight: 300;
 
@@ -360,28 +214,25 @@
 
             letter-spacing: 0.3px;
 
-            color:
-                rgba(255, 255, 255, 0.94);
-
-            text-shadow:
-                0 3px 15px rgba(0, 0, 0, 0.45);
+            text-align: center;
 
             opacity: 0;
 
             animation:
-                fadeUp 1s ease 0.38s forwards;
+                fadeUp 1s ease 0.45s forwards;
         }
 
 
         /* =========================
-           SOCIAL BUTTONS
-           EXACTLY AS BEFORE
+           SOCIAL ICONS
+           DO NOT CHANGE
         ========================= */
 
         .socials {
             display: flex;
 
             justify-content: center;
+            align-items: center;
 
             gap: 22px;
 
@@ -390,7 +241,6 @@
             animation:
                 fadeUp 1s ease 0.65s forwards;
         }
-
 
         .social {
             width: 58px;
@@ -403,17 +253,14 @@
 
             border-radius: 50%;
 
-            background:
-                rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.12);
 
-            border:
-                1px solid rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.75);
 
             box-shadow:
                 0 8px 25px rgba(0, 30, 40, 0.25);
 
             backdrop-filter: blur(12px);
-
             -webkit-backdrop-filter: blur(12px);
 
             transition:
@@ -421,7 +268,6 @@
                 background 0.3s ease,
                 box-shadow 0.3s ease;
         }
-
 
         .social:hover {
             transform:
@@ -434,7 +280,6 @@
             box-shadow:
                 0 15px 35px rgba(0, 30, 40, 0.35);
         }
-
 
         .social svg {
             width: 27px;
@@ -449,13 +294,9 @@
         ========================= */
 
         .coming-soon {
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
 
-            font-size:
-                clamp(17px, 2vw, 23px);
+            font-size: clamp(17px, 2vw, 23px);
 
             font-weight: 400;
 
@@ -463,13 +304,14 @@
 
             margin-top: 55px;
 
-            color:
-                rgba(255, 255, 255, 0.92);
+            color: rgba(255, 255, 255, 0.92);
+
+            text-align: center;
 
             opacity: 0;
 
             animation:
-                fadeUp 1s ease 0.80s forwards;
+                fadeUp 1s ease 0.85s forwards;
         }
 
 
@@ -477,113 +319,87 @@
            OUR STORY
         ========================= */
 
-        .story-section {
-            background:
-                #f2f0ea;
-
-            color:
-                #20262b;
-
-            padding:
-                110px 0 125px;
-
-            scroll-margin-top:
-                90px;
+        #our-story {
+            scroll-margin-top: 90px;
         }
 
+        .our-story {
+            min-height: 90vh;
 
-        .section-content {
-            width:
-                min(1050px, 90%);
+            display: flex;
+            flex-direction: column;
 
-            margin:
-                0 auto;
-        }
+            justify-content: center;
+            align-items: center;
 
-
-        .section-title {
             text-align: center;
 
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            padding: 120px 25px;
 
-            font-size:
-                clamp(42px, 6vw, 72px);
+            background: #f2f0ea;
 
-            font-weight: 700;
+            color: #243541;
+        }
+
+        .our-story h2 {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: clamp(35px, 5vw, 60px);
+
+            font-weight: 400;
 
             letter-spacing: 5px;
 
             margin-bottom: 60px;
         }
 
+        .video-placeholder {
+            width: min(850px, 90%);
 
-        .video-box {
-            width: 100%;
-
-            height: 500px;
+            aspect-ratio: 16 / 9;
 
             display: flex;
 
             align-items: center;
             justify-content: center;
 
-            background:
-                #d9d6ce;
+            margin-bottom: 55px;
 
-            border:
-                1px solid rgba(32, 38, 43, 0.18);
+            border: 1px solid rgba(36, 53, 65, 0.3);
 
-            box-shadow:
-                0 20px 60px rgba(20, 25, 30, 0.12);
-
-            margin-bottom: 60px;
+            background: rgba(36, 53, 65, 0.06);
         }
 
+        .video-placeholder span {
+            font-family: Helvetica, Arial, sans-serif;
 
-        .video-box span {
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            font-size: 18px;
 
-            font-size:
-                clamp(22px, 3vw, 34px);
+            font-weight: 400;
+
+            letter-spacing: 4px;
+
+            color: #243541;
+        }
+
+        .story-text {
+            width: min(850px, 90%);
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 17px;
 
             font-weight: 300;
 
-            letter-spacing: 6px;
+            line-height: 1.8;
 
-            color:
-                rgba(32, 38, 43, 0.72);
+            text-align: left;
+
+            color: #243541;
         }
 
-
-        .story-text {
-            max-width:
-                850px;
-
-            margin:
-                0 auto;
-
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            font-size:
-                18px;
-
-            line-height:
-                1.85;
-
-            font-weight:
-                300;
-
-            color:
-                #30363b;
+        .story-text p + p {
+            margin-top: 25px;
         }
 
 
@@ -591,102 +407,83 @@
            PRODUCT
         ========================= */
 
-        .product-section {
-            background:
-                #243541;
-
-            color:
-                #ffffff;
-
-            padding:
-                110px 0 125px;
-
-            scroll-margin-top:
-                90px;
+        #product {
+            scroll-margin-top: 90px;
         }
 
+        .product {
+            min-height: 85vh;
 
-        .product-section .section-title {
-            color:
-                #ffffff;
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 120px 25px;
+
+            background: #243541;
+
+            color: white;
         }
 
+        .product h2 {
+            font-family: Helvetica, Arial, sans-serif;
 
-        .image-box {
-            width: 100%;
+            font-size: clamp(35px, 5vw, 60px);
 
-            height: 500px;
+            font-weight: 400;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 60px;
+        }
+
+        .product-placeholder {
+            width: min(850px, 90%);
+
+            aspect-ratio: 16 / 9;
 
             display: flex;
 
             align-items: center;
             justify-content: center;
 
-            background:
-                rgba(20, 32, 40, 0.68);
+            margin-bottom: 55px;
 
-            border:
-                1px solid rgba(255, 255, 255, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.3);
 
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.25);
-
-            margin-bottom: 60px;
-
-            backdrop-filter:
-                blur(8px);
-
-            -webkit-backdrop-filter:
-                blur(8px);
+            background: rgba(255, 255, 255, 0.05);
         }
 
+        .product-placeholder span {
+            font-family: Helvetica, Arial, sans-serif;
 
-        .image-box span {
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            font-size: 18px;
 
-            font-size:
-                clamp(22px, 3vw, 34px);
+            font-weight: 400;
 
-            font-weight:
-                300;
+            letter-spacing: 4px;
 
-            letter-spacing:
-                6px;
-
-            color:
-                rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.9);
         }
-
 
         .product-text {
-            max-width:
-                850px;
+            width: min(850px, 90%);
 
-            margin:
-                0 auto;
+            font-family: Helvetica, Arial, sans-serif;
 
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            font-size: 17px;
 
-            font-size:
-                20px;
+            font-weight: 300;
 
-            line-height:
-                1.85;
+            line-height: 1.8;
 
-            font-weight:
-                300;
+            text-align: left;
 
-            text-align:
-                center;
-
-            color:
-                rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.9);
         }
 
 
@@ -694,32 +491,20 @@
            FOOTER
         ========================= */
 
-        .footer {
-            width:
-                100%;
+        footer {
+            padding: 35px 25px;
 
-            text-align:
-                center;
+            background: #243541;
 
-            padding:
-                28px 20px;
+            color: rgba(255, 255, 255, 0.6);
 
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            text-align: center;
 
-            font-size:
-                10px;
+            font-family: Helvetica, Arial, sans-serif;
 
-            letter-spacing:
-                3px;
+            font-size: 12px;
 
-            color:
-                rgba(255, 255, 255, 0.78);
-
-            background:
-                #243541;
+            letter-spacing: 2px;
         }
 
 
@@ -728,222 +513,119 @@
         ========================= */
 
         .survey-popup {
-            position:
-                fixed;
+            position: fixed;
 
-            left:
-                50%;
-
-            bottom:
-                0;
-
-            width:
-                min(760px, calc(100% - 30px));
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            gap:
-                25px;
-
-            padding:
-                17px 20px;
-
-            background:
-                rgba(27, 39, 49, 0.96);
-
-            border:
-                1px solid rgba(255, 255, 255, 0.18);
-
-            box-shadow:
-                0 -8px 30px rgba(0, 0, 0, 0.18);
-
-            backdrop-filter:
-                blur(12px);
-
-            -webkit-backdrop-filter:
-                blur(12px);
-
-            z-index:
-                200;
+            left: 50%;
+            bottom: 25px;
 
             transform:
-                translate(-50%, 120%);
+                translate(-50%, 150%);
 
-            opacity:
-                0;
+            z-index: 2000;
+
+            width: min(520px, calc(100% - 30px));
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+
+            padding: 18px 20px;
+
+            background: rgba(25, 38, 45, 0.96);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.2);
+
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.3);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
 
             transition:
-                transform 0.5s ease,
-                opacity 0.5s ease;
+                transform 0.45s ease;
         }
-
 
         .survey-popup.show {
             transform:
                 translate(-50%, 0);
-
-            opacity:
-                1;
         }
 
+        .survey-popup p {
+            font-family: Helvetica, Arial, sans-serif;
 
-        .popup-message {
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            font-size: 14px;
 
-            font-size:
-                14px;
+            line-height: 1.4;
 
-            line-height:
-                1.4;
-
-            font-weight:
-                300;
-
-            color:
-                rgba(255, 255, 255, 0.9);
+            color: white;
         }
-
-
-        .popup-message strong {
-            font-weight:
-                600;
-        }
-
-
-        .popup-actions {
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            gap:
-                14px;
-
-            flex-shrink:
-                0;
-        }
-
 
         .popup-button {
-            display:
-                inline-flex;
+            flex-shrink: 0;
 
-            align-items:
-                center;
+            padding: 11px 15px;
 
-            justify-content:
-                center;
+            background: white;
 
-            padding:
-                9px 14px;
+            color: #243541;
 
-            border:
-                1px solid rgba(255, 255, 255, 0.72);
+            border: none;
 
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
 
-            font-size:
-                9px;
+            font-size: 11px;
 
-            font-weight:
-                600;
+            font-weight: 600;
 
-            letter-spacing:
-                1.7px;
+            letter-spacing: 1.5px;
 
-            color:
-                white;
+            cursor: pointer;
 
             transition:
-                background 0.25s ease,
-                transform 0.25s ease;
+                opacity 0.25s ease;
         }
-
 
         .popup-button:hover {
-            background:
-                rgba(255, 255, 255, 0.12);
-
-            transform:
-                translateY(-1px);
+            opacity: 0.8;
         }
 
+        .close-popup {
+            position: absolute;
 
-        .popup-close {
-            border:
-                none;
+            top: 6px;
+            right: 9px;
 
-            background:
-                transparent;
+            border: none;
+            background: none;
 
-            color:
-                rgba(255, 255, 255, 0.72);
+            color: rgba(255, 255, 255, 0.7);
 
-            font-family:
-                Helvetica,
-                Arial,
-                sans-serif;
+            font-size: 18px;
 
-            font-size:
-                22px;
+            cursor: pointer;
 
-            font-weight:
-                300;
-
-            line-height:
-                1;
-
-            cursor:
-                pointer;
-
-            padding:
-                2px 4px;
-
-            transition:
-                color 0.2s ease;
-        }
-
-
-        .popup-close:hover {
-            color:
-                white;
+            line-height: 1;
         }
 
 
         /* =========================
-           ANIMATIONS
+           ANIMATION
         ========================= */
 
         @keyframes fadeUp {
 
             from {
-                opacity:
-                    0;
-
-                transform:
-                    translateY(25px);
+                opacity: 0;
+                transform: translateY(20px);
             }
 
             to {
-                opacity:
-                    1;
-
-                transform:
-                    translateY(0);
+                opacity: 1;
+                transform: translateY(0);
             }
 
         }
@@ -953,245 +635,218 @@
            MOBILE
         ========================= */
 
-        @media (max-width: 750px) {
+        @media (max-width: 700px) {
 
-            html {
-                scroll-padding-top:
-                    125px;
-            }
-
-
-            .top-banner {
-                height:
-                    auto;
-
-                min-height:
-                    90px;
-
-                grid-template-columns:
-                    1fr 1fr;
+            header {
+                height: 135px;
 
                 padding:
-                    15px 20px;
+                    20px 15px;
+
+                flex-direction: column;
+
+                justify-content: center;
+
+                gap: 17px;
             }
-
-
-            .logo {
-                width:
-                    105px;
-            }
-
 
             .nav {
-                grid-column:
-                    1 / -1;
-
-                grid-row:
-                    2;
-
-                gap:
-                    24px;
-
-                padding-top:
-                    12px;
+                gap: 24px;
             }
-
 
             .nav a {
-                font-size:
-                    9px;
+                font-size: 10px;
 
-                letter-spacing:
-                    1.8px;
+                letter-spacing: 1.5px;
+            }
+
+            .survey-link {
+                position: static;
+
+                font-size: 9px;
+
+                letter-spacing: 1.5px;
+
+                padding: 9px 13px;
             }
 
 
-            .survey-container {
-                justify-self:
-                    end;
-            }
-
-
-            .survey-button {
-                padding:
-                    9px 12px;
-
-                font-size:
-                    8px;
-
-                letter-spacing:
-                    1.4px;
-            }
-
+            /* =====================
+               TALLER MOBILE HERO
+            ===================== */
 
             .hero {
-                min-height:
-                    calc(100svh - 135px);
+                min-height: 110svh;
 
                 padding:
-                    70px 20px 90px;
+                    80px 20px 110px;
 
                 background-position:
                     center center;
             }
 
 
+            /* =====================
+               CENTER TRAILGUARD
+            ===================== */
+
             h1 {
-                font-size:
-                    48px;
+                width: 100%;
 
-                letter-spacing:
-                    2px;
+                display: block;
 
-                margin-bottom:
-                    42px;
+                margin-left: auto;
+                margin-right: auto;
+
+                text-align: center;
+
+                font-size: 48px;
+
+                letter-spacing: 2px;
+
+                line-height: 0.95;
+
+                margin-bottom: 42px;
             }
-
 
             .description {
-                font-size:
-                    16px;
+                width: 100%;
 
-                max-width:
-                    500px;
+                max-width: 500px;
 
-                margin-bottom:
-                    60px;
+                margin-left: auto;
+                margin-right: auto;
+
+                font-size: 16px;
+
+                line-height: 1.6;
+
+                margin-bottom: 60px;
+
+                text-align: center;
             }
 
 
-            .coming-soon {
-                font-size:
-                    17px;
-
-                letter-spacing:
-                    5px;
-
-                margin-top:
-                    38px;
-            }
-
+            /* =====================
+               SOCIALS
+               SAME DESIGN
+            ===================== */
 
             .social {
-                width:
-                    54px;
-
-                height:
-                    54px;
+                width: 54px;
+                height: 54px;
             }
-
 
             .social svg {
-                width:
-                    25px;
-
-                height:
-                    25px;
+                width: 25px;
+                height: 25px;
             }
 
 
-            .story-section,
-            .product-section {
+            /* =====================
+               LAUNCHING
+            ===================== */
+
+            .coming-soon {
+                font-size: 17px;
+
+                letter-spacing: 5px;
+
+                margin-top: 38px;
+
+                text-align: center;
+            }
+
+
+            /* =====================
+               OUR STORY
+            ===================== */
+
+            .our-story {
                 padding:
-                    75px 0 90px;
+                    90px 20px;
             }
 
+            .our-story h2 {
+                font-size: 34px;
 
-            .section-title {
-                margin-bottom:
-                    40px;
+                letter-spacing: 4px;
+
+                margin-bottom: 40px;
             }
 
+            .video-placeholder {
+                width: 100%;
 
-            .video-box,
-            .image-box {
-                height:
-                    300px;
-
-                margin-bottom:
-                    45px;
+                margin-bottom: 40px;
             }
-
-
-            .video-box span,
-            .image-box span {
-                font-size:
-                    18px;
-
-                letter-spacing:
-                    4px;
-
-                text-align:
-                    center;
-            }
-
 
             .story-text {
-                font-size:
-                    16px;
+                width: 100%;
 
-                line-height:
-                    1.75;
+                font-size: 16px;
+
+                line-height: 1.75;
             }
 
+
+            /* =====================
+               PRODUCT
+            ===================== */
+
+            .product {
+                padding:
+                    90px 20px;
+            }
+
+            .product h2 {
+                font-size: 34px;
+
+                letter-spacing: 4px;
+
+                margin-bottom: 40px;
+            }
+
+            .product-placeholder {
+                width: 100%;
+
+                margin-bottom: 40px;
+            }
 
             .product-text {
-                font-size:
-                    17px;
+                width: 100%;
 
-                line-height:
-                    1.75;
+                font-size: 16px;
+
+                line-height: 1.75;
             }
 
+
+            /* =====================
+               POPUP
+            ===================== */
 
             .survey-popup {
+                bottom: 15px;
+
                 width:
-                    calc(100% - 20px);
-
-                flex-direction:
-                    column;
-
-                align-items:
-                    stretch;
-
-                gap:
-                    12px;
+                    calc(100% - 24px);
 
                 padding:
-                    15px 16px;
+                    17px 16px;
+
+                gap: 12px;
             }
 
-
-            .popup-message {
-                padding-right:
-                    25px;
-
-                font-size:
-                    13px;
+            .survey-popup p {
+                font-size: 12px;
             }
-
-
-            .popup-actions {
-                justify-content:
-                    space-between;
-            }
-
 
             .popup-button {
-                flex:
-                    1;
-            }
+                padding:
+                    10px 12px;
 
-
-            .popup-close {
-                position:
-                    absolute;
-
-                top:
-                    9px;
-
-                right:
-                    10px;
+                font-size: 9px;
             }
 
         }
@@ -1204,24 +859,10 @@
 
 
     <!-- =========================
-         STICKY HEADER
+         HEADER
     ========================= -->
 
-    <header class="top-banner">
-
-        <a
-            href="#trailguard"
-            aria-label="SaltWërk home"
-        >
-
-            <img
-                src="SW_Stacked_White@1200px.png"
-                alt="SaltWërk"
-                class="logo"
-            >
-
-        </a>
-
+    <header>
 
         <nav class="nav">
 
@@ -1240,256 +881,198 @@
         </nav>
 
 
-        <div class="survey-container">
-
-            <a
-                href="https://forms.gle/atvUJcnE9CpMFzQM8"
-                class="survey-button"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                TAKE OUR SURVEY
-            </a>
-
-        </div>
+        <a
+            class="survey-link"
+            href="https://forms.gle/atvUJcnE9CpMFzQM8"
+            target="_blank"
+            rel="noopener"
+        >
+            TAKE OUR SURVEY
+        </a>
 
     </header>
 
 
+
     <!-- =========================
-         MAIN
+         HERO
     ========================= -->
 
-    <main>
+    <section
+        class="hero"
+        id="trailguard"
+    >
 
+        <h1>
+            TRAILGUARD
+        </h1>
 
-        <!-- =========================
-             HERO
-        ========================= -->
 
-        <section
-            class="hero"
-            id="trailguard"
-        >
+        <p class="description">
+            A first-of-its-kind compression calf sleeve with snake, tick,
+            and abrasion protection for trail runners and hikers.
+        </p>
 
-            <div class="hero-content">
 
+        <!-- SOCIAL ICONS -->
 
-                <h1>
-                    TRAILGUARD
-                </h1>
+        <div class="socials">
 
+            <!-- INSTAGRAM -->
 
-                <p class="description">
+            <a
+                class="social"
+                href="https://www.instagram.com/saltwerktrail/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+            >
 
-                    A first-of-its-kind compression calf sleeve with snake, tick, and abrasion protection for trail runners and hikers.
+                <svg
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
 
-                </p>
+                    <path
+                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
+                    />
 
+                </svg>
 
-                <!-- SOCIAL LINKS -->
+            </a>
 
-                <div class="socials">
 
+            <!-- TIKTOK -->
 
-                    <!-- INSTAGRAM -->
+            <a
+                class="social"
+                href="https://www.tiktok.com/@saltwerktrail"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok"
+            >
 
-                    <a
-                        href="https://www.instagram.com/saltwerktrail/"
-                        class="social"
-                        aria-label="SaltWërk Instagram"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                <svg
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
 
-                        <svg viewBox="0 0 24 24">
+                    <path
+                        d="M16.5 2h3c.2 1.8 1.2 3.5 2.8 4.5v3.1c-1.6-.1-3.1-.6-4.5-1.5v6.7c0 4.1-2.8 7-6.9 7-3.7 0-6.4-2.7-6.4-6.2 0-3.8 3.1-6.4 6.8-6.4.5 0 1 .1 1.5.2v3.2c-.5-.2-1-.3-1.5-.3-1.9 0-3.4 1.2-3.4 3.1 0 1.7 1.3 3.1 3.1 3.1 2 0 3.5-1.3 3.5-3.8V2h2Z"
+                    />
 
-                            <path d="
-                                M7.8 2
-                                h8.4
-                                A5.8 5.8 0 0 1 22 7.8
-                                v8.4
-                                a5.8 5.8 0 0 1-5.8 5.8
-                                H7.8
-                                A5.8 5.8 0 0 1 2 16.2
-                                V7.8
-                                A5.8 5.8 0 0 1 7.8 2z
+                </svg>
 
-                                M7.6 4
-                                A3.6 3.6 0 0 0 4 7.6
-                                v8.8
-                                A3.6 3.6 0 0 0 7.6 20
-                                h8.8
-                                a3.6 3.6 0 0 0 3.6-3.6
-                                V7.6
-                                A3.6 3.6 0 0 0 16.4 4
-                                H7.6z
+            </a>
 
-                                M16.5 5.5
-                                a1.4 1.4 0 1 0 0 2.8
-                                1.4 1.4 0 0 0 0-2.8z
+        </div>
 
-                                M12 7
-                                a5 5 0 1 0 0 10
-                                a5 5 0 0 0 0-10z
 
-                                M12 9
-                                a3 3 0 1 1 0 6
-                                a3 3 0 0 1 0-6z
-                            "/>
+        <!-- LAUNCHING -->
 
-                        </svg>
+        <div class="coming-soon">
+            LAUNCHING 2027
+        </div>
 
-                    </a>
+    </section>
 
 
-                    <!-- TIKTOK -->
 
-                    <a
-                        href="https://www.tiktok.com/@saltwerktrail"
-                        class="social"
-                        aria-label="SaltWërk TikTok"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+    <!-- =========================
+         OUR STORY
+    ========================= -->
 
-                        <svg viewBox="0 0 24 24">
+    <section
+        class="our-story"
+        id="our-story"
+    >
 
-                            <path d="
-                                M19.6 7.3
-                                a5.7 5.7 0 0 1-3.4-1.1
-                                v7.1
-                                a5.7 5.7 0 1 1-4.9-5.6
-                                v2.9
-                                a2.8 2.8 0 1 0 2 2.7
-                                V2
-                                h2.9
-                                a5.7 5.7 0 0 0 3.4 2.7
-                                v2.6z
-                            "/>
+        <h2>
+            OUR STORY
+        </h2>
 
-                        </svg>
 
-                    </a>
+        <div class="video-placeholder">
 
+            <span>
+                VIDEO COMING SOON
+            </span>
 
-                </div>
+        </div>
 
 
-                <!-- LAUNCHING 2027 -->
+        <div class="story-text">
 
-                <div class="coming-soon">
+            <p>
+                SaltWërk is an early-stage performance gear startup
+                founded and owned by Daren Mann, a Santa Barbara-based
+                entrepreneur and marathon runner. Our flagship product,
+                TrailGuard, is a compression calf sleeve designed for
+                trail runners and hikers, combining performance compression
+                with multi-threat protection for the trail: including
+                snake-resistant materials, permethrin-based tick protection,
+                and abrasion resistance.
+            </p>
 
-                    LAUNCHING 2027
 
-                </div>
+            <p>
+                We will be beginning pre-orders and delivering the first
+                products in Q1 2027.
+            </p>
 
+        </div>
 
-            </div>
+    </section>
 
-        </section>
 
 
-        <!-- =========================
-             OUR STORY
-        ========================= -->
+    <!-- =========================
+         PRODUCT
+    ========================= -->
 
-        <section
-            class="story-section"
-            id="our-story"
-        >
+    <section
+        class="product"
+        id="product"
+    >
 
-            <div class="section-content">
+        <h2>
+            PRODUCT
+        </h2>
 
 
-                <h2 class="section-title">
+        <div class="product-placeholder">
 
-                    OUR STORY
+            <span>
+                IMAGES COMING SOON
+            </span>
 
-                </h2>
+        </div>
 
 
-                <div class="video-box">
+        <div class="product-text">
 
-                    <span>
+            <p>
+                SaltWerk is a startup launching TrailGuard, a
+                first-of-its-kind compression calf sleeve with snake,
+                tick, and abrasion protection for trail runners and hikers.
+            </p>
 
-                        VIDEO COMING SOON
+        </div>
 
-                    </span>
+    </section>
 
-                </div>
-
-
-                <p class="story-text">
-
-                    SaltWërk is an early-stage performance gear startup founded and owned by Daren Mann, a Santa Barbara-based entrepreneur and marathon runner. Our flagship product, TrailGuard, is a compression calf sleeve designed for trail runners and hikers, combining performance compression with multi-threat protection for the trail: including snake-resistant materials, permethrin-based tick protection, and abrasion resistance.
-
-                    <br><br>
-
-                    We will be beginning pre-orders and delivering the first products in Q1 2027.
-
-                </p>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PRODUCT
-        ========================= -->
-
-        <section
-            class="product-section"
-            id="product"
-        >
-
-            <div class="section-content">
-
-
-                <h2 class="section-title">
-
-                    PRODUCT
-
-                </h2>
-
-
-                <div class="image-box">
-
-                    <span>
-
-                        IMAGES COMING SOON
-
-                    </span>
-
-                </div>
-
-
-                <p class="product-text">
-
-                    SaltWerk is a startup launching TrailGuard, a first-of-its-kind compression calf sleeve with snake, tick, and abrasion protection for trail runners and hikers.
-
-                </p>
-
-
-            </div>
-
-        </section>
-
-
-    </main>
 
 
     <!-- =========================
          FOOTER
     ========================= -->
 
-    <footer class="footer">
+    <footer>
 
-        © 2026 SALTWËRK
+        SALTWËRK
 
     </footer>
+
 
 
     <!-- =========================
@@ -1499,54 +1082,37 @@
     <div
         class="survey-popup"
         id="surveyPopup"
-        aria-label="TrailGuard survey invitation"
     >
 
-        <div class="popup-message">
-
-            <strong>
-                Help us shape TrailGuard.
-            </strong>
-
-            Take our quick survey.
-
-        </div>
+        <button
+            class="close-popup"
+            id="closePopup"
+            aria-label="Close"
+        >
+            ×
+        </button>
 
 
-        <div class="popup-actions">
+        <p>
+            Help us shape TrailGuard. Take our quick survey.
+        </p>
 
 
-            <a
-                href="https://forms.gle/atvUJcnE9CpMFzQM8"
-                class="popup-button"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-
-                TAKE SURVEY
-
-            </a>
-
-
-            <button
-                type="button"
-                class="popup-close"
-                id="closePopup"
-                aria-label="Close survey invitation"
-            >
-
-                ×
-
-            </button>
-
-
-        </div>
+        <a
+            class="popup-button"
+            href="https://forms.gle/atvUJcnE9CpMFzQM8"
+            target="_blank"
+            rel="noopener"
+        >
+            TAKE SURVEY
+        </a>
 
     </div>
 
 
+
     <!-- =========================
-         SURVEY POPUP SCRIPT
+         JAVASCRIPT
     ========================= -->
 
     <script>
@@ -1565,15 +1131,17 @@
         }, 30000);
 
 
-        closePopup.addEventListener("click", () => {
+        closePopup.addEventListener(
+            "click",
+            () => {
 
-            surveyPopup.classList.remove("show");
+                surveyPopup.classList.remove("show");
 
-        });
+            }
+        );
 
     </script>
 
 
 </body>
-</html>
 </html>
