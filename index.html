@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,6 +19,11 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
         html,
         body {
             width: 100%;
@@ -25,7 +31,7 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
             color: #ffffff;
             overflow-x: hidden;
             background: #243541;
@@ -36,42 +42,9 @@
             text-decoration: none;
         }
 
-        /* =========================
-           CUSTOM SALTWËRK FONT
-           ONLY USED FOR TRAILGUARD
-        ========================= */
-
-        @font-face {
-            font-family: "Saltwerk";
-            src: url("Saltwerk%20Font") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-        }
 
         /* =========================
-           PAGE
-        ========================= */
-
-        .page {
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-
-            background-image:
-                linear-gradient(
-                    180deg,
-                    rgba(19, 55, 72, 0.18),
-                    rgba(0, 30, 40, 0.30)
-                ),
-                url("mountain-trail.jpg");
-
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
-
-        /* =========================
-           HEADER
+           STICKY HEADER
         ========================= */
 
         .top-banner {
@@ -96,8 +69,9 @@
             box-shadow:
                 0 4px 25px rgba(0, 0, 0, 0.18);
 
-            position: relative;
-            z-index: 10;
+            position: sticky;
+            top: 0;
+            z-index: 100;
 
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
@@ -106,13 +80,10 @@
         .logo {
             width: 125px;
             height: auto;
-
             justify-self: start;
 
             opacity: 0;
-
-            animation:
-                logoFade 1s ease forwards;
+            animation: logoFade 1s ease forwards;
         }
 
         @keyframes logoFade {
@@ -129,6 +100,7 @@
 
         }
 
+
         /* =========================
            NAVIGATION
         ========================= */
@@ -141,7 +113,7 @@
         }
 
         .nav a {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
 
             font-size: 11px;
             font-weight: 600;
@@ -153,8 +125,7 @@
             position: relative;
 
             transition:
-                color 0.25s ease,
-                opacity 0.25s ease;
+                color 0.25s ease;
         }
 
         .nav a::after {
@@ -182,6 +153,7 @@
             width: 100%;
         }
 
+
         /* =========================
            SURVEY BUTTON
         ========================= */
@@ -199,7 +171,7 @@
 
             border: 1px solid rgba(255, 255, 255, 0.75);
 
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
 
             font-size: 9px;
             font-weight: 600;
@@ -220,6 +192,7 @@
             transform: translateY(-2px);
         }
 
+
         /* =========================
            HERO
         ========================= */
@@ -235,23 +208,35 @@
 
             text-align: center;
 
-            padding: 50px 25px 100px;
+            padding: 60px 25px 100px;
 
             position: relative;
-            z-index: 5;
+            overflow: hidden;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.25),
+                    rgba(0, 0, 0, 0.25)
+                ),
+                url("RedRockTrail.jpg");
+
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
 
-        .hero::before {
+        .hero::after {
             content: "";
 
             position: absolute;
+
             inset: 0;
 
             background:
                 radial-gradient(
                     circle at 50% 45%,
-                    rgba(255, 255, 255, 0.18),
-                    transparent 35%
+                    rgba(255, 255, 255, 0.12),
+                    transparent 38%
                 );
 
             pointer-events: none;
@@ -265,25 +250,26 @@
             max-width: 1300px;
 
             text-shadow:
-                0 4px 25px rgba(0, 30, 40, 0.42);
+                0 4px 25px rgba(0, 0, 0, 0.42);
         }
+
 
         /* =========================
            TRAILGUARD
         ========================= */
 
         h1 {
-            font-family: "Saltwerk", Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
 
             font-size: clamp(55px, 8vw, 105px);
 
-            font-weight: normal;
+            font-weight: 700;
 
             letter-spacing: 3px;
 
             line-height: 0.95;
 
-            margin-bottom: 24px;
+            margin-bottom: 28px;
 
             text-align: center;
 
@@ -295,29 +281,30 @@
                 fadeUp 1s ease 0.25s forwards;
         }
 
+
         /* =========================
            DESCRIPTION
         ========================= */
 
         .description {
-            max-width: 650px;
+            max-width: 780px;
 
-            margin: 0 auto 25px;
+            margin: 0 auto 30px;
 
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
 
-            font-size: clamp(14px, 1.5vw, 18px);
+            font-size: clamp(17px, 1.8vw, 22px);
 
             font-weight: 300;
 
             line-height: 1.6;
 
-            letter-spacing: 0.4px;
+            letter-spacing: 0.3px;
 
-            color: rgba(255, 255, 255, 0.88);
+            color: rgba(255, 255, 255, 0.94);
 
             text-shadow:
-                0 3px 15px rgba(0, 30, 40, 0.45);
+                0 3px 15px rgba(0, 0, 0, 0.45);
 
             opacity: 0;
 
@@ -325,22 +312,23 @@
                 fadeUp 1s ease 0.38s forwards;
         }
 
+
         /* =========================
-           COMING SOON
+           LAUNCHING 2027
         ========================= */
 
         .coming-soon {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
 
-            font-size: clamp(19px, 2.5vw, 28px);
+            font-size: clamp(30px, 4.5vw, 52px);
 
-            font-weight: 300;
+            font-weight: 400;
 
-            letter-spacing: 8px;
+            letter-spacing: 9px;
 
-            margin-bottom: 45px;
+            margin-bottom: 48px;
 
-            color: rgba(255, 255, 255, 0.92);
+            color: rgba(255, 255, 255, 0.96);
 
             opacity: 0;
 
@@ -348,8 +336,10 @@
                 fadeUp 1s ease 0.50s forwards;
         }
 
+
         /* =========================
            SOCIAL BUTTONS
+           THESE ARE UNCHANGED
         ========================= */
 
         .socials {
@@ -413,81 +403,329 @@
             fill: white;
         }
 
+
         /* =========================
-           LIGHT EFFECT
+           OUR STORY
         ========================= */
 
-        .light {
-            position: absolute;
+        .story-section {
+            background: #f2f0ea;
 
-            width: 500px;
+            color: #20262b;
+
+            padding: 110px 0 125px;
+
+            scroll-margin-top: 90px;
+        }
+
+        .section-content {
+            width: min(1050px, 90%);
+
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: clamp(42px, 6vw, 72px);
+
+            font-weight: 700;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 60px;
+        }
+
+        .video-box {
+            width: 100%;
+
             height: 500px;
 
-            border-radius: 50%;
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #d9d6ce;
+
+            border:
+                1px solid rgba(32, 38, 43, 0.18);
+
+            box-shadow:
+                0 20px 60px rgba(20, 25, 30, 0.12);
+
+            margin-bottom: 60px;
+        }
+
+        .video-box span {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: clamp(22px, 3vw, 34px);
+
+            font-weight: 300;
+
+            letter-spacing: 6px;
+
+            color: rgba(32, 38, 43, 0.72);
+        }
+
+        .story-text {
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 18px;
+
+            line-height: 1.85;
+
+            font-weight: 300;
+
+            color: #30363b;
+        }
+
+
+        /* =========================
+           PRODUCT
+        ========================= */
+
+        .product-section {
+            background: #243541;
+
+            color: #ffffff;
+
+            padding: 110px 0 125px;
+
+            scroll-margin-top: 90px;
+        }
+
+        .product-section .section-title {
+            color: #ffffff;
+        }
+
+        .image-box {
+            width: 100%;
+
+            height: 500px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
 
             background:
-                radial-gradient(
-                    circle,
-                    rgba(132, 232, 245, 0.16),
-                    transparent 70%
-                );
+                rgba(20, 32, 40, 0.68);
 
-            top: 25%;
-            left: 50%;
+            border:
+                1px solid rgba(255, 255, 255, 0.28);
 
-            transform:
-                translate(-50%, -50%);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.25);
 
-            pointer-events: none;
+            margin-bottom: 60px;
 
-            animation:
-                lightPulse 8s ease-in-out infinite alternate;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
-        @keyframes lightPulse {
+        .image-box span {
+            font-family: Helvetica, Arial, sans-serif;
 
-            from {
-                opacity: 0.5;
+            font-size: clamp(22px, 3vw, 34px);
 
-                transform:
-                    translate(-50%, -50%)
-                    scale(0.9);
-            }
+            font-weight: 300;
 
-            to {
-                opacity: 1;
+            letter-spacing: 6px;
 
-                transform:
-                    translate(-50%, -50%)
-                    scale(1.15);
-            }
-
+            color: rgba(255, 255, 255, 0.85);
         }
+
+        .product-text {
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 20px;
+
+            line-height: 1.85;
+
+            font-weight: 300;
+
+            text-align: center;
+
+            color: rgba(255, 255, 255, 0.9);
+        }
+
 
         /* =========================
            FOOTER
         ========================= */
 
         .footer {
-            position: absolute;
-
-            bottom: 18px;
-
             width: 100%;
 
             text-align: center;
 
-            font-family: Arial, Helvetica, sans-serif;
+            padding: 28px 20px;
+
+            font-family: Helvetica, Arial, sans-serif;
 
             font-size: 10px;
 
             letter-spacing: 3px;
 
-            color:
-                rgba(255, 255, 255, 0.78);
+            color: rgba(255, 255, 255, 0.78);
 
-            z-index: 8;
+            background: #243541;
         }
+
+
+        /* =========================
+           SURVEY POPUP
+        ========================= */
+
+        .survey-popup {
+            position: fixed;
+
+            left: 50%;
+            bottom: 0;
+
+            width: min(760px, calc(100% - 30px));
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+
+            padding: 17px 20px;
+
+            background:
+                rgba(27, 39, 49, 0.96);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.18);
+
+            box-shadow:
+                0 -8px 30px rgba(0, 0, 0, 0.18);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            z-index: 200;
+
+            transform:
+                translate(-50%, 120%);
+
+            opacity: 0;
+
+            transition:
+                transform 0.5s ease,
+                opacity 0.5s ease;
+        }
+
+        .survey-popup.show {
+            transform:
+                translate(-50%, 0);
+
+            opacity: 1;
+        }
+
+        .popup-message {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.4;
+
+            font-weight: 300;
+
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .popup-message strong {
+            font-weight: 600;
+        }
+
+        .popup-actions {
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            flex-shrink: 0;
+        }
+
+        .popup-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 9px 14px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.72);
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 9px;
+
+            font-weight: 600;
+
+            letter-spacing: 1.7px;
+
+            color: white;
+
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .popup-button:hover {
+            background:
+                rgba(255, 255, 255, 0.12);
+
+            transform:
+                translateY(-1px);
+        }
+
+        .popup-close {
+            border: none;
+
+            background: transparent;
+
+            color:
+                rgba(255, 255, 255, 0.72);
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 22px;
+
+            font-weight: 300;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+            padding: 2px 4px;
+
+            transition:
+                color 0.2s ease;
+        }
+
+        .popup-close:hover {
+            color: white;
+        }
+
 
         /* =========================
            ANIMATIONS
@@ -511,14 +749,20 @@
 
         }
 
+
         /* =========================
            MOBILE
         ========================= */
 
         @media (max-width: 750px) {
 
+            html {
+                scroll-padding-top: 125px;
+            }
+
             .top-banner {
                 height: auto;
+
                 min-height: 90px;
 
                 grid-template-columns: 1fr 1fr;
@@ -533,6 +777,7 @@
 
             .nav {
                 grid-column: 1 / -1;
+
                 grid-row: 2;
 
                 gap: 24px;
@@ -542,6 +787,7 @@
 
             .nav a {
                 font-size: 9px;
+
                 letter-spacing: 1.8px;
             }
 
@@ -550,44 +796,130 @@
             }
 
             .survey-button {
-                padding: 9px 12px;
+                padding:
+                    9px 12px;
 
                 font-size: 8px;
+
                 letter-spacing: 1.4px;
             }
 
             .hero {
                 min-height:
-                    calc(100vh - 135px);
+                    calc(100svh - 135px);
 
                 padding:
                     45px 20px 90px;
+
+                background-position:
+                    center center;
             }
 
             h1 {
                 font-size: 48px;
+
                 letter-spacing: 2px;
             }
 
             .description {
-                font-size: 14px;
+                font-size: 16px;
+
                 max-width: 500px;
             }
 
             .coming-soon {
-                font-size: 17px;
+                font-size: 28px;
+
                 letter-spacing: 5px;
+
                 margin-bottom: 38px;
             }
 
             .social {
                 width: 54px;
+
                 height: 54px;
             }
 
             .social svg {
                 width: 25px;
+
                 height: 25px;
+            }
+
+            .story-section,
+            .product-section {
+                padding:
+                    75px 0 90px;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .video-box,
+            .image-box {
+                height: 300px;
+
+                margin-bottom: 45px;
+            }
+
+            .video-box span,
+            .image-box span {
+                font-size: 18px;
+
+                letter-spacing: 4px;
+
+                text-align: center;
+            }
+
+            .story-text {
+                font-size: 16px;
+
+                line-height: 1.75;
+            }
+
+            .product-text {
+                font-size: 17px;
+
+                line-height: 1.75;
+            }
+
+            .survey-popup {
+                width:
+                    calc(100% - 20px);
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 12px;
+
+                padding:
+                    15px 16px;
+            }
+
+            .popup-message {
+                padding-right: 25px;
+
+                font-size: 13px;
+            }
+
+            .popup-actions {
+                justify-content:
+                    space-between;
+            }
+
+            .popup-button {
+                flex: 1;
+            }
+
+            .popup-close {
+                position: absolute;
+
+                top: 9px;
+
+                right: 10px;
             }
 
         }
@@ -598,35 +930,38 @@
 
 <body>
 
-<div class="page">
-
 
     <!-- =========================
-         HEADER
+         STICKY HEADER
     ========================= -->
 
     <header class="top-banner">
 
-        <a href="index.html">
+        <a
+            href="#trailguard"
+            aria-label="SaltWërk home"
+        >
+
             <img
                 src="SW_Stacked_White@1200px.png"
                 alt="SaltWërk"
                 class="logo"
             >
+
         </a>
 
 
         <nav class="nav">
 
-            <a href="index.html">
+            <a href="#trailguard">
                 TRAILGUARD
             </a>
 
-            <a href="our-story.html">
+            <a href="#our-story">
                 OUR STORY
             </a>
 
-            <a href="product.html">
+            <a href="#product">
                 PRODUCT
             </a>
 
@@ -636,7 +971,7 @@
         <div class="survey-container">
 
             <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf-vGovbamQwFjMfGCLOZwd0sZgm4hum5gCOwHjFR-9tHzAeg/viewform"
+                href="https://forms.gle/atvUJcnE9CpMFzQM8"
                 class="survey-button"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -650,118 +985,223 @@
 
 
     <!-- =========================
-         HERO
+         MAIN
     ========================= -->
 
-    <main class="hero">
-
-        <div class="light"></div>
-
-        <div class="hero-content">
-
-            <h1>
-                TRAILGUARD
-            </h1>
+    <main>
 
 
-            <p class="description">
-                A first-of-its-kind compression calf sleeve with snake, tick, and abrasion protection for trail runners and hikers.
-            </p>
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section
+            class="hero"
+            id="trailguard"
+        >
+
+            <div class="hero-content">
 
 
-            <div class="coming-soon">
-                COMING SOON 2027
+                <h1>
+                    TRAILGUARD
+                </h1>
+
+
+                <p class="description">
+
+                    A first-of-its-kind compression calf sleeve with snake, tick, and abrasion protection for trail runners and hikers.
+
+                </p>
+
+
+                <div class="coming-soon">
+
+                    LAUNCHING 2027
+
+                </div>
+
+
+                <!-- SOCIAL LINKS — UNCHANGED -->
+
+                <div class="socials">
+
+
+                    <!-- INSTAGRAM -->
+
+                    <a
+                        href="https://www.instagram.com/saltwerktrail/"
+                        class="social"
+                        aria-label="SaltWërk Instagram"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <svg viewBox="0 0 24 24">
+
+                            <path d="
+                                M7.8 2
+                                h8.4
+                                A5.8 5.8 0 0 1 22 7.8
+                                v8.4
+                                a5.8 5.8 0 0 1-5.8 5.8
+                                H7.8
+                                A5.8 5.8 0 0 1 2 16.2
+                                V7.8
+                                A5.8 5.8 0 0 1 7.8 2z
+
+                                M7.6 4
+                                A3.6 3.6 0 0 0 4 7.6
+                                v8.8
+                                A3.6 3.6 0 0 0 7.6 20
+                                h8.8
+                                a3.6 3.6 0 0 0 3.6-3.6
+                                V7.6
+                                A3.6 3.6 0 0 0 16.4 4
+                                H7.6z
+
+                                M16.5 5.5
+                                a1.4 1.4 0 1 0 0 2.8
+                                1.4 1.4 0 0 0 0-2.8z
+
+                                M12 7
+                                a5 5 0 1 0 0 10
+                                a5 5 0 0 0 0-10z
+
+                                M12 9
+                                a3 3 0 1 1 0 6
+                                a3 3 0 0 1 0-6z
+                            "/>
+
+                        </svg>
+
+                    </a>
+
+
+                    <!-- TIKTOK -->
+
+                    <a
+                        href="https://www.tiktok.com/@saltwerktrail"
+                        class="social"
+                        aria-label="SaltWërk TikTok"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <svg viewBox="0 0 24 24">
+
+                            <path d="
+                                M19.6 7.3
+                                a5.7 5.7 0 0 1-3.4-1.1
+                                v7.1
+                                a5.7 5.7 0 1 1-4.9-5.6
+                                v2.9
+                                a2.8 2.8 0 1 0 2 2.7
+                                V2
+                                h2.9
+                                a5.7 5.7 0 0 0 3.4 2.7
+                                v2.6z
+                            "/>
+
+                        </svg>
+
+                    </a>
+
+
+                </div>
+
             </div>
 
-
-            <!-- SOCIAL LINKS -->
-
-            <div class="socials">
+        </section>
 
 
-                <!-- INSTAGRAM -->
+        <!-- =========================
+             OUR STORY
+        ========================= -->
 
-                <a
-                    href="https://www.instagram.com/saltwerktrail/"
-                    class="social"
-                    aria-label="SaltWërk Instagram"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+        <section
+            class="story-section"
+            id="our-story"
+        >
 
-                    <svg viewBox="0 0 24 24">
-
-                        <path d="
-                            M7.8 2
-                            h8.4
-                            A5.8 5.8 0 0 1 22 7.8
-                            v8.4
-                            a5.8 5.8 0 0 1-5.8 5.8
-                            H7.8
-                            A5.8 5.8 0 0 1 2 16.2
-                            V7.8
-                            A5.8 5.8 0 0 1 7.8 2z
-
-                            M7.6 4
-                            A3.6 3.6 0 0 0 4 7.6
-                            v8.8
-                            A3.6 3.6 0 0 0 7.6 20
-                            h8.8
-                            a3.6 3.6 0 0 0 3.6-3.6
-                            V7.6
-                            A3.6 3.6 0 0 0 16.4 4
-                            H7.6z
-
-                            M16.5 5.5
-                            a1.4 1.4 0 1 0 0 2.8
-                            1.4 1.4 0 0 0 0-2.8z
-
-                            M12 7
-                            a5 5 0 1 0 0 10
-                            a5 5 0 0 0 0-10z
-
-                            M12 9
-                            a3 3 0 1 1 0 6
-                            a3 3 0 0 1 0-6z
-                        "/>
-
-                    </svg>
-
-                </a>
+            <div class="section-content">
 
 
-                <!-- TIKTOK -->
+                <h2 class="section-title">
 
-                <a
-                    href="https://www.tiktok.com/@saltwerktrail"
-                    class="social"
-                    aria-label="SaltWërk TikTok"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                    OUR STORY
 
-                    <svg viewBox="0 0 24 24">
+                </h2>
 
-                        <path d="
-                            M19.6 7.3
-                            a5.7 5.7 0 0 1-3.4-1.1
-                            v7.1
-                            a5.7 5.7 0 1 1-4.9-5.6
-                            v2.9
-                            a2.8 2.8 0 1 0 2 2.7
-                            V2
-                            h2.9
-                            a5.7 5.7 0 0 0 3.4 2.7
-                            v2.6z
-                        "/>
 
-                    </svg>
+                <div class="video-box">
 
-                </a>
+                    <span>
+
+                        VIDEO COMING SOON
+
+                    </span>
+
+                </div>
+
+
+                <p class="story-text">
+
+                    SaltWërk is an early-stage performance gear startup founded and owned by Daren Mann, a Santa Barbara-based entrepreneur and marathon runner. Our flagship product, TrailGuard, is a compression calf sleeve designed for trail runners and hikers, combining performance compression with multi-threat protection for the trail: including snake-resistant materials, permethrin-based tick protection, and abrasion resistance.
+
+                    <br><br>
+
+                    We will be beginning pre-orders and delivering the first products in Q1 2027.
+
+                </p>
+
 
             </div>
 
-        </div>
+        </section>
+
+
+        <!-- =========================
+             PRODUCT
+        ========================= -->
+
+        <section
+            class="product-section"
+            id="product"
+        >
+
+            <div class="section-content">
+
+
+                <h2 class="section-title">
+
+                    PRODUCT
+
+                </h2>
+
+
+                <div class="image-box">
+
+                    <span>
+
+                        IMAGES COMING SOON
+
+                    </span>
+
+                </div>
+
+
+                <p class="product-text">
+
+                    SaltWerk is a startup launching TrailGuard, a first-of-its-kind compression calf sleeve with snake, tick, and abrasion protection for trail runners and hikers.
+
+                </p>
+
+
+            </div>
+
+        </section>
+
 
     </main>
 
@@ -771,11 +1211,93 @@
     ========================= -->
 
     <footer class="footer">
+
         © 2026 SALTWËRK
+
     </footer>
 
 
-</div>
+    <!-- =========================
+         SURVEY POPUP
+    ========================= -->
+
+    <div
+        class="survey-popup"
+        id="surveyPopup"
+        aria-label="TrailGuard survey invitation"
+    >
+
+        <div class="popup-message">
+
+            <strong>
+                Help us shape TrailGuard.
+            </strong>
+
+            Take our quick survey.
+
+        </div>
+
+
+        <div class="popup-actions">
+
+
+            <a
+                href="https://forms.gle/atvUJcnE9CpMFzQM8"
+                class="popup-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                TAKE SURVEY
+
+            </a>
+
+
+            <button
+                type="button"
+                class="popup-close"
+                id="closePopup"
+                aria-label="Close survey invitation"
+            >
+
+                ×
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SURVEY POPUP SCRIPT
+    ========================= -->
+
+    <script>
+
+        const surveyPopup =
+            document.getElementById("surveyPopup");
+
+        const closePopup =
+            document.getElementById("closePopup");
+
+
+        setTimeout(() => {
+
+            surveyPopup.classList.add("show");
+
+        }, 30000);
+
+
+        closePopup.addEventListener("click", () => {
+
+            surveyPopup.classList.remove("show");
+
+        });
+
+    </script>
+
 
 </body>
 </html>
