@@ -44,6 +44,19 @@
 
 
         /* =========================
+           SALTWËRK FONT
+           ONLY TRAILGUARD USES THIS
+        ========================= */
+
+        @font-face {
+            font-family: "Saltwerk";
+            src: url("Saltwerk%20Font") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        /* =========================
            STICKY HEADER
         ========================= */
 
@@ -77,14 +90,19 @@
             -webkit-backdrop-filter: blur(8px);
         }
 
+
         .logo {
             width: 125px;
             height: auto;
+
             justify-self: start;
 
             opacity: 0;
-            animation: logoFade 1s ease forwards;
+
+            animation:
+                logoFade 1s ease forwards;
         }
+
 
         @keyframes logoFade {
 
@@ -107,26 +125,32 @@
 
         .nav {
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             gap: 42px;
         }
+
 
         .nav a {
             font-family: Helvetica, Arial, sans-serif;
 
             font-size: 11px;
+
             font-weight: 600;
 
             letter-spacing: 2.5px;
 
-            color: rgba(255, 255, 255, 0.82);
+            color:
+                rgba(255, 255, 255, 0.82);
 
             position: relative;
 
             transition:
                 color 0.25s ease;
         }
+
 
         .nav a::after {
             content: "";
@@ -145,9 +169,11 @@
                 width 0.25s ease;
         }
 
+
         .nav a:hover {
             color: #ffffff;
         }
+
 
         .nav a:hover::after {
             width: 100%;
@@ -162,34 +188,43 @@
             justify-self: end;
         }
 
+
         .survey-button {
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
 
             padding: 11px 18px;
 
-            border: 1px solid rgba(255, 255, 255, 0.75);
+            border:
+                1px solid rgba(255, 255, 255, 0.75);
 
             font-family: Helvetica, Arial, sans-serif;
 
             font-size: 9px;
+
             font-weight: 600;
 
             letter-spacing: 2px;
 
             color: white;
 
-            background: rgba(255, 255, 255, 0.03);
+            background:
+                rgba(255, 255, 255, 0.03);
 
             transition:
                 background 0.25s ease,
                 transform 0.25s ease;
         }
 
+
         .survey-button:hover {
-            background: rgba(255, 255, 255, 0.14);
-            transform: translateY(-2px);
+            background:
+                rgba(255, 255, 255, 0.14);
+
+            transform:
+                translateY(-2px);
         }
 
 
@@ -198,9 +233,11 @@
         ========================= */
 
         .hero {
-            min-height: calc(100vh - 90px);
+            min-height:
+                calc(100vh - 90px);
 
             display: flex;
+
             flex-direction: column;
 
             align-items: center;
@@ -208,9 +245,11 @@
 
             text-align: center;
 
-            padding: 60px 25px 100px;
+            padding:
+                90px 25px 120px;
 
             position: relative;
+
             overflow: hidden;
 
             background-image:
@@ -221,9 +260,15 @@
                 url("RedRockTrail.jpg");
 
             background-size: cover;
-            background-position: center center;
+
+            background-position:
+                center center;
+
             background-repeat: no-repeat;
         }
+
+
+        /* subtle light over the photograph */
 
         .hero::after {
             content: "";
@@ -235,18 +280,21 @@
             background:
                 radial-gradient(
                     circle at 50% 45%,
-                    rgba(255, 255, 255, 0.12),
-                    transparent 38%
+                    rgba(255, 255, 255, 0.10),
+                    transparent 40%
                 );
 
             pointer-events: none;
         }
 
+
         .hero-content {
             position: relative;
+
             z-index: 2;
 
             width: 100%;
+
             max-width: 1300px;
 
             text-shadow:
@@ -256,20 +304,26 @@
 
         /* =========================
            TRAILGUARD
+           SALTWËRK FONT
         ========================= */
 
         h1 {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                "Saltwerk",
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: clamp(55px, 8vw, 105px);
+            font-size:
+                clamp(55px, 8vw, 105px);
 
-            font-weight: 700;
+            font-weight: normal;
 
             letter-spacing: 3px;
 
             line-height: 0.95;
 
-            margin-bottom: 28px;
+            margin-bottom: 55px;
 
             text-align: center;
 
@@ -289,11 +343,16 @@
         .description {
             max-width: 780px;
 
-            margin: 0 auto 30px;
+            margin:
+                0 auto 75px;
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: clamp(17px, 1.8vw, 22px);
+            font-size:
+                clamp(17px, 1.8vw, 22px);
 
             font-weight: 300;
 
@@ -301,7 +360,8 @@
 
             letter-spacing: 0.3px;
 
-            color: rgba(255, 255, 255, 0.94);
+            color:
+                rgba(255, 255, 255, 0.94);
 
             text-shadow:
                 0 3px 15px rgba(0, 0, 0, 0.45);
@@ -314,32 +374,8 @@
 
 
         /* =========================
-           LAUNCHING 2027
-        ========================= */
-
-        .coming-soon {
-            font-family: Helvetica, Arial, sans-serif;
-
-            font-size: clamp(30px, 4.5vw, 52px);
-
-            font-weight: 400;
-
-            letter-spacing: 9px;
-
-            margin-bottom: 48px;
-
-            color: rgba(255, 255, 255, 0.96);
-
-            opacity: 0;
-
-            animation:
-                fadeUp 1s ease 0.50s forwards;
-        }
-
-
-        /* =========================
            SOCIAL BUTTONS
-           THESE ARE UNCHANGED
+           EXACTLY AS BEFORE
         ========================= */
 
         .socials {
@@ -354,6 +390,7 @@
             animation:
                 fadeUp 1s ease 0.65s forwards;
         }
+
 
         .social {
             width: 58px;
@@ -376,6 +413,7 @@
                 0 8px 25px rgba(0, 30, 40, 0.25);
 
             backdrop-filter: blur(12px);
+
             -webkit-backdrop-filter: blur(12px);
 
             transition:
@@ -383,6 +421,7 @@
                 background 0.3s ease,
                 box-shadow 0.3s ease;
         }
+
 
         .social:hover {
             transform:
@@ -396,6 +435,7 @@
                 0 15px 35px rgba(0, 30, 40, 0.35);
         }
 
+
         .social svg {
             width: 27px;
             height: 27px;
@@ -405,31 +445,72 @@
 
 
         /* =========================
+           LAUNCHING 2027
+        ========================= */
+
+        .coming-soon {
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            font-size:
+                clamp(17px, 2vw, 23px);
+
+            font-weight: 400;
+
+            letter-spacing: 6px;
+
+            margin-top: 55px;
+
+            color:
+                rgba(255, 255, 255, 0.92);
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1s ease 0.80s forwards;
+        }
+
+
+        /* =========================
            OUR STORY
         ========================= */
 
         .story-section {
-            background: #f2f0ea;
+            background:
+                #f2f0ea;
 
-            color: #20262b;
+            color:
+                #20262b;
 
-            padding: 110px 0 125px;
+            padding:
+                110px 0 125px;
 
-            scroll-margin-top: 90px;
+            scroll-margin-top:
+                90px;
         }
+
 
         .section-content {
-            width: min(1050px, 90%);
+            width:
+                min(1050px, 90%);
 
-            margin: 0 auto;
+            margin:
+                0 auto;
         }
+
 
         .section-title {
             text-align: center;
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: clamp(42px, 6vw, 72px);
+            font-size:
+                clamp(42px, 6vw, 72px);
 
             font-weight: 700;
 
@@ -437,6 +518,7 @@
 
             margin-bottom: 60px;
         }
+
 
         .video-box {
             width: 100%;
@@ -448,7 +530,8 @@
             align-items: center;
             justify-content: center;
 
-            background: #d9d6ce;
+            background:
+                #d9d6ce;
 
             border:
                 1px solid rgba(32, 38, 43, 0.18);
@@ -459,32 +542,48 @@
             margin-bottom: 60px;
         }
 
-        .video-box span {
-            font-family: Helvetica, Arial, sans-serif;
 
-            font-size: clamp(22px, 3vw, 34px);
+        .video-box span {
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            font-size:
+                clamp(22px, 3vw, 34px);
 
             font-weight: 300;
 
             letter-spacing: 6px;
 
-            color: rgba(32, 38, 43, 0.72);
+            color:
+                rgba(32, 38, 43, 0.72);
         }
 
+
         .story-text {
-            max-width: 850px;
+            max-width:
+                850px;
 
-            margin: 0 auto;
+            margin:
+                0 auto;
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: 18px;
+            font-size:
+                18px;
 
-            line-height: 1.85;
+            line-height:
+                1.85;
 
-            font-weight: 300;
+            font-weight:
+                300;
 
-            color: #30363b;
+            color:
+                #30363b;
         }
 
 
@@ -493,18 +592,25 @@
         ========================= */
 
         .product-section {
-            background: #243541;
+            background:
+                #243541;
 
-            color: #ffffff;
+            color:
+                #ffffff;
 
-            padding: 110px 0 125px;
+            padding:
+                110px 0 125px;
 
-            scroll-margin-top: 90px;
+            scroll-margin-top:
+                90px;
         }
+
 
         .product-section .section-title {
-            color: #ffffff;
+            color:
+                #ffffff;
         }
+
 
         .image-box {
             width: 100%;
@@ -527,38 +633,60 @@
 
             margin-bottom: 60px;
 
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
         }
+
 
         .image-box span {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: clamp(22px, 3vw, 34px);
+            font-size:
+                clamp(22px, 3vw, 34px);
 
-            font-weight: 300;
+            font-weight:
+                300;
 
-            letter-spacing: 6px;
+            letter-spacing:
+                6px;
 
-            color: rgba(255, 255, 255, 0.85);
+            color:
+                rgba(255, 255, 255, 0.85);
         }
 
+
         .product-text {
-            max-width: 850px;
+            max-width:
+                850px;
 
-            margin: 0 auto;
+            margin:
+                0 auto;
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: 20px;
+            font-size:
+                20px;
 
-            line-height: 1.85;
+            line-height:
+                1.85;
 
-            font-weight: 300;
+            font-weight:
+                300;
 
-            text-align: center;
+            text-align:
+                center;
 
-            color: rgba(255, 255, 255, 0.9);
+            color:
+                rgba(255, 255, 255, 0.9);
         }
 
 
@@ -567,21 +695,31 @@
         ========================= */
 
         .footer {
-            width: 100%;
+            width:
+                100%;
 
-            text-align: center;
+            text-align:
+                center;
 
-            padding: 28px 20px;
+            padding:
+                28px 20px;
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: 10px;
+            font-size:
+                10px;
 
-            letter-spacing: 3px;
+            letter-spacing:
+                3px;
 
-            color: rgba(255, 255, 255, 0.78);
+            color:
+                rgba(255, 255, 255, 0.78);
 
-            background: #243541;
+            background:
+                #243541;
         }
 
 
@@ -590,22 +728,32 @@
         ========================= */
 
         .survey-popup {
-            position: fixed;
+            position:
+                fixed;
 
-            left: 50%;
-            bottom: 0;
+            left:
+                50%;
 
-            width: min(760px, calc(100% - 30px));
+            bottom:
+                0;
 
-            display: flex;
+            width:
+                min(760px, calc(100% - 30px));
 
-            align-items: center;
+            display:
+                flex;
 
-            justify-content: space-between;
+            align-items:
+                center;
 
-            gap: 25px;
+            justify-content:
+                space-between;
 
-            padding: 17px 20px;
+            gap:
+                25px;
+
+            padding:
+                17px 20px;
 
             background:
                 rgba(27, 39, 49, 0.96);
@@ -616,79 +764,115 @@
             box-shadow:
                 0 -8px 30px rgba(0, 0, 0, 0.18);
 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter:
+                blur(12px);
 
-            z-index: 200;
+            -webkit-backdrop-filter:
+                blur(12px);
+
+            z-index:
+                200;
 
             transform:
                 translate(-50%, 120%);
 
-            opacity: 0;
+            opacity:
+                0;
 
             transition:
                 transform 0.5s ease,
                 opacity 0.5s ease;
         }
 
+
         .survey-popup.show {
             transform:
                 translate(-50%, 0);
 
-            opacity: 1;
+            opacity:
+                1;
         }
+
 
         .popup-message {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: 14px;
+            font-size:
+                14px;
 
-            line-height: 1.4;
+            line-height:
+                1.4;
 
-            font-weight: 300;
+            font-weight:
+                300;
 
-            color: rgba(255, 255, 255, 0.9);
+            color:
+                rgba(255, 255, 255, 0.9);
         }
+
 
         .popup-message strong {
-            font-weight: 600;
+            font-weight:
+                600;
         }
+
 
         .popup-actions {
-            display: flex;
+            display:
+                flex;
 
-            align-items: center;
+            align-items:
+                center;
 
-            gap: 14px;
+            gap:
+                14px;
 
-            flex-shrink: 0;
+            flex-shrink:
+                0;
         }
 
+
         .popup-button {
-            display: inline-flex;
+            display:
+                inline-flex;
 
-            align-items: center;
-            justify-content: center;
+            align-items:
+                center;
 
-            padding: 9px 14px;
+            justify-content:
+                center;
+
+            padding:
+                9px 14px;
 
             border:
                 1px solid rgba(255, 255, 255, 0.72);
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: 9px;
+            font-size:
+                9px;
 
-            font-weight: 600;
+            font-weight:
+                600;
 
-            letter-spacing: 1.7px;
+            letter-spacing:
+                1.7px;
 
-            color: white;
+            color:
+                white;
 
             transition:
                 background 0.25s ease,
                 transform 0.25s ease;
         }
+
 
         .popup-button:hover {
             background:
@@ -698,32 +882,45 @@
                 translateY(-1px);
         }
 
-        .popup-close {
-            border: none;
 
-            background: transparent;
+        .popup-close {
+            border:
+                none;
+
+            background:
+                transparent;
 
             color:
                 rgba(255, 255, 255, 0.72);
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica,
+                Arial,
+                sans-serif;
 
-            font-size: 22px;
+            font-size:
+                22px;
 
-            font-weight: 300;
+            font-weight:
+                300;
 
-            line-height: 1;
+            line-height:
+                1;
 
-            cursor: pointer;
+            cursor:
+                pointer;
 
-            padding: 2px 4px;
+            padding:
+                2px 4px;
 
             transition:
                 color 0.2s ease;
         }
 
+
         .popup-close:hover {
-            color: white;
+            color:
+                white;
         }
 
 
@@ -734,14 +931,16 @@
         @keyframes fadeUp {
 
             from {
-                opacity: 0;
+                opacity:
+                    0;
 
                 transform:
                     translateY(25px);
             }
 
             to {
-                opacity: 1;
+                opacity:
+                    1;
 
                 transform:
                     translateY(0);
@@ -757,95 +956,139 @@
         @media (max-width: 750px) {
 
             html {
-                scroll-padding-top: 125px;
+                scroll-padding-top:
+                    125px;
             }
 
+
             .top-banner {
-                height: auto;
+                height:
+                    auto;
 
-                min-height: 90px;
+                min-height:
+                    90px;
 
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:
+                    1fr 1fr;
 
                 padding:
                     15px 20px;
             }
 
+
             .logo {
-                width: 105px;
+                width:
+                    105px;
             }
+
 
             .nav {
-                grid-column: 1 / -1;
+                grid-column:
+                    1 / -1;
 
-                grid-row: 2;
+                grid-row:
+                    2;
 
-                gap: 24px;
+                gap:
+                    24px;
 
-                padding-top: 12px;
+                padding-top:
+                    12px;
             }
+
 
             .nav a {
-                font-size: 9px;
+                font-size:
+                    9px;
 
-                letter-spacing: 1.8px;
+                letter-spacing:
+                    1.8px;
             }
+
 
             .survey-container {
-                justify-self: end;
+                justify-self:
+                    end;
             }
+
 
             .survey-button {
                 padding:
                     9px 12px;
 
-                font-size: 8px;
+                font-size:
+                    8px;
 
-                letter-spacing: 1.4px;
+                letter-spacing:
+                    1.4px;
             }
+
 
             .hero {
                 min-height:
                     calc(100svh - 135px);
 
                 padding:
-                    45px 20px 90px;
+                    70px 20px 90px;
 
                 background-position:
                     center center;
             }
 
-            h1 {
-                font-size: 48px;
 
-                letter-spacing: 2px;
+            h1 {
+                font-size:
+                    48px;
+
+                letter-spacing:
+                    2px;
+
+                margin-bottom:
+                    42px;
             }
+
 
             .description {
-                font-size: 16px;
+                font-size:
+                    16px;
 
-                max-width: 500px;
+                max-width:
+                    500px;
+
+                margin-bottom:
+                    60px;
             }
+
 
             .coming-soon {
-                font-size: 28px;
+                font-size:
+                    17px;
 
-                letter-spacing: 5px;
+                letter-spacing:
+                    5px;
 
-                margin-bottom: 38px;
+                margin-top:
+                    38px;
             }
+
 
             .social {
-                width: 54px;
+                width:
+                    54px;
 
-                height: 54px;
+                height:
+                    54px;
             }
+
 
             .social svg {
-                width: 25px;
+                width:
+                    25px;
 
-                height: 25px;
+                height:
+                    25px;
             }
+
 
             .story-section,
             .product-section {
@@ -853,73 +1096,102 @@
                     75px 0 90px;
             }
 
+
             .section-title {
-                margin-bottom: 40px;
+                margin-bottom:
+                    40px;
             }
+
 
             .video-box,
             .image-box {
-                height: 300px;
+                height:
+                    300px;
 
-                margin-bottom: 45px;
+                margin-bottom:
+                    45px;
             }
+
 
             .video-box span,
             .image-box span {
-                font-size: 18px;
+                font-size:
+                    18px;
 
-                letter-spacing: 4px;
+                letter-spacing:
+                    4px;
 
-                text-align: center;
+                text-align:
+                    center;
             }
+
 
             .story-text {
-                font-size: 16px;
+                font-size:
+                    16px;
 
-                line-height: 1.75;
+                line-height:
+                    1.75;
             }
+
 
             .product-text {
-                font-size: 17px;
+                font-size:
+                    17px;
 
-                line-height: 1.75;
+                line-height:
+                    1.75;
             }
+
 
             .survey-popup {
                 width:
                     calc(100% - 20px);
 
-                flex-direction: column;
+                flex-direction:
+                    column;
 
-                align-items: stretch;
+                align-items:
+                    stretch;
 
-                gap: 12px;
+                gap:
+                    12px;
 
                 padding:
                     15px 16px;
             }
 
-            .popup-message {
-                padding-right: 25px;
 
-                font-size: 13px;
+            .popup-message {
+                padding-right:
+                    25px;
+
+                font-size:
+                    13px;
             }
+
 
             .popup-actions {
                 justify-content:
                     space-between;
             }
 
+
             .popup-button {
-                flex: 1;
+                flex:
+                    1;
             }
 
+
             .popup-close {
-                position: absolute;
+                position:
+                    absolute;
 
-                top: 9px;
+                top:
+                    9px;
 
-                right: 10px;
+                right:
+                    10px;
             }
 
         }
@@ -1015,14 +1287,7 @@
                 </p>
 
 
-                <div class="coming-soon">
-
-                    LAUNCHING 2027
-
-                </div>
-
-
-                <!-- SOCIAL LINKS — UNCHANGED -->
+                <!-- SOCIAL LINKS -->
 
                 <div class="socials">
 
@@ -1109,6 +1374,16 @@
 
 
                 </div>
+
+
+                <!-- LAUNCHING 2027 -->
+
+                <div class="coming-soon">
+
+                    LAUNCHING 2027
+
+                </div>
+
 
             </div>
 
@@ -1300,4 +1575,5 @@
 
 
 </body>
+</html>
 </html>
