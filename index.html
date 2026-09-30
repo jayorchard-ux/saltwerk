@@ -71,6 +71,37 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
+
+        /* =========================
+           SALTWËRK LOGO
+        ========================= */
+
+        .logo-link {
+            position: absolute;
+
+            left: 40px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            display: flex;
+            align-items: center;
+
+            z-index: 2;
+        }
+
+        .logo {
+            width: 125px;
+            height: auto;
+
+            display: block;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
         .nav {
             display: flex;
             align-items: center;
@@ -643,12 +674,31 @@
                 padding:
                     20px 15px;
 
+                position: sticky;
+
                 flex-direction: column;
 
                 justify-content: center;
 
                 gap: 17px;
             }
+
+
+            /* =====================
+               MOBILE LOGO
+            ===================== */
+
+            .logo-link {
+                left: 15px;
+                top: 20px;
+
+                transform: none;
+            }
+
+            .logo {
+                width: 105px;
+            }
+
 
             .nav {
                 gap: 24px;
@@ -864,6 +914,26 @@
 
     <header>
 
+
+        <!-- SALTWËRK LOGO -->
+
+        <a
+            href="#trailguard"
+            class="logo-link"
+            aria-label="SaltWërk"
+        >
+
+            <img
+                src="SW_Stacked_White@1200px.png"
+                alt="SaltWërk"
+                class="logo"
+            >
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
         <nav class="nav">
 
             <a href="#trailguard">
@@ -880,6 +950,8 @@
 
         </nav>
 
+
+        <!-- SURVEY -->
 
         <a
             class="survey-link"
@@ -917,6 +989,7 @@
         <!-- SOCIAL ICONS -->
 
         <div class="socials">
+
 
             <!-- INSTAGRAM -->
 
@@ -1142,7 +1215,6 @@
 
     </script>
 
-    
 
 </body>
 </html>
