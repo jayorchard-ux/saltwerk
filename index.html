@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>SaltWërk | TrailGuard</title>
+
 
     <style>
 
@@ -38,7 +44,6 @@
             font-family: Helvetica, Arial, sans-serif;
             color: white;
             background: #243541;
-            overflow-x: hidden;
         }
 
         a {
@@ -71,6 +76,7 @@
 
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
+
 
         /* =========================
            LOGO
@@ -106,7 +112,7 @@
             align-items: center;
             justify-content: center;
 
-            gap: 38px;
+            gap: 42px;
         }
 
         .nav a {
@@ -166,6 +172,10 @@
         /* =========================
            HERO
         ========================= */
+
+        #trailguard {
+            scroll-margin-top: 90px;
+        }
 
         .hero {
             min-height: 115vh;
@@ -358,26 +368,22 @@
 
             color: white;
 
-            padding: 115px 0 0;
-
-            overflow: hidden;
+            padding:
+                120px 5vw
+                130px;
         }
 
-
-        /* =========================
-           PROBLEM INTRO
-        ========================= */
-
         .problem-intro {
-            width: min(1200px, 88%);
+            max-width: 1200px;
 
-            margin: 0 auto;
-
-            padding-bottom: 85px;
+            margin:
+                0 auto
+                90px;
 
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr;
 
             gap: 80px;
 
@@ -385,60 +391,41 @@
         }
 
         .problem-label {
-            font-family: Helvetica, Arial, sans-serif;
-
             font-size: 13px;
 
-            font-weight: 400;
+            letter-spacing: 4px;
 
-            letter-spacing: 5px;
+            margin-bottom: 25px;
 
-            color: rgba(255, 255, 255, 0.65);
-
-            margin-bottom: 24px;
+            color:
+                rgba(255, 255, 255, 0.65);
         }
 
-        .problem-label::after {
-            content: "";
+        .problem-headline {
+            font-family:
+                Helvetica, Arial, sans-serif;
 
-            display: inline-block;
+            font-size:
+                clamp(48px, 7vw, 95px);
 
-            width: 125px;
-            height: 1px;
+            font-weight: 500;
 
-            background: rgba(255, 255, 255, 0.35);
+            line-height: 0.95;
 
-            margin-left: 20px;
-
-            vertical-align: middle;
+            letter-spacing: -2px;
         }
 
-        .problem-title {
-            font-family: Helvetica, Arial, sans-serif;
+        .problem-copy {
+            max-width: 500px;
 
-            font-size: clamp(42px, 5vw, 72px);
-
-            font-weight: 400;
-
-            line-height: 1.02;
-
-            letter-spacing: 2px;
-        }
-
-        .problem-intro-text {
-            max-width: 520px;
-
-            justify-self: end;
-
-            font-family: Helvetica, Arial, sans-serif;
-
-            font-size: 17px;
+            font-size: 18px;
 
             font-weight: 300;
 
             line-height: 1.7;
 
-            color: rgba(255, 255, 255, 0.78);
+            color:
+                rgba(255, 255, 255, 0.72);
         }
 
 
@@ -447,68 +434,27 @@
         ========================= */
 
         .problem-grid {
-            width: 100%;
+            max-width: 1400px;
+
+            margin: 0 auto;
 
             display: grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 2px;
-
-            background: #18242b;
+            gap: 18px;
         }
 
         .problem-card {
             position: relative;
 
-            min-width: 0;
-
-            aspect-ratio: 1 / 1;
+            min-height: 620px;
 
             overflow: hidden;
 
-            background: #111a1f;
+            background: #243541;
         }
-
-        .problem-card img {
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-
-            transition:
-                transform 0.8s ease;
-        }
-
-        .problem-card:hover img {
-            transform: scale(1.035);
-        }
-
-
-        /* =========================
-           INDIVIDUAL IMAGE CROPS
-        ========================= */
-
-        .snake-card img {
-            object-position: center center;
-        }
-
-        .tick-card img {
-            object-position: center center;
-        }
-
-        .abrasion-card img {
-            object-position: 58% center;
-        }
-
-
-        /* =========================
-           IMAGE GRADIENT
-           KEEPS PHOTO VISIBLE
-        ========================= */
 
         .problem-card::after {
             content: "";
@@ -520,120 +466,122 @@
             background:
                 linear-gradient(
                     to top,
-                    rgba(0, 0, 0, 0.78) 0%,
-                    rgba(0, 0, 0, 0.42) 22%,
-                    rgba(0, 0, 0, 0.08) 48%,
-                    rgba(0, 0, 0, 0) 65%
+                    rgba(0, 0, 0, 0.85),
+                    rgba(0, 0, 0, 0.05) 60%
                 );
 
-            pointer-events: none;
+            z-index: 1;
         }
 
+        .problem-card img {
+            width: 100%;
+            height: 100%;
 
-        /* =========================
-           IMAGE TEXT
-        ========================= */
+            object-fit: cover;
 
-        .problem-content {
+            display: block;
+
+            transition:
+                transform 0.7s ease;
+        }
+
+        .problem-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .problem-card-content {
             position: absolute;
 
-            left: 0;
-            right: 0;
-            bottom: 0;
+            left: 35px;
+            right: 35px;
+            bottom: 35px;
 
             z-index: 2;
-
-            padding: 34px 32px 32px;
         }
 
-        .problem-line {
-            width: 42px;
+        .problem-card-line {
+            width: 45px;
             height: 1px;
 
-            background: white;
+            background:
+                rgba(255, 255, 255, 0.7);
 
-            margin-bottom: 17px;
+            margin-bottom: 18px;
         }
 
         .problem-card h3 {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
-            font-size: 25px;
+            font-size: 38px;
 
-            font-weight: 500;
+            font-weight: 400;
 
             letter-spacing: 5px;
 
-            margin-bottom: 13px;
+            margin-bottom: 14px;
         }
 
         .problem-card p {
-            max-width: 370px;
+            max-width: 330px;
 
-            font-family: Helvetica, Arial, sans-serif;
-
-            font-size: 14px;
+            font-size: 15px;
 
             font-weight: 300;
 
-            line-height: 1.55;
+            line-height: 1.6;
 
-            color: rgba(255, 255, 255, 0.9);
+            color:
+                rgba(255, 255, 255, 0.85);
         }
 
 
         /* =========================
-           PROBLEM CLOSING STATEMENT
+           PROBLEM CLOSING
         ========================= */
 
-        .problem-close {
-            min-height: 340px;
+        .problem-closing {
+            max-width: 1200px;
 
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-            justify-content: center;
+            margin:
+                110px auto 0;
 
             text-align: center;
 
-            padding: 90px 25px;
-
-            background: #f2f0ea;
-
-            color: #243541;
+            padding:
+                0 20px;
         }
 
-        .problem-close h2 {
-            font-family: Helvetica, Arial, sans-serif;
+        .problem-closing h2 {
+            font-family:
+                Helvetica, Arial, sans-serif;
 
-            font-size: clamp(28px, 4vw, 48px);
+            font-size:
+                clamp(32px, 5vw, 65px);
 
             font-weight: 400;
 
-            line-height: 1.25;
-
-            letter-spacing: 5px;
-        }
-
-        .problem-close-line {
-            width: 55px;
-            height: 2px;
-
-            background: #243541;
-
-            margin: 28px 0;
-        }
-
-        .problem-close span {
-            font-family: Helvetica, Arial, sans-serif;
-
-            font-size: 19px;
-
-            font-weight: 500;
-
             letter-spacing: 4px;
+
+            line-height: 1.1;
+
+            margin-bottom: 35px;
+        }
+
+        .problem-closing-brand {
+            font-family:
+                "Saltwerk",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            font-size:
+                clamp(38px, 5vw, 65px);
+
+            letter-spacing: 3px;
+
+            color:
+                rgba(255, 255, 255, 0.9);
         }
 
 
@@ -664,9 +612,11 @@
         }
 
         .our-story h2 {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
-            font-size: clamp(35px, 5vw, 60px);
+            font-size:
+                clamp(35px, 5vw, 60px);
 
             font-weight: 400;
 
@@ -676,7 +626,8 @@
         }
 
         .video-placeholder {
-            width: min(850px, 90%);
+            width:
+                min(850px, 90%);
 
             aspect-ratio: 16 / 9;
 
@@ -687,13 +638,17 @@
 
             margin-bottom: 55px;
 
-            border: 1px solid rgba(36, 53, 65, 0.3);
+            border:
+                1px solid
+                rgba(36, 53, 65, 0.3);
 
-            background: rgba(36, 53, 65, 0.06);
+            background:
+                rgba(36, 53, 65, 0.06);
         }
 
         .video-placeholder span {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
             font-size: 18px;
 
@@ -705,9 +660,11 @@
         }
 
         .story-text {
-            width: min(850px, 90%);
+            width:
+                min(850px, 90%);
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
             font-size: 17px;
 
@@ -752,9 +709,11 @@
         }
 
         .product h2 {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
-            font-size: clamp(35px, 5vw, 60px);
+            font-size:
+                clamp(35px, 5vw, 60px);
 
             font-weight: 400;
 
@@ -764,7 +723,8 @@
         }
 
         .product-placeholder {
-            width: min(850px, 90%);
+            width:
+                min(850px, 90%);
 
             aspect-ratio: 16 / 9;
 
@@ -775,13 +735,17 @@
 
             margin-bottom: 55px;
 
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.3);
 
-            background: rgba(255, 255, 255, 0.05);
+            background:
+                rgba(255, 255, 255, 0.05);
         }
 
         .product-placeholder span {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
             font-size: 18px;
 
@@ -789,13 +753,16 @@
 
             letter-spacing: 4px;
 
-            color: rgba(255, 255, 255, 0.9);
+            color:
+                rgba(255, 255, 255, 0.9);
         }
 
         .product-text {
-            width: min(850px, 90%);
+            width:
+                min(850px, 90%);
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
             font-size: 17px;
 
@@ -805,7 +772,8 @@
 
             text-align: left;
 
-            color: rgba(255, 255, 255, 0.9);
+            color:
+                rgba(255, 255, 255, 0.9);
         }
 
 
@@ -818,11 +786,13 @@
 
             background: #243541;
 
-            color: rgba(255, 255, 255, 0.6);
+            color:
+                rgba(255, 255, 255, 0.6);
 
             text-align: center;
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
             font-size: 12px;
 
@@ -845,7 +815,8 @@
 
             z-index: 2000;
 
-            width: min(520px, calc(100% - 30px));
+            width:
+                min(520px, calc(100% - 30px));
 
             display: flex;
 
@@ -856,13 +827,16 @@
 
             padding: 18px 20px;
 
-            background: rgba(25, 38, 45, 0.96);
+            background:
+                rgba(25, 38, 45, 0.96);
 
             border:
-                1px solid rgba(255, 255, 255, 0.2);
+                1px solid
+                rgba(255, 255, 255, 0.2);
 
             box-shadow:
-                0 15px 50px rgba(0, 0, 0, 0.3);
+                0 15px 50px
+                rgba(0, 0, 0, 0.3);
 
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -877,7 +851,8 @@
         }
 
         .survey-popup p {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
             font-size: 14px;
 
@@ -897,7 +872,8 @@
 
             border: none;
 
-            font-family: Helvetica, Arial, sans-serif;
+            font-family:
+                Helvetica, Arial, sans-serif;
 
             font-size: 11px;
 
@@ -924,7 +900,8 @@
             border: none;
             background: none;
 
-            color: rgba(255, 255, 255, 0.7);
+            color:
+                rgba(255, 255, 255, 0.7);
 
             font-size: 18px;
 
@@ -959,17 +936,23 @@
 
         @media (max-width: 700px) {
 
+
+            /* =====================
+               HEADER
+            ===================== */
+
             header {
-                height: 135px;
+                height: 150px;
 
-                padding:
-                    20px 15px;
+                padding: 0 15px;
 
-                flex-direction: column;
+                position: sticky;
+
+                display: flex;
+
+                align-items: flex-start;
 
                 justify-content: center;
-
-                gap: 17px;
             }
 
 
@@ -978,14 +961,19 @@
             ===================== */
 
             .logo-link {
+                position: absolute;
+
                 left: 15px;
-                top: 20px;
+                top: 12px;
 
                 transform: none;
+
+                z-index: 3;
             }
 
             .logo {
-                width: 105px;
+                width: 72px;
+                height: auto;
             }
 
 
@@ -994,15 +982,34 @@
             ===================== */
 
             .nav {
-                gap: 14px;
+                position: absolute;
 
-                margin-top: 38px;
+                left: 0;
+                right: 0;
+
+                top: 62px;
+
+                width: 100%;
+
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+
+                gap: 13px;
+
+                padding: 0 10px;
             }
 
             .nav a {
-                font-size: 8.5px;
+                font-size: 9px;
 
-                letter-spacing: 1.2px;
+                letter-spacing: 1.25px;
+
+                white-space: nowrap;
+
+                color:
+                    rgba(255, 255, 255, 0.92);
             }
 
 
@@ -1011,13 +1018,19 @@
             ===================== */
 
             .survey-link {
-                position: static;
+                position: absolute;
 
-                font-size: 9px;
+                right: 15px;
+                top: 12px;
 
-                letter-spacing: 1.5px;
+                font-size: 8px;
 
-                padding: 9px 13px;
+                letter-spacing: 1.3px;
+
+                padding:
+                    9px 11px;
+
+                white-space: nowrap;
             }
 
 
@@ -1037,11 +1050,13 @@
 
 
             /* =====================
-               MOBILE TRAILGUARD
+               CENTER TRAILGUARD
             ===================== */
 
             h1 {
                 width: 100%;
+
+                max-width: 100%;
 
                 display: block;
 
@@ -1050,14 +1065,21 @@
 
                 text-align: center;
 
-                font-size: 48px;
+                font-size: 41px;
 
                 letter-spacing: 2px;
 
                 line-height: 0.95;
 
                 margin-bottom: 42px;
+
+                white-space: nowrap;
             }
+
+
+            /* =====================
+               MOBILE DESCRIPTION
+            ===================== */
 
             .description {
                 width: 100%;
@@ -1078,7 +1100,7 @@
 
 
             /* =====================
-               MOBILE SOCIALS
+               SOCIALS
                SAME DESIGN
             ===================== */
 
@@ -1094,7 +1116,7 @@
 
 
             /* =====================
-               MOBILE LAUNCHING
+               LAUNCHING
             ===================== */
 
             .coming-soon {
@@ -1109,92 +1131,70 @@
 
 
             /* =====================
-               MOBILE PROBLEM
+               THE PROBLEM
             ===================== */
 
             .problem {
-                padding-top: 80px;
+                padding:
+                    85px 20px
+                    90px;
             }
 
             .problem-intro {
-                width: 88%;
-
                 display: block;
 
-                padding-bottom: 55px;
+                margin-bottom: 55px;
             }
 
             .problem-label {
                 font-size: 11px;
 
-                letter-spacing: 4px;
+                letter-spacing: 3px;
 
                 margin-bottom: 20px;
             }
 
-            .problem-label::after {
-                width: 60px;
+            .problem-headline {
+                font-size: 48px;
 
-                margin-left: 12px;
+                letter-spacing: -1px;
+
+                line-height: 0.98;
+
+                margin-bottom: 30px;
             }
 
-            .problem-title {
-                font-size: 40px;
-
-                line-height: 1.05;
-
-                letter-spacing: 1px;
-            }
-
-            .problem-intro-text {
-                margin-top: 30px;
-
-                max-width: 100%;
-
-                font-size: 15px;
+            .problem-copy {
+                font-size: 16px;
 
                 line-height: 1.7;
             }
 
 
             /* =====================
-               MOBILE IMAGE GRID
+               PROBLEM CARDS
             ===================== */
 
             .problem-grid {
+                display: grid;
+
                 grid-template-columns: 1fr;
 
-                gap: 2px;
+                gap: 14px;
             }
 
             .problem-card {
-                aspect-ratio: 4 / 3;
+                min-height: 480px;
             }
 
-            .problem-card::after {
-                background:
-                    linear-gradient(
-                        to top,
-                        rgba(0, 0, 0, 0.82) 0%,
-                        rgba(0, 0, 0, 0.40) 27%,
-                        rgba(0, 0, 0, 0.06) 58%,
-                        rgba(0, 0, 0, 0) 72%
-                    );
-            }
-
-            .problem-content {
-                padding:
-                    30px 24px 25px;
-            }
-
-            .problem-line {
-                width: 36px;
-
-                margin-bottom: 14px;
+            .problem-card-content {
+                left: 25px;
+                right: 25px;
+                bottom: 25px;
             }
 
             .problem-card h3 {
-                font-size: 21px;
+                font-size: 32px;
 
                 letter-spacing: 4px;
 
@@ -1202,48 +1202,40 @@
             }
 
             .problem-card p {
-                max-width: 340px;
+                font-size: 14px;
 
-                font-size: 13px;
-
-                line-height: 1.5;
+                line-height: 1.55;
             }
 
 
             /* =====================
-               MOBILE PROBLEM CLOSE
+               PROBLEM CLOSING
             ===================== */
 
-            .problem-close {
-                min-height: 280px;
+            .problem-closing {
+                margin-top: 75px;
 
                 padding:
-                    70px 20px;
+                    0 10px;
             }
 
-            .problem-close h2 {
-                font-size: 26px;
+            .problem-closing h2 {
+                font-size: 32px;
 
-                letter-spacing: 3px;
+                letter-spacing: 2px;
 
-                line-height: 1.3;
+                line-height: 1.15;
             }
 
-            .problem-close-line {
-                width: 45px;
+            .problem-closing-brand {
+                font-size: 40px;
 
-                margin: 22px 0;
-            }
-
-            .problem-close span {
-                font-size: 16px;
-
-                letter-spacing: 3px;
+                letter-spacing: 2px;
             }
 
 
             /* =====================
-               MOBILE OUR STORY
+               OUR STORY
             ===================== */
 
             .our-story {
@@ -1265,6 +1257,12 @@
                 margin-bottom: 40px;
             }
 
+            .video-placeholder span {
+                font-size: 13px;
+
+                letter-spacing: 3px;
+            }
+
             .story-text {
                 width: 100%;
 
@@ -1275,7 +1273,7 @@
 
 
             /* =====================
-               MOBILE PRODUCT
+               PRODUCT
             ===================== */
 
             .product {
@@ -1297,6 +1295,12 @@
                 margin-bottom: 40px;
             }
 
+            .product-placeholder span {
+                font-size: 13px;
+
+                letter-spacing: 3px;
+            }
+
             .product-text {
                 width: 100%;
 
@@ -1307,7 +1311,7 @@
 
 
             /* =====================
-               MOBILE POPUP
+               POPUP
             ===================== */
 
             .survey-popup {
@@ -1336,6 +1340,7 @@
         }
 
     </style>
+
 </head>
 
 
@@ -1348,18 +1353,25 @@
 
     <header>
 
+
+        <!-- LOGO -->
+
         <a
             href="#trailguard"
             class="logo-link"
             aria-label="SaltWërk"
         >
+
             <img
                 src="SW_Stacked_White@1200px.png"
                 alt="SaltWërk"
                 class="logo"
             >
+
         </a>
 
+
+        <!-- NAVIGATION -->
 
         <nav class="nav">
 
@@ -1381,6 +1393,8 @@
 
         </nav>
 
+
+        <!-- SURVEY -->
 
         <a
             class="survey-link"
@@ -1404,20 +1418,26 @@
         id="trailguard"
     >
 
+
         <h1>
             TRAILGUARD
         </h1>
 
 
         <p class="description">
+
             A first-of-its-kind compression calf sleeve with snake, tick,
             and abrasion protection for trail runners and hikers.
+
         </p>
 
 
-        <!-- SOCIAL ICONS -->
+        <!-- =====================
+             SOCIAL ICONS
+        ===================== -->
 
         <div class="socials">
+
 
             <!-- INSTAGRAM -->
 
@@ -1435,7 +1455,7 @@
                 >
 
                     <path
-                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3-3Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
+                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
                     />
 
                 </svg>
@@ -1475,6 +1495,7 @@
             LAUNCHING 2027
         </div>
 
+
     </section>
 
 
@@ -1488,9 +1509,9 @@
         id="the-problem"
     >
 
-        <!-- INTRO -->
 
         <div class="problem-intro">
+
 
             <div>
 
@@ -1498,40 +1519,46 @@
                     THE PROBLEM
                 </div>
 
-                <h2 class="problem-title">
+                <div class="problem-headline">
                     THE TRAIL<br>
                     DOESN'T ALWAYS<br>
                     PLAY NICE.
-                </h2>
+                </div>
 
             </div>
 
 
-            <p class="problem-intro-text">
+            <p class="problem-copy">
+
                 Rugged trails come with real risks. From wildlife and pests
                 to harsh terrain, the outdoors can be tough on your lower legs.
+
             </p>
+
 
         </div>
 
 
-        <!-- THREE PROBLEM IMAGES -->
+
+        <!-- =====================
+             PROBLEM IMAGES
+        ===================== -->
 
         <div class="problem-grid">
 
 
             <!-- SNAKES -->
 
-            <article class="problem-card snake-card">
+            <div class="problem-card">
 
                 <img
                     src="Rattle Snake.jpg"
-                    alt="Rattlesnake on rugged terrain"
+                    alt="Snake on a rugged trail"
                 >
 
-                <div class="problem-content">
+                <div class="problem-card-content">
 
-                    <div class="problem-line"></div>
+                    <div class="problem-card-line"></div>
 
                     <h3>
                         SNAKES
@@ -1544,21 +1571,21 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
             <!-- TICKS -->
 
-            <article class="problem-card tick-card">
+            <div class="problem-card">
 
                 <img
                     src="Tick.jpg"
-                    alt="Tick on grass"
+                    alt="Tick on vegetation"
                 >
 
-                <div class="problem-content">
+                <div class="problem-card-content">
 
-                    <div class="problem-line"></div>
+                    <div class="problem-card-line"></div>
 
                     <h3>
                         TICKS
@@ -1571,21 +1598,21 @@
 
                 </div>
 
-            </article>
+            </div>
 
 
             <!-- ABRASION -->
 
-            <article class="problem-card abrasion-card">
+            <div class="problem-card">
 
                 <img
                     src="Abrasion.jpg"
-                    alt="Trail runner on rugged terrain"
+                    alt="Rugged trail terrain"
                 >
 
-                <div class="problem-content">
+                <div class="problem-card-content">
 
-                    <div class="problem-line"></div>
+                    <div class="problem-card-line"></div>
 
                     <h3>
                         ABRASION
@@ -1598,30 +1625,32 @@
 
                 </div>
 
-            </article>
+            </div>
+
 
         </div>
 
-    </section>
 
 
+        <!-- =====================
+             PROBLEM CLOSING
+        ===================== -->
 
-    <!-- =========================
-         PROBLEM CLOSING
-    ========================= -->
+        <div class="problem-closing">
 
-    <section class="problem-close">
+            <h2>
 
-        <h2>
-            THE TRAIL IS UNPREDICTABLE.<br>
-            YOUR GEAR SHOULDN'T BE.
-        </h2>
+                THE TRAIL IS UNPREDICTABLE.<br>
+                YOUR GEAR SHOULDN'T BE.
 
-        <div class="problem-close-line"></div>
+            </h2>
 
-        <span>
-            TRAILGUARD
-        </span>
+            <div class="problem-closing-brand">
+                TRAILGUARD
+            </div>
+
+        </div>
+
 
     </section>
 
@@ -1635,6 +1664,7 @@
         class="our-story"
         id="our-story"
     >
+
 
         <h2>
             OUR STORY
@@ -1652,7 +1682,9 @@
 
         <div class="story-text">
 
+
             <p>
+
                 SaltWërk is an early-stage performance gear startup
                 founded and owned by Daren Mann, a Santa Barbara-based
                 entrepreneur and marathon runner. Our flagship product,
@@ -1661,15 +1693,20 @@
                 with multi-threat protection for the trail: including
                 snake-resistant materials, permethrin-based tick protection,
                 and abrasion resistance.
+
             </p>
 
 
             <p>
+
                 We will be beginning pre-orders and delivering the first
                 products in Q1 2027.
+
             </p>
 
+
         </div>
+
 
     </section>
 
@@ -1683,6 +1720,7 @@
         class="product"
         id="product"
     >
+
 
         <h2>
             PRODUCT
@@ -1701,12 +1739,15 @@
         <div class="product-text">
 
             <p>
+
                 SaltWerk is a startup launching TrailGuard, a
                 first-of-its-kind compression calf sleeve with snake,
                 tick, and abrasion protection for trail runners and hikers.
+
             </p>
 
         </div>
+
 
     </section>
 
@@ -1733,6 +1774,7 @@
         id="surveyPopup"
     >
 
+
         <button
             class="close-popup"
             id="closePopup"
@@ -1756,6 +1798,7 @@
             TAKE SURVEY
         </a>
 
+
     </div>
 
 
@@ -1766,8 +1809,10 @@
 
     <script>
 
+
         const surveyPopup =
             document.getElementById("surveyPopup");
+
 
         const closePopup =
             document.getElementById("closePopup");
@@ -1789,8 +1834,10 @@
             }
         );
 
+
     </script>
 
 
 </body>
+
 </html>
