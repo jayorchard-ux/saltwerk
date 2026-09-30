@@ -38,6 +38,7 @@
             font-family: Helvetica, Arial, sans-serif;
             color: white;
             background: #243541;
+            overflow-x: hidden;
         }
 
         a {
@@ -71,9 +72,8 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
-
         /* =========================
-           SALTWËRK LOGO
+           LOGO
         ========================= */
 
         .logo-link {
@@ -93,7 +93,6 @@
         .logo {
             width: 125px;
             height: auto;
-
             display: block;
         }
 
@@ -107,7 +106,7 @@
             align-items: center;
             justify-content: center;
 
-            gap: 42px;
+            gap: 38px;
         }
 
         .nav a {
@@ -343,6 +342,298 @@
 
             animation:
                 fadeUp 1s ease 0.85s forwards;
+        }
+
+
+        /* =========================
+           THE PROBLEM
+        ========================= */
+
+        #the-problem {
+            scroll-margin-top: 90px;
+        }
+
+        .problem {
+            background: #18242b;
+
+            color: white;
+
+            padding: 115px 0 0;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           PROBLEM INTRO
+        ========================= */
+
+        .problem-intro {
+            width: min(1200px, 88%);
+
+            margin: 0 auto;
+
+            padding-bottom: 85px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: end;
+        }
+
+        .problem-label {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 400;
+
+            letter-spacing: 5px;
+
+            color: rgba(255, 255, 255, 0.65);
+
+            margin-bottom: 24px;
+        }
+
+        .problem-label::after {
+            content: "";
+
+            display: inline-block;
+
+            width: 125px;
+            height: 1px;
+
+            background: rgba(255, 255, 255, 0.35);
+
+            margin-left: 20px;
+
+            vertical-align: middle;
+        }
+
+        .problem-title {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: clamp(42px, 5vw, 72px);
+
+            font-weight: 400;
+
+            line-height: 1.02;
+
+            letter-spacing: 2px;
+        }
+
+        .problem-intro-text {
+            max-width: 520px;
+
+            justify-self: end;
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 300;
+
+            line-height: 1.7;
+
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+
+        /* =========================
+           PROBLEM IMAGE GRID
+        ========================= */
+
+        .problem-grid {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 2px;
+
+            background: #18242b;
+        }
+
+        .problem-card {
+            position: relative;
+
+            min-width: 0;
+
+            aspect-ratio: 1 / 1;
+
+            overflow: hidden;
+
+            background: #111a1f;
+        }
+
+        .problem-card img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.8s ease;
+        }
+
+        .problem-card:hover img {
+            transform: scale(1.035);
+        }
+
+
+        /* =========================
+           INDIVIDUAL IMAGE CROPS
+        ========================= */
+
+        .snake-card img {
+            object-position: center center;
+        }
+
+        .tick-card img {
+            object-position: center center;
+        }
+
+        .abrasion-card img {
+            object-position: 58% center;
+        }
+
+
+        /* =========================
+           IMAGE GRADIENT
+           KEEPS PHOTO VISIBLE
+        ========================= */
+
+        .problem-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.78) 0%,
+                    rgba(0, 0, 0, 0.42) 22%,
+                    rgba(0, 0, 0, 0.08) 48%,
+                    rgba(0, 0, 0, 0) 65%
+                );
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           IMAGE TEXT
+        ========================= */
+
+        .problem-content {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            z-index: 2;
+
+            padding: 34px 32px 32px;
+        }
+
+        .problem-line {
+            width: 42px;
+            height: 1px;
+
+            background: white;
+
+            margin-bottom: 17px;
+        }
+
+        .problem-card h3 {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 25px;
+
+            font-weight: 500;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 13px;
+        }
+
+        .problem-card p {
+            max-width: 370px;
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 300;
+
+            line-height: 1.55;
+
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+
+        /* =========================
+           PROBLEM CLOSING STATEMENT
+        ========================= */
+
+        .problem-close {
+            min-height: 340px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 90px 25px;
+
+            background: #f2f0ea;
+
+            color: #243541;
+        }
+
+        .problem-close h2 {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: clamp(28px, 4vw, 48px);
+
+            font-weight: 400;
+
+            line-height: 1.25;
+
+            letter-spacing: 5px;
+        }
+
+        .problem-close-line {
+            width: 55px;
+            height: 2px;
+
+            background: #243541;
+
+            margin: 28px 0;
+        }
+
+        .problem-close span {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 19px;
+
+            font-weight: 500;
+
+            letter-spacing: 4px;
         }
 
 
@@ -674,8 +965,6 @@
                 padding:
                     20px 15px;
 
-                position: sticky;
-
                 flex-direction: column;
 
                 justify-content: center;
@@ -700,15 +989,26 @@
             }
 
 
+            /* =====================
+               MOBILE NAV
+            ===================== */
+
             .nav {
-                gap: 24px;
+                gap: 14px;
+
+                margin-top: 38px;
             }
 
             .nav a {
-                font-size: 10px;
+                font-size: 8.5px;
 
-                letter-spacing: 1.5px;
+                letter-spacing: 1.2px;
             }
+
+
+            /* =====================
+               MOBILE SURVEY
+            ===================== */
 
             .survey-link {
                 position: static;
@@ -722,7 +1022,7 @@
 
 
             /* =====================
-               TALLER MOBILE HERO
+               MOBILE HERO
             ===================== */
 
             .hero {
@@ -737,7 +1037,7 @@
 
 
             /* =====================
-               CENTER TRAILGUARD
+               MOBILE TRAILGUARD
             ===================== */
 
             h1 {
@@ -778,7 +1078,7 @@
 
 
             /* =====================
-               SOCIALS
+               MOBILE SOCIALS
                SAME DESIGN
             ===================== */
 
@@ -794,7 +1094,7 @@
 
 
             /* =====================
-               LAUNCHING
+               MOBILE LAUNCHING
             ===================== */
 
             .coming-soon {
@@ -809,7 +1109,141 @@
 
 
             /* =====================
-               OUR STORY
+               MOBILE PROBLEM
+            ===================== */
+
+            .problem {
+                padding-top: 80px;
+            }
+
+            .problem-intro {
+                width: 88%;
+
+                display: block;
+
+                padding-bottom: 55px;
+            }
+
+            .problem-label {
+                font-size: 11px;
+
+                letter-spacing: 4px;
+
+                margin-bottom: 20px;
+            }
+
+            .problem-label::after {
+                width: 60px;
+
+                margin-left: 12px;
+            }
+
+            .problem-title {
+                font-size: 40px;
+
+                line-height: 1.05;
+
+                letter-spacing: 1px;
+            }
+
+            .problem-intro-text {
+                margin-top: 30px;
+
+                max-width: 100%;
+
+                font-size: 15px;
+
+                line-height: 1.7;
+            }
+
+
+            /* =====================
+               MOBILE IMAGE GRID
+            ===================== */
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+
+                gap: 2px;
+            }
+
+            .problem-card {
+                aspect-ratio: 4 / 3;
+            }
+
+            .problem-card::after {
+                background:
+                    linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0.82) 0%,
+                        rgba(0, 0, 0, 0.40) 27%,
+                        rgba(0, 0, 0, 0.06) 58%,
+                        rgba(0, 0, 0, 0) 72%
+                    );
+            }
+
+            .problem-content {
+                padding:
+                    30px 24px 25px;
+            }
+
+            .problem-line {
+                width: 36px;
+
+                margin-bottom: 14px;
+            }
+
+            .problem-card h3 {
+                font-size: 21px;
+
+                letter-spacing: 4px;
+
+                margin-bottom: 10px;
+            }
+
+            .problem-card p {
+                max-width: 340px;
+
+                font-size: 13px;
+
+                line-height: 1.5;
+            }
+
+
+            /* =====================
+               MOBILE PROBLEM CLOSE
+            ===================== */
+
+            .problem-close {
+                min-height: 280px;
+
+                padding:
+                    70px 20px;
+            }
+
+            .problem-close h2 {
+                font-size: 26px;
+
+                letter-spacing: 3px;
+
+                line-height: 1.3;
+            }
+
+            .problem-close-line {
+                width: 45px;
+
+                margin: 22px 0;
+            }
+
+            .problem-close span {
+                font-size: 16px;
+
+                letter-spacing: 3px;
+            }
+
+
+            /* =====================
+               MOBILE OUR STORY
             ===================== */
 
             .our-story {
@@ -841,7 +1275,7 @@
 
 
             /* =====================
-               PRODUCT
+               MOBILE PRODUCT
             ===================== */
 
             .product {
@@ -873,7 +1307,7 @@
 
 
             /* =====================
-               POPUP
+               MOBILE POPUP
             ===================== */
 
             .survey-popup {
@@ -914,30 +1348,27 @@
 
     <header>
 
-
-        <!-- SALTWËRK LOGO -->
-
         <a
             href="#trailguard"
             class="logo-link"
             aria-label="SaltWërk"
         >
-
             <img
                 src="SW_Stacked_White@1200px.png"
                 alt="SaltWërk"
                 class="logo"
             >
-
         </a>
 
-
-        <!-- NAVIGATION -->
 
         <nav class="nav">
 
             <a href="#trailguard">
                 TRAILGUARD
+            </a>
+
+            <a href="#the-problem">
+                THE PROBLEM
             </a>
 
             <a href="#our-story">
@@ -950,8 +1381,6 @@
 
         </nav>
 
-
-        <!-- SURVEY -->
 
         <a
             class="survey-link"
@@ -990,7 +1419,6 @@
 
         <div class="socials">
 
-
             <!-- INSTAGRAM -->
 
             <a
@@ -1007,7 +1435,7 @@
                 >
 
                     <path
-                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
+                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3-3Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
                     />
 
                 </svg>
@@ -1046,6 +1474,154 @@
         <div class="coming-soon">
             LAUNCHING 2027
         </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         THE PROBLEM
+    ========================= -->
+
+    <section
+        class="problem"
+        id="the-problem"
+    >
+
+        <!-- INTRO -->
+
+        <div class="problem-intro">
+
+            <div>
+
+                <div class="problem-label">
+                    THE PROBLEM
+                </div>
+
+                <h2 class="problem-title">
+                    THE TRAIL<br>
+                    DOESN'T ALWAYS<br>
+                    PLAY NICE.
+                </h2>
+
+            </div>
+
+
+            <p class="problem-intro-text">
+                Rugged trails come with real risks. From wildlife and pests
+                to harsh terrain, the outdoors can be tough on your lower legs.
+            </p>
+
+        </div>
+
+
+        <!-- THREE PROBLEM IMAGES -->
+
+        <div class="problem-grid">
+
+
+            <!-- SNAKES -->
+
+            <article class="problem-card snake-card">
+
+                <img
+                    src="Rattle Snake.jpg"
+                    alt="Rattlesnake on rugged terrain"
+                >
+
+                <div class="problem-content">
+
+                    <div class="problem-line"></div>
+
+                    <h3>
+                        SNAKES
+                    </h3>
+
+                    <p>
+                        Unexpected encounters are part of the risk
+                        of exploring rugged trails.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- TICKS -->
+
+            <article class="problem-card tick-card">
+
+                <img
+                    src="Tick.jpg"
+                    alt="Tick on grass"
+                >
+
+                <div class="problem-content">
+
+                    <div class="problem-line"></div>
+
+                    <h3>
+                        TICKS
+                    </h3>
+
+                    <p>
+                        Trails through grass, brush, and vegetation
+                        can bring runners into contact with ticks.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- ABRASION -->
+
+            <article class="problem-card abrasion-card">
+
+                <img
+                    src="Abrasion.jpg"
+                    alt="Trail runner on rugged terrain"
+                >
+
+                <div class="problem-content">
+
+                    <div class="problem-line"></div>
+
+                    <h3>
+                        ABRASION
+                    </h3>
+
+                    <p>
+                        Rocks, branches, and brush can put your
+                        lower legs through a lot.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROBLEM CLOSING
+    ========================= -->
+
+    <section class="problem-close">
+
+        <h2>
+            THE TRAIL IS UNPREDICTABLE.<br>
+            YOUR GEAR SHOULDN'T BE.
+        </h2>
+
+        <div class="problem-close-line"></div>
+
+        <span>
+            TRAILGUARD
+        </span>
 
     </section>
 
