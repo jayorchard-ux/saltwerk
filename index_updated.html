@@ -1,0 +1,1958 @@
+TYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SaltWërk | TrailGuard</title>
+
+
+    <style>
+
+        /* =========================
+           CUSTOM FONT
+        ========================= */
+
+        @font-face {
+            font-family: "Saltwerk";
+            src: url("Saltwerk%20Font") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            color: white;
+            background: #243541;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            height: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0 40px;
+
+            background: rgba(20, 30, 35, 0.92);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo-link {
+            position: absolute;
+
+            left: 40px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            display: flex;
+            align-items: center;
+
+            z-index: 2;
+        }
+
+        .logo {
+            width: 125px;
+            height: auto;
+            display: block;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 42px;
+        }
+
+        .nav a {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 13px;
+            font-weight: 500;
+
+            letter-spacing: 2px;
+
+            color: rgba(255, 255, 255, 0.9);
+
+            transition:
+                color 0.25s ease,
+                opacity 0.25s ease;
+        }
+
+        .nav a:hover {
+            color: white;
+            opacity: 0.7;
+        }
+
+
+        /* =========================
+           SURVEY BUTTON
+        ========================= */
+
+        .survey-link {
+            position: absolute;
+            right: 40px;
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: 12px;
+            font-weight: 500;
+
+            letter-spacing: 1.8px;
+
+            padding: 12px 18px;
+
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 2px;
+
+            color: white;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+        }
+
+        .survey-link:hover {
+            background: white;
+            color: #243541;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        #trailguard {
+            scroll-margin-top: 90px;
+        }
+
+        .hero {
+            min-height: 115vh;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 100px 25px 140px;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.25),
+                    rgba(0, 0, 0, 0.25)
+                ),
+                url("RedRockTrail.jpg");
+
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+
+        /* =========================
+           TRAILGUARD TITLE
+        ========================= */
+
+        h1 {
+            width: 100%;
+
+            font-family: "Saltwerk", Helvetica, Arial, sans-serif;
+
+            font-size: clamp(55px, 8vw, 105px);
+
+            font-weight: normal;
+
+            letter-spacing: 3px;
+
+            line-height: 0.95;
+
+            text-align: center;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-bottom: 55px;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1s ease 0.25s forwards;
+        }
+
+
+        /* =========================
+           HERO DESCRIPTION
+        ========================= */
+
+        .description {
+            width: 100%;
+            max-width: 780px;
+
+            margin: 0 auto 75px;
+
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: clamp(17px, 1.8vw, 22px);
+
+            font-weight: 300;
+
+            line-height: 1.6;
+
+            letter-spacing: 0.3px;
+
+            text-align: center;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1s ease 0.45s forwards;
+        }
+
+
+        /* =========================
+           SOCIAL ICONS
+           DO NOT CHANGE
+        ========================= */
+
+        .socials {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            gap: 22px;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1s ease 0.65s forwards;
+        }
+
+        .social {
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.12);
+
+            border: 1px solid rgba(255, 255, 255, 0.75);
+
+            box-shadow:
+                0 8px 25px rgba(0, 30, 40, 0.25);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .social:hover {
+            transform:
+                translateY(-7px)
+                scale(1.08);
+
+            background:
+                rgba(255, 255, 255, 0.30);
+
+            box-shadow:
+                0 15px 35px rgba(0, 30, 40, 0.35);
+        }
+
+        .social svg {
+            width: 27px;
+            height: 27px;
+
+            fill: white;
+        }
+
+
+        /* =========================
+           LAUNCHING 2027
+        ========================= */
+
+        .coming-soon {
+            font-family: Helvetica, Arial, sans-serif;
+
+            font-size: clamp(17px, 2vw, 23px);
+
+            font-weight: 400;
+
+            letter-spacing: 6px;
+
+            margin-top: 55px;
+
+            color: rgba(255, 255, 255, 0.92);
+
+            text-align: center;
+
+            opacity: 0;
+
+            animation:
+                fadeUp 1s ease 0.85s forwards;
+        }
+
+
+        /* =========================
+           THE PROBLEM
+        ========================= */
+
+        #the-problem {
+            scroll-margin-top: 90px;
+        }
+
+        .problem {
+            background: #18242b;
+
+            color: white;
+
+            padding:
+                120px 5vw
+                130px;
+        }
+
+        .problem-intro {
+            max-width: 1200px;
+
+            margin:
+                0 auto
+                90px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+
+            align-items: end;
+        }
+
+        .problem-label {
+            font-size: 13px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+
+            color:
+                rgba(255, 255, 255, 0.65);
+        }
+
+        .problem-headline {
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size:
+                clamp(48px, 7vw, 95px);
+
+            font-weight: 500;
+
+            line-height: 0.95;
+
+            letter-spacing: -2px;
+        }
+
+        .problem-copy {
+            max-width: 500px;
+
+            font-size: 18px;
+
+            font-weight: 300;
+
+            line-height: 1.7;
+
+            color:
+                rgba(255, 255, 255, 0.72);
+        }
+
+
+        /* =========================
+           PROBLEM SECTION FADE-UP REVEALS
+        ========================= */
+
+        .problem-reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .problem-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .problem-reveal:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .problem-reveal:nth-child(2) {
+            transition-delay: 0.18s;
+        }
+
+        .problem-reveal:nth-child(3) {
+            transition-delay: 0.31s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .problem-reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+
+        /* =========================
+           PROBLEM IMAGE GRID
+        ========================= */
+
+        .problem-grid {
+            max-width: 1400px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .problem-card {
+            position: relative;
+
+            min-height: 620px;
+
+            overflow: hidden;
+
+            background: #243541;
+        }
+
+        .problem-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.85),
+                    rgba(0, 0, 0, 0.05) 60%
+                );
+
+            z-index: 1;
+        }
+
+        .problem-card img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.7s ease;
+        }
+
+        .problem-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .problem-card-content {
+            position: absolute;
+
+            left: 35px;
+            right: 35px;
+            bottom: 35px;
+
+            z-index: 2;
+        }
+
+        .problem-card-line {
+            width: 45px;
+            height: 1px;
+
+            background:
+                rgba(255, 255, 255, 0.7);
+
+            margin-bottom: 18px;
+        }
+
+        .problem-card h3 {
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size: 38px;
+
+            font-weight: 400;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 14px;
+        }
+
+        .problem-card p {
+            max-width: 330px;
+
+            font-size: 15px;
+
+            font-weight: 300;
+
+            line-height: 1.6;
+
+            color:
+                rgba(255, 255, 255, 0.85);
+        }
+
+
+        /* =========================
+           PROBLEM CLOSING
+        ========================= */
+
+        .problem-closing {
+            max-width: 1200px;
+
+            margin:
+                110px auto 0;
+
+            text-align: center;
+
+            padding:
+                0 20px;
+        }
+
+        .problem-closing h2 {
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size:
+                clamp(32px, 5vw, 65px);
+
+            font-weight: 400;
+
+            letter-spacing: 4px;
+
+            line-height: 1.1;
+
+            margin-bottom: 35px;
+        }
+
+        .problem-closing-brand {
+            font-family:
+                "Saltwerk",
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            font-size:
+                clamp(38px, 5vw, 65px);
+
+            letter-spacing: 3px;
+
+            color:
+                rgba(255, 255, 255, 0.9);
+        }
+
+
+        /* =========================
+           OUR STORY
+        ========================= */
+
+        #our-story {
+            scroll-margin-top: 90px;
+        }
+
+        .our-story {
+            min-height: 90vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 120px 25px;
+
+            background: #f2f0ea;
+
+            color: #243541;
+        }
+
+        .our-story h2 {
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size:
+                clamp(35px, 5vw, 60px);
+
+            font-weight: 400;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 60px;
+        }
+
+        .video-placeholder {
+            width:
+                min(850px, 90%);
+
+            aspect-ratio: 16 / 9;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 55px;
+
+            border:
+                1px solid
+                rgba(36, 53, 65, 0.3);
+
+            background:
+                rgba(36, 53, 65, 0.06);
+        }
+
+        .video-placeholder span {
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size: 18px;
+
+            font-weight: 400;
+
+            letter-spacing: 4px;
+
+            color: #243541;
+        }
+
+        .story-text {
+            width:
+                min(850px, 90%);
+
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 300;
+
+            line-height: 1.8;
+
+            text-align: left;
+
+            color: #243541;
+        }
+
+        .story-text p + p {
+            margin-top: 25px;
+        }
+
+
+        /* =========================
+           PRODUCT
+        ========================= */
+
+        #product {
+            scroll-margin-top: 90px;
+        }
+
+        .product {
+            min-height: 85vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 120px 25px;
+
+            background: #243541;
+
+            color: white;
+        }
+
+        .product h2 {
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size:
+                clamp(35px, 5vw, 60px);
+
+            font-weight: 400;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 60px;
+        }
+
+        .product-placeholder {
+            width:
+                min(850px, 90%);
+
+            aspect-ratio: 16 / 9;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 55px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.3);
+
+            background:
+                rgba(255, 255, 255, 0.05);
+        }
+
+        .product-placeholder span {
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size: 18px;
+
+            font-weight: 400;
+
+            letter-spacing: 4px;
+
+            color:
+                rgba(255, 255, 255, 0.9);
+        }
+
+        .product-video-wrap {
+            aspect-ratio: auto;
+            min-height: 0;
+            width: min(430px, 90%);
+            padding: 0;
+            border: none;
+            background: transparent;
+        }
+
+        .product-video {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 720px;
+            object-fit: contain;
+            background: #101a20;
+        }
+
+        .product-text {
+            width:
+                min(850px, 90%);
+
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 300;
+
+            line-height: 1.8;
+
+            text-align: left;
+
+            color:
+                rgba(255, 255, 255, 0.9);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 25px;
+
+            background: #243541;
+
+            color:
+                rgba(255, 255, 255, 0.6);
+
+            text-align: center;
+
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           SURVEY POPUP
+        ========================= */
+
+        .survey-popup {
+            position: fixed;
+
+            left: 50%;
+            bottom: 25px;
+
+            transform:
+                translate(-50%, 150%);
+
+            z-index: 2000;
+
+            width:
+                min(520px, calc(100% - 30px));
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+
+            padding: 18px 20px;
+
+            background:
+                rgba(25, 38, 45, 0.96);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.2);
+
+            box-shadow:
+                0 15px 50px
+                rgba(0, 0, 0, 0.3);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            transition:
+                transform 0.45s ease;
+        }
+
+        .survey-popup.show {
+            transform:
+                translate(-50%, 0);
+        }
+
+        .survey-popup p {
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.4;
+
+            color: white;
+        }
+
+        .popup-button {
+            flex-shrink: 0;
+
+            padding: 11px 15px;
+
+            background: white;
+
+            color: #243541;
+
+            border: none;
+
+            font-family:
+                Helvetica, Arial, sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 1.5px;
+
+            cursor: pointer;
+
+            transition:
+                opacity 0.25s ease;
+        }
+
+        .popup-button:hover {
+            opacity: 0.8;
+        }
+
+        .close-popup {
+            position: absolute;
+
+            top: 6px;
+            right: 9px;
+
+            border: none;
+            background: none;
+
+            color:
+                rgba(255, 255, 255, 0.7);
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            line-height: 1;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+
+            /* =====================
+               HEADER
+            ===================== */
+
+            header {
+                height: 150px;
+
+                padding: 0 15px;
+
+                position: sticky;
+
+                display: flex;
+
+                align-items: flex-start;
+
+                justify-content: center;
+            }
+
+
+            /* =====================
+               MOBILE LOGO
+            ===================== */
+
+            .logo-link {
+                position: absolute;
+
+                left: 15px;
+                top: 12px;
+
+                transform: none;
+
+                z-index: 3;
+            }
+
+            .logo {
+                width: 72px;
+                height: auto;
+            }
+
+
+            /* =====================
+               MOBILE NAV
+            ===================== */
+
+            .nav {
+                position: absolute;
+
+                left: 0;
+                right: 0;
+
+                top: 62px;
+
+                width: 100%;
+
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+
+                gap: 13px;
+
+                padding: 0 10px;
+            }
+
+            .nav a {
+                font-size: 9px;
+
+                letter-spacing: 1.25px;
+
+                white-space: nowrap;
+
+                color:
+                    rgba(255, 255, 255, 0.92);
+            }
+
+
+            /* =====================
+               MOBILE SURVEY
+            ===================== */
+
+            .survey-link {
+                position: absolute;
+
+                right: 15px;
+                top: 12px;
+
+                font-size: 8px;
+
+                letter-spacing: 1.3px;
+
+                padding:
+                    9px 11px;
+
+                white-space: nowrap;
+            }
+
+
+            /* =====================
+               MOBILE HERO
+            ===================== */
+
+            .hero {
+                min-height: 110svh;
+
+                padding:
+                    80px 20px 110px;
+
+                background-position:
+                    center center;
+            }
+
+
+            /* =====================
+               CENTER TRAILGUARD
+            ===================== */
+
+            h1 {
+                width: 100%;
+
+                max-width: 100%;
+
+                display: block;
+
+                margin-left: auto;
+                margin-right: auto;
+
+                text-align: center;
+
+                font-size: 41px;
+
+                letter-spacing: 2px;
+
+                line-height: 0.95;
+
+                margin-bottom: 42px;
+
+                white-space: nowrap;
+            }
+
+
+            /* =====================
+               MOBILE DESCRIPTION
+            ===================== */
+
+            .description {
+                width: 100%;
+
+                max-width: 500px;
+
+                margin-left: auto;
+                margin-right: auto;
+
+                font-size: 16px;
+
+                line-height: 1.6;
+
+                margin-bottom: 60px;
+
+                text-align: center;
+            }
+
+
+            /* =====================
+               SOCIALS
+               SAME DESIGN
+            ===================== */
+
+            .social {
+                width: 54px;
+                height: 54px;
+            }
+
+            .social svg {
+                width: 25px;
+                height: 25px;
+            }
+
+
+            /* =====================
+               LAUNCHING
+            ===================== */
+
+            .coming-soon {
+                font-size: 17px;
+
+                letter-spacing: 5px;
+
+                margin-top: 38px;
+
+                text-align: center;
+            }
+
+
+            /* =====================
+               THE PROBLEM
+            ===================== */
+
+            .problem {
+                padding:
+                    85px 20px
+                    90px;
+            }
+
+            .problem-intro {
+                display: block;
+
+                margin-bottom: 55px;
+            }
+
+            .problem-label {
+                font-size: 11px;
+
+                letter-spacing: 3px;
+
+                margin-bottom: 20px;
+            }
+
+            .problem-headline {
+                font-size: 48px;
+
+                letter-spacing: -1px;
+
+                line-height: 0.98;
+
+                margin-bottom: 30px;
+            }
+
+            .problem-copy {
+                font-size: 16px;
+
+                line-height: 1.7;
+            }
+
+
+            /* =====================
+               PROBLEM CARDS
+            ===================== */
+
+            .problem-grid {
+                display: grid;
+
+                grid-template-columns: 1fr;
+
+                gap: 14px;
+            }
+
+            .problem-card {
+                min-height: 480px;
+            }
+
+            .problem-card-content {
+                left: 25px;
+                right: 25px;
+                bottom: 25px;
+            }
+
+            .problem-card h3 {
+                font-size: 32px;
+
+                letter-spacing: 4px;
+
+                margin-bottom: 10px;
+            }
+
+            .problem-card p {
+                font-size: 14px;
+
+                line-height: 1.55;
+            }
+
+
+            /* =====================
+               PROBLEM CLOSING
+            ===================== */
+
+            .problem-closing {
+                margin-top: 75px;
+
+                padding:
+                    0 10px;
+            }
+
+            .problem-closing h2 {
+                font-size: 32px;
+
+                letter-spacing: 2px;
+
+                line-height: 1.15;
+            }
+
+            .problem-closing-brand {
+                font-size: 40px;
+
+                letter-spacing: 2px;
+            }
+
+
+            /* =====================
+               OUR STORY
+            ===================== */
+
+            .our-story {
+                padding:
+                    90px 20px;
+            }
+
+            .our-story h2 {
+                font-size: 34px;
+
+                letter-spacing: 4px;
+
+                margin-bottom: 40px;
+            }
+
+            .video-placeholder {
+                width: 100%;
+
+                margin-bottom: 40px;
+            }
+
+            .video-placeholder span {
+                font-size: 13px;
+
+                letter-spacing: 3px;
+            }
+
+            .story-text {
+                width: 100%;
+
+                font-size: 16px;
+
+                line-height: 1.75;
+            }
+
+
+            /* =====================
+               PRODUCT
+            ===================== */
+
+            .product {
+                padding:
+                    90px 20px;
+            }
+
+            .product h2 {
+                font-size: 34px;
+
+                letter-spacing: 4px;
+
+                margin-bottom: 40px;
+            }
+
+            .product-placeholder {
+                width: 100%;
+
+                margin-bottom: 40px;
+            }
+
+            .product-video-wrap {
+                width: min(100%, 390px);
+            }
+
+            .product-video {
+                width: 100%;
+                max-height: 650px;
+            }
+
+            .product-placeholder span {
+                font-size: 13px;
+
+                letter-spacing: 3px;
+            }
+
+            .product-text {
+                width: 100%;
+
+                font-size: 16px;
+
+                line-height: 1.75;
+            }
+
+
+            /* =====================
+               POPUP
+            ===================== */
+
+            .survey-popup {
+                bottom: 15px;
+
+                width:
+                    calc(100% - 24px);
+
+                padding:
+                    17px 16px;
+
+                gap: 12px;
+            }
+
+            .survey-popup p {
+                font-size: 12px;
+            }
+
+            .popup-button {
+                padding:
+                    10px 12px;
+
+                font-size: 9px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+
+        <!-- LOGO -->
+
+        <a
+            href="#trailguard"
+            class="logo-link"
+            aria-label="SaltWërk"
+        >
+
+            <img
+                src="SW_Stacked_White@1200px.png"
+                alt="SaltWërk"
+                class="logo"
+            >
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav">
+
+            <a href="#trailguard">
+                TRAILGUARD
+            </a>
+
+            <a href="#the-problem">
+                THE PROBLEM
+            </a>
+
+            <a href="#our-story">
+                OUR STORY
+            </a>
+
+            <a href="#product">
+                PRODUCT
+            </a>
+
+        </nav>
+
+
+        <!-- SURVEY -->
+
+        <a
+            class="survey-link"
+            href="https://forms.gle/atvUJcnE9CpMFzQM8"
+            target="_blank"
+            rel="noopener"
+        >
+            TAKE OUR SURVEY
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section
+        class="hero"
+        id="trailguard"
+    >
+
+
+        <h1>
+            TRAILGUARD
+        </h1>
+
+
+        <p class="description">
+
+            A first-of-its-kind compression calf sleeve with snake, tick,
+            and abrasion protection for trail runners and hikers.
+
+        </p>
+
+
+        <!-- =====================
+             SOCIAL ICONS
+        ===================== -->
+
+        <div class="socials">
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                class="social"
+                href="https://www.instagram.com/saltwerktrail/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <path
+                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
+                    />
+
+                </svg>
+
+            </a>
+
+
+            <!-- TIKTOK -->
+
+            <a
+                class="social"
+                href="https://www.tiktok.com/@saltwerktrail"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <path
+                        d="M16.5 2h3c.2 1.8 1.2 3.5 2.8 4.5v3.1c-1.6-.1-3.1-.6-4.5-1.5v6.7c0 4.1-2.8 7-6.9 7-3.7 0-6.4-2.7-6.4-6.2 0-3.8 3.1-6.4 6.8-6.4.5 0 1 .1 1.5.2v3.2c-.5-.2-1-.3-1.5-.3-1.9 0-3.4 1.2-3.4 3.1 0 1.7 1.3 3.1 3.1 3.1 2 0 3.5-1.3 3.5-3.8V2h2Z"
+                    />
+
+                </svg>
+
+            </a>
+
+        </div>
+
+
+        <!-- LAUNCHING -->
+
+        <div class="coming-soon">
+            LAUNCHING 2027
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         THE PROBLEM
+    ========================= -->
+
+    <section
+        class="problem"
+        id="the-problem"
+    >
+
+
+        <div class="problem-intro problem-reveal">
+
+
+            <div>
+
+                <div class="problem-label">
+                    THE PROBLEM
+                </div>
+
+                <div class="problem-headline">
+                    THE TRAIL<br>
+                    DOESN'T ALWAYS<br>
+                    PLAY NICE.
+                </div>
+
+            </div>
+
+
+            <p class="problem-copy">
+
+                Rugged trails come with real risks. From wildlife and pests
+                to harsh terrain, the outdoors can be tough on your lower legs.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =====================
+             PROBLEM IMAGES
+        ===================== -->
+
+        <div class="problem-grid">
+
+
+            <!-- SNAKES -->
+
+            <div class="problem-card problem-reveal">
+
+                <img
+                    src="Rattle Snake.jpg"
+                    alt="Snake on a rugged trail"
+                >
+
+                <div class="problem-card-content">
+
+                    <div class="problem-card-line"></div>
+
+                    <h3>
+                        SNAKES
+                    </h3>
+
+                    <p>
+                        Unexpected encounters are part of the risk
+                        of exploring rugged trails.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- TICKS -->
+
+            <div class="problem-card problem-reveal">
+
+                <img
+                    src="Tick.jpg"
+                    alt="Tick on vegetation"
+                >
+
+                <div class="problem-card-content">
+
+                    <div class="problem-card-line"></div>
+
+                    <h3>
+                        TICKS
+                    </h3>
+
+                    <p>
+                        Trails through grass, brush, and vegetation
+                        can bring runners into contact with ticks.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ABRASION -->
+
+            <div class="problem-card problem-reveal">
+
+                <img
+                    src="Abrasion.jpg"
+                    alt="Rugged trail terrain"
+                >
+
+                <div class="problem-card-content">
+
+                    <div class="problem-card-line"></div>
+
+                    <h3>
+                        ABRASION
+                    </h3>
+
+                    <p>
+                        Rocks, branches, and brush can put your
+                        lower legs through a lot.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================
+             PROBLEM CLOSING
+        ===================== -->
+
+        <div class="problem-closing problem-reveal">
+
+            <h2>
+
+                THE TRAIL IS UNPREDICTABLE.<br>
+                YOUR GEAR SHOULDN'T BE.
+
+            </h2>
+
+            <div class="problem-closing-brand">
+                TRAILGUARD
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         OUR STORY
+    ========================= -->
+
+    <section
+        class="our-story"
+        id="our-story"
+    >
+
+
+        <h2>
+            OUR STORY
+        </h2>
+
+
+        <div class="video-placeholder">
+
+            <span>
+                VIDEO COMING SOON
+            </span>
+
+        </div>
+
+
+        <div class="story-text">
+
+
+            <p>
+
+                SaltWërk is an early-stage performance gear startup
+                founded and owned by Daren Mann, a Santa Barbara-based
+                entrepreneur and marathon runner. Our flagship product,
+                TrailGuard, is a compression calf sleeve designed for
+                trail runners and hikers, combining performance compression
+                with multi-threat protection for the trail: including
+                snake-resistant materials, permethrin-based tick protection,
+                and abrasion resistance.
+
+            </p>
+
+
+            <p>
+
+                We will be beginning pre-orders and delivering the first
+                products in Q1 2027.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         PRODUCT
+    ========================= -->
+
+    <section
+        class="product"
+        id="product"
+    >
+
+
+        <h2>
+            PRODUCT
+        </h2>
+
+
+        <div class="product-placeholder product-video-wrap">
+
+            <video
+                class="product-video"
+                controls
+                playsinline
+                preload="metadata"
+            >
+                <source
+                    src="SaltWerk%201st%20Post%20-%20Website.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support the video tag.
+
+            </video>
+
+        </div>
+
+
+        <div class="product-text">
+
+            <p>
+
+                SaltWerk is a startup launching TrailGuard, a
+                first-of-its-kind compression calf sleeve with snake,
+                tick, and abrasion protection for trail runners and hikers.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        SALTWËRK
+
+    </footer>
+
+
+
+    <!-- =========================
+         SURVEY POPUP
+    ========================= -->
+
+    <div
+        class="survey-popup"
+        id="surveyPopup"
+    >
+
+
+        <button
+            class="close-popup"
+            id="closePopup"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <p>
+            Help us shape TrailGuard. Take our quick survey.
+        </p>
+
+
+        <a
+            class="popup-button"
+            href="https://forms.gle/atvUJcnE9CpMFzQM8"
+            target="_blank"
+            rel="noopener"
+        >
+            TAKE SURVEY
+        </a>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           PROBLEM SECTION REVEALS
+        ========================= */
+
+        const problemRevealElements =
+            document.querySelectorAll(".problem-reveal");
+
+        const problemRevealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("revealed");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15,
+                    rootMargin: "0px 0px -50px 0px"
+                }
+            );
+
+        problemRevealElements.forEach(element => {
+            problemRevealObserver.observe(element);
+        });
+
+
+        /* =========================
+           SURVEY POPUP
+        ========================= */
+
+        const surveyPopup =
+            document.getElementById("surveyPopup");
+
+
+        const closePopup =
+            document.getElementById("closePopup");
+
+
+        setTimeout(() => {
+
+            surveyPopup.classList.add("show");
+
+        }, 30000);
+
+
+        closePopup.addEventListener(
+            "click",
+            () => {
+
+                surveyPopup.classList.remove("show");
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
