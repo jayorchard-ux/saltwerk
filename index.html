@@ -435,33 +435,48 @@ TYPE html>
 
         .problem-reveal {
             opacity: 0;
-            transform: translateY(32px);
+            transform: translateY(60px);
+            filter: blur(4px);
+            will-change: opacity, transform, filter;
             transition:
-                opacity 0.8s ease,
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+                opacity 1.05s ease,
+                transform 1.05s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 1.05s ease;
         }
 
         .problem-reveal.revealed {
             opacity: 1;
             transform: translateY(0);
+            filter: blur(0);
         }
 
-        .problem-reveal:nth-child(1) {
+        /* Stagger the three image cards */
+        .problem-grid .problem-card:nth-child(1) {
             transition-delay: 0.05s;
         }
 
-        .problem-reveal:nth-child(2) {
-            transition-delay: 0.18s;
+        .problem-grid .problem-card:nth-child(2) {
+            transition-delay: 0.22s;
         }
 
-        .problem-reveal:nth-child(3) {
-            transition-delay: 0.31s;
+        .problem-grid .problem-card:nth-child(3) {
+            transition-delay: 0.39s;
+        }
+
+        /* Give the intro and closing their own subtle timing */
+        .problem-intro {
+            transition-delay: 0s;
+        }
+
+        .problem-closing {
+            transition-delay: 0.05s;
         }
 
         @media (prefers-reduced-motion: reduce) {
             .problem-reveal {
                 opacity: 1;
                 transform: none;
+                filter: none;
                 transition: none;
             }
         }
@@ -1911,8 +1926,8 @@ TYPE html>
 
                 },
                 {
-                    threshold: 0.15,
-                    rootMargin: "0px 0px -50px 0px"
+                    threshold: 0.10,
+                    rootMargin: "0px 0px -80px 0px"
                 }
             );
 
