@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+TYPE html>
 <html lang="en">
 
 <head>
@@ -430,6 +430,44 @@
 
 
         /* =========================
+           PROBLEM SECTION FADE-UP REVEALS
+        ========================= */
+
+        .problem-reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .problem-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .problem-reveal:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .problem-reveal:nth-child(2) {
+            transition-delay: 0.18s;
+        }
+
+        .problem-reveal:nth-child(3) {
+            transition-delay: 0.31s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .problem-reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+
+        /* =========================
            PROBLEM IMAGE GRID
         ========================= */
 
@@ -755,6 +793,24 @@
 
             color:
                 rgba(255, 255, 255, 0.9);
+        }
+
+        .product-video-wrap {
+            aspect-ratio: auto;
+            min-height: 0;
+            width: min(430px, 90%);
+            padding: 0;
+            border: none;
+            background: transparent;
+        }
+
+        .product-video {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 720px;
+            object-fit: contain;
+            background: #101a20;
         }
 
         .product-text {
@@ -1295,6 +1351,15 @@
                 margin-bottom: 40px;
             }
 
+            .product-video-wrap {
+                width: min(100%, 390px);
+            }
+
+            .product-video {
+                width: 100%;
+                max-height: 650px;
+            }
+
             .product-placeholder span {
                 font-size: 13px;
 
@@ -1510,7 +1575,7 @@
     >
 
 
-        <div class="problem-intro">
+        <div class="problem-intro problem-reveal">
 
 
             <div>
@@ -1549,7 +1614,7 @@
 
             <!-- SNAKES -->
 
-            <div class="problem-card">
+            <div class="problem-card problem-reveal">
 
                 <img
                     src="Rattle Snake.jpg"
@@ -1576,7 +1641,7 @@
 
             <!-- TICKS -->
 
-            <div class="problem-card">
+            <div class="problem-card problem-reveal">
 
                 <img
                     src="Tick.jpg"
@@ -1603,7 +1668,7 @@
 
             <!-- ABRASION -->
 
-            <div class="problem-card">
+            <div class="problem-card problem-reveal">
 
                 <img
                     src="Abrasion.jpg"
@@ -1636,7 +1701,7 @@
              PROBLEM CLOSING
         ===================== -->
 
-        <div class="problem-closing">
+        <div class="problem-closing problem-reveal">
 
             <h2>
 
@@ -1727,11 +1792,22 @@
         </h2>
 
 
-        <div class="product-placeholder">
+        <div class="product-placeholder product-video-wrap">
 
-            <span>
-                IMAGES COMING SOON
-            </span>
+            <video
+                class="product-video"
+                controls
+                playsinline
+                preload="metadata"
+            >
+                <source
+                    src="SaltWerk%201st%20Post%20-%20Website.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support the video tag.
+
+            </video>
 
         </div>
 
@@ -1809,6 +1885,45 @@
 
     <script>
 
+
+        /* =========================
+           PROBLEM SECTION REVEALS
+        ========================= */
+
+        const problemRevealElements =
+            document.querySelectorAll(".problem-reveal");
+
+        const problemRevealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("revealed");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15,
+                    rootMargin: "0px 0px -50px 0px"
+                }
+            );
+
+        problemRevealElements.forEach(element => {
+            problemRevealObserver.observe(element);
+        });
+
+
+        /* =========================
+           SURVEY POPUP
+        ========================= */
 
         const surveyPopup =
             document.getElementById("surveyPopup");
