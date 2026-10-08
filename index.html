@@ -264,98 +264,6 @@
 
 
         /* =========================
-           SOCIAL ICONS
-           DO NOT CHANGE
-        ========================= */
-
-        .socials {
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            gap: 22px;
-
-            opacity: 0;
-
-            animation:
-                fadeUp 1s ease 0.65s forwards;
-        }
-
-        .social {
-            width: 58px;
-            height: 58px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background: rgba(255, 255, 255, 0.12);
-
-            border: 1px solid rgba(255, 255, 255, 0.75);
-
-            box-shadow:
-                0 8px 25px rgba(0, 30, 40, 0.25);
-
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-
-            transition:
-                transform 0.3s ease,
-                background 0.3s ease,
-                box-shadow 0.3s ease;
-        }
-
-        .social:hover {
-            transform:
-                translateY(-7px)
-                scale(1.08);
-
-            background:
-                rgba(255, 255, 255, 0.30);
-
-            box-shadow:
-                0 15px 35px rgba(0, 30, 40, 0.35);
-        }
-
-        .social svg {
-            width: 27px;
-            height: 27px;
-
-            fill: white;
-        }
-
-
-        /* =========================
-           LAUNCHING 2027
-        ========================= */
-
-        .coming-soon {
-            font-family: Helvetica, Arial, sans-serif;
-
-            font-size: clamp(17px, 2vw, 23px);
-
-            font-weight: 400;
-
-            letter-spacing: 6px;
-
-            margin-top: 55px;
-
-            color: rgba(255, 255, 255, 0.92);
-
-            text-align: center;
-
-            opacity: 0;
-
-            animation:
-                fadeUp 1s ease 0.85s forwards;
-        }
-
-
-        /* =========================
            THE PROBLEM
         ========================= */
 
@@ -848,6 +756,227 @@
         }
 
 
+
+
+        /* =========================
+           COMMUNITY
+        ========================= */
+
+        #community {
+            scroll-margin-top: 90px;
+        }
+
+        .community {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .community-survey {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            padding: 110px 7vw;
+            background: #f1eee5;
+            color: #18242b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .community-survey::after {
+            content: "";
+            position: absolute;
+            width: 560px;
+            height: 760px;
+            right: -80px;
+            top: -40px;
+            opacity: 0.28;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='760' viewBox='0 0 560 760'%3E%3Cg fill='none' stroke='%23969a84' stroke-width='1'%3E%3Cpath d='M40 40c90 50 100 100 190 85s130-90 250-25'/%3E%3Cpath d='M10 105c100 55 130 110 220 90s130-75 280-15'/%3E%3Cpath d='M20 185c100 60 150 100 240 75s140-65 270-5'/%3E%3Cpath d='M0 275c110 60 165 95 260 65s150-55 300 10'/%3E%3Cpath d='M20 380c100 55 175 90 270 55s145-45 260 25'/%3E%3Cpath d='M0 500c120 50 185 75 285 40s145-30 275 35'/%3E%3Cpath d='M35 625c95 35 175 60 260 20s145-20 245 35'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            pointer-events: none;
+        }
+
+        .community-survey-inner {
+            width: min(1100px, 100%);
+            position: relative;
+            z-index: 1;
+        }
+
+        .community-eyebrow {
+            font-size: 12px;
+            letter-spacing: 3px;
+            margin-bottom: 22px;
+        }
+
+        .community-survey h2 {
+            margin: 0;
+            max-width: 800px;
+            font-size: clamp(58px, 8vw, 110px);
+            line-height: 0.9;
+            letter-spacing: -3px;
+            font-weight: 700;
+        }
+
+        .community-survey h2 span {
+            color: #8b8968;
+        }
+
+        .community-survey-copy {
+            max-width: 650px;
+            margin: 38px 0 32px;
+            font-size: 19px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .community-survey-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 330px;
+            padding: 20px 30px;
+            background: #18242b;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        .community-survey-button:hover {
+            transform: translateY(-3px);
+            background: #243541;
+        }
+
+        .community-benefits {
+            display: flex;
+            gap: 0;
+            margin-top: 65px;
+            max-width: 720px;
+        }
+
+        .community-benefit {
+            flex: 1;
+            padding: 0 30px;
+            border-left: 1px solid rgba(24, 36, 43, 0.28);
+        }
+
+        .community-benefit:first-child {
+            padding-left: 0;
+            border-left: none;
+        }
+
+        .community-benefit strong {
+            display: block;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            margin-bottom: 7px;
+        }
+
+        .community-benefit span {
+            display: block;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .community-social {
+            padding: 105px 7vw 115px;
+            background: #101b22;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .community-social-inner {
+            width: min(1100px, 100%);
+            margin: 0 auto;
+        }
+
+        .community-social h3 {
+            max-width: 900px;
+            margin: 0;
+            font-size: clamp(48px, 6vw, 82px);
+            line-height: 0.95;
+            letter-spacing: -2px;
+        }
+
+        .community-social h3 span {
+            color: #d7cbb8;
+        }
+
+        .community-social-copy {
+            max-width: 650px;
+            margin: 25px 0 55px;
+            font-size: 18px;
+            line-height: 1.7;
+            font-weight: 300;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .community-social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .community-social-card {
+            padding: 34px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.025);
+        }
+
+        .community-social-card-top {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .community-social-icon {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.65);
+            border-radius: 50%;
+        }
+
+        .community-social-icon svg {
+            width: 23px;
+            height: 23px;
+            fill: white;
+        }
+
+        .community-social-name {
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            margin-bottom: 5px;
+        }
+
+        .community-social-handle {
+            font-size: 17px;
+        }
+
+        .community-social-button {
+            display: block;
+            padding: 16px 20px;
+            border: 1px solid rgba(255,255,255,0.7);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        .community-social-button:hover {
+            background: white;
+            color: #101b22;
+        }
+
+
         /* =========================
            FOOTER
         ========================= */
@@ -1171,37 +1300,6 @@
 
 
             /* =====================
-               SOCIALS
-               SAME DESIGN
-            ===================== */
-
-            .social {
-                width: 54px;
-                height: 54px;
-            }
-
-            .social svg {
-                width: 25px;
-                height: 25px;
-            }
-
-
-            /* =====================
-               LAUNCHING
-            ===================== */
-
-            .coming-soon {
-                font-size: 17px;
-
-                letter-spacing: 5px;
-
-                margin-top: 38px;
-
-                text-align: center;
-            }
-
-
-            /* =====================
                THE PROBLEM
             ===================== */
 
@@ -1391,6 +1489,81 @@
 
 
             /* =====================
+               COMMUNITY
+            ===================== */
+
+            .community-survey {
+                min-height: auto;
+                padding: 85px 20px 80px;
+            }
+
+            .community-survey::after {
+                width: 390px;
+                height: 530px;
+                right: -150px;
+                top: 80px;
+                opacity: 0.2;
+            }
+
+            .community-survey h2 {
+                font-size: clamp(48px, 14vw, 72px);
+                letter-spacing: -2px;
+            }
+
+            .community-survey-copy {
+                font-size: 16px;
+                line-height: 1.65;
+                margin: 28px 0;
+            }
+
+            .community-survey-button {
+                width: 100%;
+                min-width: 0;
+                padding: 18px 20px;
+                font-size: 13px;
+            }
+
+            .community-benefits {
+                display: block;
+                margin-top: 50px;
+            }
+
+            .community-benefit,
+            .community-benefit:first-child {
+                padding: 18px 0;
+                border-left: none;
+                border-top: 1px solid rgba(24, 36, 43, 0.22);
+            }
+
+            .community-benefit:first-child {
+                border-top: none;
+            }
+
+            .community-social {
+                padding: 80px 20px 85px;
+            }
+
+            .community-social h3 {
+                font-size: clamp(42px, 12vw, 64px);
+                letter-spacing: -1.5px;
+            }
+
+            .community-social-copy {
+                font-size: 16px;
+                margin: 24px 0 40px;
+            }
+
+            .community-social-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .community-social-card {
+                padding: 25px;
+            }
+
+
+            /* =====================
                POPUP
             ===================== */
 
@@ -1471,6 +1644,10 @@
                 PRODUCT
             </a>
 
+            <a href="#community">
+                COMMUNITY
+            </a>
+
         </nav>
 
 
@@ -1506,74 +1683,11 @@
 
         <p class="description">
 
-            A first-of-its-kind compression calf sleeve with snake, tick,
-            and abrasion protection for trail runners and hikers.
+            First-of-its-kind protective trail performance gear for runners and hikers.
+            Lightweight, breathable, built for what the trail throws at you.
 
         </p>
 
-
-        <!-- =====================
-             SOCIAL ICONS
-        ===================== -->
-
-        <div class="socials">
-
-
-            <!-- INSTAGRAM -->
-
-            <a
-                class="social"
-                href="https://www.instagram.com/saltwerktrail/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram"
-            >
-
-                <svg
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-
-                    <path
-                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
-                    />
-
-                </svg>
-
-            </a>
-
-
-            <!-- TIKTOK -->
-
-            <a
-                class="social"
-                href="https://www.tiktok.com/@saltwerktrail"
-                target="_blank"
-                rel="noopener"
-                aria-label="TikTok"
-            >
-
-                <svg
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-
-                    <path
-                        d="M16.5 2h3c.2 1.8 1.2 3.5 2.8 4.5v3.1c-1.6-.1-3.1-.6-4.5-1.5v6.7c0 4.1-2.8 7-6.9 7-3.7 0-6.4-2.7-6.4-6.2 0-3.8 3.1-6.4 6.8-6.4.5 0 1 .1 1.5.2v3.2c-.5-.2-1-.3-1.5-.3-1.9 0-3.4 1.2-3.4 3.1 0 1.7 1.3 3.1 3.1 3.1 2 0 3.5-1.3 3.5-3.8V2h2Z"
-                    />
-
-                </svg>
-
-            </a>
-
-        </div>
-
-
-        <!-- LAUNCHING -->
-
-        <div class="coming-soon">
-            LAUNCHING 2027
-        </div>
 
 
     </section>
@@ -1765,22 +1879,12 @@
 
             <p>
 
-                SaltWërk is an early-stage performance gear startup
-                founded and owned by Daren Mann, a Santa Barbara-based
-                entrepreneur and marathon runner. Our flagship product,
-                TrailGuard, is a compression calf sleeve designed for
-                trail runners and hikers, combining performance compression
-                with multi-threat protection for the trail: including
-                snake-resistant materials, permethrin-based tick protection,
-                and abrasion resistance.
-
-            </p>
-
-
-            <p>
-
-                We will be beginning pre-orders and delivering the first
-                products in Q1 2027.
+                SaltWërk is a Santa Barbara-based performance brand built by
+                avid runners and hikers who wanted better gear for the trail.
+                Our products combine performance with multi-threat trail
+                protection — snake-resistant materials, permethrin-based tick
+                protection, and abrasion resistance. The goal is simple: more
+                miles, more confidence, more exploration.
 
             </p>
 
@@ -1842,6 +1946,152 @@
 
     </section>
 
+
+
+    <!-- =========================
+         COMMUNITY
+    ========================= -->
+
+    <section
+        class="community"
+        id="community"
+    >
+
+        <div class="community-survey">
+
+            <div class="community-survey-inner">
+
+                <div class="community-eyebrow">
+                    YOUR FEEDBACK MATTERS
+                </div>
+
+                <h2>
+                    HELP BUILD<br>
+                    <span>TRAILGUARD</span>
+                </h2>
+
+                <p class="community-survey-copy">
+                    We’re building TrailGuard for the people who actually
+                    spend time on the trail. Tell us what you think, what
+                    you need, and what would make your gear better.
+                </p>
+
+                <a
+                    class="community-survey-button"
+                    href="https://forms.gle/atvUJcnE9CpMFzQM8"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    TAKE THE SURVEY &nbsp; →
+                </a>
+
+                <div class="community-benefits">
+
+                    <div class="community-benefit">
+                        <strong>REAL RUNNERS</strong>
+                        <span>Share feedback from the trail.</span>
+                    </div>
+
+                    <div class="community-benefit">
+                        <strong>SHAPE THE PRODUCT</strong>
+                        <span>Help us build gear people actually need.</span>
+                    </div>
+
+                    <div class="community-benefit">
+                        <strong>BETTER TRAILS</strong>
+                        <span>More miles, more confidence, more exploration.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="community-social">
+
+            <div class="community-social-inner">
+
+                <div class="community-eyebrow">
+                    FOLLOW THE JOURNEY
+                </div>
+
+                <h3>
+                    BUILT ON THE TRAIL.<br>
+                    <span>SHARED ALONG THE WAY.</span>
+                </h3>
+
+                <p class="community-social-copy">
+                    Follow SaltWërk as we test, explore, and build TrailGuard.
+                </p>
+
+                <div class="community-social-grid">
+
+                    <div class="community-social-card">
+
+                        <div class="community-social-card-top">
+
+                            <div class="community-social-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3 3Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <div class="community-social-name">INSTAGRAM</div>
+                                <div class="community-social-handle">@saltwerktrail</div>
+                            </div>
+
+                        </div>
+
+                        <a
+                            class="community-social-button"
+                            href="https://www.instagram.com/saltwerktrail/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            FOLLOW ON INSTAGRAM &nbsp; →
+                        </a>
+
+                    </div>
+
+
+                    <div class="community-social-card">
+
+                        <div class="community-social-card-top">
+
+                            <div class="community-social-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.5 2h3c.2 1.8 1.2 3.5 2.8 4.5v3.1c-1.6-.1-3.1-.6-4.5-1.5v6.7c0 4.1-2.8 7-6.9 7-3.7 0-6.4-2.7-6.4-6.2 0-3.8 3.1-6.4 6.8-6.4.5 0 1 .1 1.5.2v3.2c-.5-.2-1-.3-1.5-.3-1.9 0-3.4 1.2-3.4 3.1 0 1.7 1.3 3.1 3.1 3.1 2 0 3.5-1.3 3.5-3.8V2h2Z"/>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <div class="community-social-name">TIKTOK</div>
+                                <div class="community-social-handle">@saltwerktrail</div>
+                            </div>
+
+                        </div>
+
+                        <a
+                            class="community-social-button"
+                            href="https://www.tiktok.com/@saltwerktrail"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            FOLLOW ON TIKTOK &nbsp; →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
     <!-- =========================
