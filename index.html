@@ -2,23 +2,21 @@
 <html lang="en">
 
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WW9S71MVS0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-WW9S71MVS0');
-</script>
     <meta charset="UTF-8">
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>SaltWërk | TrailGuard</title>
-
+    <title>SaltWërk TrailGuard | Trail Running Snake, Tick & Abrasion Protection</title>
+    <meta name="description" content="Meet TrailGuard by SaltWërk: protective trail performance gear in development for runners and hikers, designed around snake, tick, and abrasion risks on the trail.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="trail running protection, snake protection for hikers, snake protection for trail runners, tick protection, abrasion protection, protective calf sleeve, TrailGuard, SaltWërk">
+    <meta property="og:title" content="SaltWërk TrailGuard | Protective Trail Performance Gear">
+    <meta property="og:description" content="Protective trail performance gear in development for runners and hikers. Follow the journey toward TrailGuard, coming in 2027.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saltwerk.com/">
     <link rel="icon" type="image/svg+xml" href="SW_Icon_Black.svg">
 
 
@@ -188,7 +186,8 @@
         }
 
         .hero {
-            min-height: 115vh;
+            min-height: 75vh;
+            min-height: 75svh;
 
             display: flex;
             flex-direction: column;
@@ -198,7 +197,7 @@
 
             text-align: center;
 
-            padding: 100px 25px 140px;
+            padding: 55px 25px 105px;
 
             background-image:
                 linear-gradient(
@@ -208,7 +207,7 @@
                 url("RedRockTrail.jpg");
 
             background-size: cover;
-            background-position: center center;
+            background-position: center bottom;
             background-repeat: no-repeat;
 
             position: relative;
@@ -260,7 +259,7 @@
             margin-left: auto;
             margin-right: auto;
 
-            margin-bottom: 24px;
+            margin-bottom: 15px;
 
             opacity: 0;
 
@@ -274,7 +273,7 @@
         ========================= */
 
         .launch-note {
-            margin: 0 auto 30px;
+            margin: 0 auto 18px;
 
             font-family: Helvetica, Arial, sans-serif;
             font-size: clamp(30px, 3.2vw, 46px);
@@ -298,7 +297,7 @@
             width: 100%;
             max-width: 780px;
 
-            margin: 0 auto 75px;
+            margin: 0 auto 32px;
 
             font-family: Helvetica, Arial, sans-serif;
 
@@ -318,6 +317,67 @@
                 fadeUp 1s ease 0.55s forwards;
         }
 
+
+        .hero-socials {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin-top: -8px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.7s forwards;
+        }
+
+        .hero-social-link {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.75);
+            border-radius: 50%;
+            transition: background 0.25s ease, transform 0.25s ease;
+        }
+
+        .hero-social-link:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-2px);
+        }
+
+        .hero-social-link svg {
+            width: 19px;
+            height: 19px;
+            fill: white;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            left: 50%;
+            bottom: 24px;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.85);
+            font-size: 10px;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator::after {
+            content: "";
+            width: 1px;
+            height: 24px;
+            background: rgba(255,255,255,0.75);
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.65; }
+            50% { opacity: 1; }
+        }
 
         /* =========================
            THE PROBLEM
@@ -1295,17 +1355,36 @@
             ===================== */
 
             .hero {
-                min-height: 110svh;
+                min-height: 68svh;
 
                 padding:
-                    80px 20px 110px;
+                    55px 20px 100px;
 
                 background-position:
-                    center center;
+                    center bottom;
             }
 
             .hero::after {
-                height: 190px;
+                height: 170px;
+            }
+
+            .hero-socials {
+                margin-top: -2px;
+                gap: 14px;
+            }
+
+            .hero-social-link {
+                width: 38px;
+                height: 38px;
+            }
+
+            .scroll-indicator {
+                bottom: 15px;
+                font-size: 9px;
+            }
+
+            .scroll-indicator::after {
+                height: 16px;
             }
 
 
@@ -1331,7 +1410,7 @@
 
                 line-height: 0.95;
 
-                margin-bottom: 42px;
+                margin-bottom: 22px;
 
                 white-space: nowrap;
             }
@@ -1359,7 +1438,7 @@
 
                 line-height: 1.6;
 
-                margin-bottom: 60px;
+                margin-bottom: 30px;
 
                 text-align: center;
             }
@@ -1660,6 +1739,19 @@
 
     </style>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SaltWërk",
+      "url": "https://saltwerk.com/",
+      "sameAs": [
+        "https://www.instagram.com/saltwerktrail/",
+        "https://www.tiktok.com/@saltwerktrail"
+      ],
+      "description": "Outdoor performance brand developing TrailGuard protective trail gear for runners and hikers."
+    }
+    </script>
 </head>
 
 
@@ -1759,7 +1851,16 @@
 
         </p>
 
+        <div class="hero-socials" aria-label="Follow SaltWërk on social media">
+            <a class="hero-social-link" href="https://www.instagram.com/saltwerktrail/" target="_blank" rel="noopener" aria-label="SaltWërk on Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+            </a>
+            <a class="hero-social-link" href="https://www.tiktok.com/@saltwerktrail" target="_blank" rel="noopener" aria-label="SaltWërk on TikTok">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 2h3c.2 1.8 1.2 3.5 2.8 4.5v3.1c-1.6-.1-3.1-.6-4.5-1.5v6.7c0 4.1-2.8 7-6.9 7-3.7 0-6.4-2.7-6.4-6.2 0-3.8 3.1-6.4 6.8-6.4.5 0 1 .1 1.5.2v3.2c-.5-.2-1-.3-1.5-.3-1.9 0-3.4 1.2-3.4 3.1 0 1.7 1.3 3.1 3.1 3.1 2 0 3.5-1.3 3.5-3.8V2h2Z"/></svg>
+            </a>
+        </div>
 
+        <a class="scroll-indicator" href="#the-problem" aria-label="Scroll to explore the trail protection challenges">SCROLL TO EXPLORE</a>
 
     </section>
 
@@ -1818,7 +1919,9 @@
 
                 <img
                     src="Rattle Snake.jpg"
-                    alt="Snake on a rugged trail"
+                    loading="eager"
+                    decoding="async"
+                    alt="Rattlesnake on rocky trail terrain, illustrating snake encounter risks for trail runners and hikers"
                 >
 
                 <div class="problem-card-content">
@@ -1845,7 +1948,9 @@
 
                 <img
                     src="Tick.jpg"
-                    alt="Tick on vegetation"
+                    loading="eager"
+                    decoding="async"
+                    alt="Tick on vegetation, illustrating tick exposure risks for trail runners and hikers"
                 >
 
                 <div class="problem-card-content">
@@ -1872,7 +1977,9 @@
 
                 <img
                     src="Abrasion.jpg"
-                    alt="Rugged trail terrain"
+                    loading="eager"
+                    decoding="async"
+                    alt="Rough trail brush and terrain that can scratch or irritate hikers’ lower legs"
                 >
 
                 <div class="problem-card-content">
@@ -1884,8 +1991,9 @@
                     </h3>
 
                     <p>
-                        Rocks, branches, and brush can put your
-                        lower legs through a lot.
+                        Rocks, branches, and brush can scratch your lower legs.
+                        Poison oak can also cause an itchy skin rash after contact.
+                        Learn to recognize it, avoid touching unfamiliar plants, and stay on established trails.
                     </p>
 
                 </div>
@@ -2207,7 +2315,7 @@
             target="_blank"
             rel="noopener"
         >
-            TAKE SURVEY
+            JOIN OUR COMMUNITY
         </a>
 
 
