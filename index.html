@@ -186,8 +186,8 @@
         }
 
         .hero {
-            min-height: 75vh;
-            min-height: 75svh;
+            min-height: 78vh;
+            min-height: 78svh;
 
             display: flex;
             flex-direction: column;
@@ -197,14 +197,16 @@
 
             text-align: center;
 
-            padding: 55px 25px 105px;
+            padding: 58px 25px 105px;
 
             background-image:
                 linear-gradient(
-                    rgba(0, 0, 0, 0.25),
-                    rgba(0, 0, 0, 0.25)
+                    to bottom,
+                    rgba(10, 15, 18, 0.38) 0%,
+                    rgba(10, 15, 18, 0.28) 45%,
+                    rgba(10, 15, 18, 0.38) 100%
                 ),
-                url("RedRockTrail.jpg");
+                url("dan-begel-wnC7LTRzCX0-unsplash.jpg");
 
             background-size: cover;
             background-position: center bottom;
@@ -241,6 +243,17 @@
            TRAILGUARD TITLE
         ========================= */
 
+        .hero-eyebrow {
+            margin: 0 auto 16px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 7px;
+            text-indent: 7px;
+            color: rgba(255, 255, 255, 0.94);
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+        }
+
         h1 {
             width: 100%;
 
@@ -260,6 +273,7 @@
             margin-right: auto;
 
             margin-bottom: 15px;
+            text-shadow: 0 3px 24px rgba(0, 0, 0, 0.32);
 
             opacity: 0;
 
@@ -274,6 +288,7 @@
 
         .launch-note {
             margin: 0 auto 18px;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
 
             font-family: Helvetica, Arial, sans-serif;
             font-size: clamp(30px, 3.2vw, 46px);
@@ -298,6 +313,7 @@
             max-width: 780px;
 
             margin: 0 auto 32px;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 
             font-family: Helvetica, Arial, sans-serif;
 
@@ -329,31 +345,31 @@
         }
 
         .hero-social-link {
-            width: 42px;
-            height: 42px;
+            width: 38px;
+            height: 38px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255,255,255,0.75);
+            border: 1px solid transparent;
             border-radius: 50%;
-            transition: background 0.25s ease, transform 0.25s ease;
+            transition: opacity 0.25s ease, transform 0.25s ease;
         }
 
         .hero-social-link:hover {
-            background: rgba(255,255,255,0.18);
+            opacity: 0.72;
             transform: translateY(-2px);
         }
 
         .hero-social-link svg {
-            width: 19px;
-            height: 19px;
+            width: 27px;
+            height: 27px;
             fill: white;
         }
 
         .scroll-indicator {
             position: absolute;
             left: 50%;
-            bottom: 24px;
+            bottom: 18px;
             transform: translateX(-50%);
             z-index: 3;
             display: flex;
@@ -370,8 +386,8 @@
         .scroll-indicator::after {
             content: "";
             width: 1px;
-            height: 24px;
-            background: rgba(255,255,255,0.75);
+            height: 20px;
+            background: rgba(255,255,255,0.8);
         }
 
         @keyframes scrollPulse {
@@ -472,19 +488,6 @@
             opacity: 1;
             transform: translateY(0);
             filter: blur(0);
-        }
-
-        /* Stagger the three image cards */
-        .problem-grid .problem-card:nth-child(1) {
-            transition-delay: 0.05s;
-        }
-
-        .problem-grid .problem-card:nth-child(2) {
-            transition-delay: 0.22s;
-        }
-
-        .problem-grid .problem-card:nth-child(3) {
-            transition-delay: 0.39s;
         }
 
         /* Give the intro and closing their own subtle timing */
@@ -1355,7 +1358,7 @@
             ===================== */
 
             .hero {
-                min-height: 68svh;
+                min-height: 72svh;
 
                 padding:
                     55px 20px 100px;
@@ -1366,6 +1369,13 @@
 
             .hero::after {
                 height: 170px;
+            }
+
+            .hero-eyebrow {
+                font-size: 11px;
+                letter-spacing: 5px;
+                text-indent: 5px;
+                margin-bottom: 13px;
             }
 
             .hero-socials {
@@ -1833,6 +1843,7 @@
         id="trailguard"
     >
 
+        <p class="hero-eyebrow">SALTWËRK</p>
 
         <h1>
             TRAILGUARD
@@ -1915,7 +1926,7 @@
 
             <!-- SNAKES -->
 
-            <div class="problem-card problem-reveal">
+            <div class="problem-card">
 
                 <img
                     src="Rattle Snake.jpg"
@@ -1944,7 +1955,7 @@
 
             <!-- TICKS -->
 
-            <div class="problem-card problem-reveal">
+            <div class="problem-card">
 
                 <img
                     src="Tick.jpg"
@@ -1973,7 +1984,7 @@
 
             <!-- ABRASION -->
 
-            <div class="problem-card problem-reveal">
+            <div class="problem-card">
 
                 <img
                     src="Abrasion.jpg"
