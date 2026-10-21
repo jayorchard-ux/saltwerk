@@ -186,8 +186,8 @@
         }
 
         .hero {
-            min-height: 78vh;
-            min-height: 78svh;
+            min-height: 76vh;
+            min-height: 76svh;
 
             display: flex;
             flex-direction: column;
@@ -197,7 +197,7 @@
 
             text-align: center;
 
-            padding: 58px 25px 105px;
+            padding: 48px 25px 88px;
 
             background-image:
                 linear-gradient(
@@ -208,7 +208,8 @@
                 ),
                 url("dan-begel-wnC7LTRzCX0-unsplash.jpg");
 
-            background-size: cover;
+            /* Fit the uploaded landscape photo to the hero instead of aggressively cropping it. */
+            background-size: 100% 100%;
             background-position: center bottom;
             background-repeat: no-repeat;
 
@@ -222,7 +223,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            height: 230px;
+            height: 190px;
             background: linear-gradient(
                 to bottom,
                 rgba(24, 36, 43, 0),
@@ -244,7 +245,7 @@
         ========================= */
 
         .hero-eyebrow {
-            margin: 0 auto 16px;
+            margin: 0 auto 12px;
             font-family: Helvetica, Arial, sans-serif;
             font-size: 13px;
             font-weight: 500;
@@ -272,7 +273,7 @@
             margin-left: auto;
             margin-right: auto;
 
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-shadow: 0 3px 24px rgba(0, 0, 0, 0.32);
 
             opacity: 0;
@@ -287,7 +288,7 @@
         ========================= */
 
         .launch-note {
-            margin: 0 auto 18px;
+            margin: 0 auto 14px;
             text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
 
             font-family: Helvetica, Arial, sans-serif;
@@ -312,7 +313,7 @@
             width: 100%;
             max-width: 780px;
 
-            margin: 0 auto 32px;
+            margin: 0 auto 22px;
             text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 
             font-family: Helvetica, Arial, sans-serif;
@@ -339,7 +340,7 @@
             align-items: center;
             justify-content: center;
             gap: 18px;
-            margin-top: -8px;
+            margin-top: -4px;
             opacity: 0;
             animation: fadeUp 1s ease 0.7s forwards;
         }
@@ -409,8 +410,8 @@
             color: white;
 
             padding:
-                120px 5vw
-                130px;
+                42px 5vw
+                100px;
         }
 
         .problem-intro {
@@ -418,16 +419,16 @@
 
             margin:
                 0 auto
-                90px;
+                48px;
 
             display: grid;
 
             grid-template-columns:
                 1fr 1fr;
 
-            gap: 80px;
+            gap: 55px;
 
-            align-items: end;
+            align-items: center;
         }
 
         .problem-label {
@@ -435,7 +436,7 @@
 
             letter-spacing: 4px;
 
-            margin-bottom: 25px;
+            margin-bottom: 18px;
 
             color:
                 rgba(255, 255, 255, 0.65);
@@ -446,19 +447,20 @@
                 Helvetica, Arial, sans-serif;
 
             font-size:
-                clamp(48px, 7vw, 95px);
+                clamp(42px, 5.2vw, 76px);
 
             font-weight: 500;
 
-            line-height: 0.95;
+            line-height: 0.98;
 
             letter-spacing: -2px;
+            max-width: 760px;
         }
 
         .problem-copy {
             max-width: 500px;
 
-            font-size: 18px;
+            font-size: 17px;
 
             font-weight: 300;
 
@@ -475,13 +477,13 @@
 
         .problem-reveal {
             opacity: 0;
-            transform: translateY(60px);
-            filter: blur(4px);
+            transform: translateY(24px);
+            filter: blur(1px);
             will-change: opacity, transform, filter;
             transition:
-                opacity 1.05s ease,
-                transform 1.05s cubic-bezier(0.22, 1, 0.36, 1),
-                filter 1.05s ease;
+                opacity 0.65s ease,
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.65s ease;
         }
 
         .problem-reveal.revealed {
@@ -529,7 +531,7 @@
         .problem-card {
             position: relative;
 
-            min-height: 620px;
+            min-height: 500px;
 
             overflow: hidden;
 
@@ -1230,6 +1232,33 @@
         }
 
 
+
+        @media (min-width: 701px) and (max-width: 1050px) {
+            .problem-intro {
+                gap: 32px;
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+
+            .problem-headline {
+                font-size: clamp(42px, 5.5vw, 62px);
+            }
+
+            .problem-card {
+                min-height: 430px;
+            }
+
+            .problem-card-content {
+                left: 22px;
+                right: 22px;
+                bottom: 25px;
+            }
+
+            .problem-card h3 {
+                font-size: 29px;
+                letter-spacing: 3px;
+            }
+        }
+
         /* =========================
            ANIMATION
         ========================= */
@@ -1358,24 +1387,21 @@
             ===================== */
 
             .hero {
-                min-height: 72svh;
-
-                padding:
-                    55px 20px 100px;
-
-                background-position:
-                    center bottom;
+                min-height: 70svh;
+                padding: 45px 20px 88px;
+                background-size: cover;
+                background-position: center bottom;
             }
 
             .hero::after {
-                height: 170px;
+                height: 150px;
             }
 
             .hero-eyebrow {
                 font-size: 11px;
                 letter-spacing: 5px;
                 text-indent: 5px;
-                margin-bottom: 13px;
+                margin-bottom: 10px;
             }
 
             .hero-socials {
@@ -1420,7 +1446,7 @@
 
                 line-height: 0.95;
 
-                margin-bottom: 22px;
+                margin-bottom: 18px;
 
                 white-space: nowrap;
             }
@@ -1431,8 +1457,8 @@
             ===================== */
 
             .launch-note {
-                font-size: 26px;
-                margin-bottom: 24px;
+                font-size: 24px;
+                margin-bottom: 16px;
             }
 
 
@@ -1448,7 +1474,7 @@
 
                 line-height: 1.6;
 
-                margin-bottom: 30px;
+                margin-bottom: 22px;
 
                 text-align: center;
             }
@@ -1459,15 +1485,13 @@
             ===================== */
 
             .problem {
-                padding:
-                    85px 20px
-                    90px;
+                padding: 34px 20px 75px;
             }
 
             .problem-intro {
                 display: block;
 
-                margin-bottom: 55px;
+                margin-bottom: 34px;
             }
 
             .problem-label {
@@ -1475,17 +1499,17 @@
 
                 letter-spacing: 3px;
 
-                margin-bottom: 20px;
+                margin-bottom: 14px;
             }
 
             .problem-headline {
-                font-size: 48px;
+                font-size: clamp(40px, 10vw, 48px);
 
                 letter-spacing: -1px;
 
                 line-height: 0.98;
 
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
 
             .problem-copy {
@@ -1508,7 +1532,7 @@
             }
 
             .problem-card {
-                min-height: 480px;
+                min-height: 420px;
             }
 
             .problem-card-content {
@@ -1897,9 +1921,8 @@
                 </div>
 
                 <div class="problem-headline">
-                    THE TRAIL<br>
-                    DOESN'T ALWAYS<br>
-                    PLAY NICE.
+                    THE TRAIL DOESN'T<br>
+                    ALWAYS PLAY NICE.
                 </div>
 
             </div>
