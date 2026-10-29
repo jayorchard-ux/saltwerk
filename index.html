@@ -1953,6 +1953,161 @@
             }
         }
 
+
+
+        /* =========================
+           POLISHED VISUAL REFINEMENTS
+        ========================= */
+        :root {
+            --saltwerk-blue: #243541;
+            --saltwerk-banner: #314b59;
+            --saltwerk-pale-blue: #dce8e8;
+            --saltwerk-white: #ffffff;
+        }
+
+        /* Give the top navigation a more intentional branded blue. */
+        header {
+            background: rgba(49, 75, 89, 0.97);
+            border-bottom-color: rgba(255, 255, 255, 0.16);
+        }
+
+        /* Make the product art feel framed, not lost in a huge white field. */
+        .tech-pack-showcase {
+            display: block;
+            width: min(1280px, 96%);
+            max-width: 100%;
+            padding: 12px;
+            margin: 0 auto 42px;
+            background: #fff;
+            border: 1px solid rgba(255,255,255,0.72);
+            box-shadow: 0 14px 38px rgba(0,0,0,0.18);
+        }
+        .tech-pack-showcase img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            max-height: none;
+            height: auto;
+            object-fit: contain;
+            margin: 0;
+        }
+        .product h2 {
+            margin-bottom: 48px;
+        }
+        .product-eyebrow {
+            margin: -28px 0 28px;
+            color: rgba(255,255,255,0.72);
+        }
+
+        /* Equal image dimensions, followed by readable colored text panels. */
+        .problem-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            min-height: 0;
+            height: 100%;
+            overflow: hidden;
+            background: var(--saltwerk-pale-blue);
+            border: 1px solid rgba(36,53,65,0.10);
+            box-shadow: 0 12px 30px rgba(36,53,65,0.09);
+        }
+        .problem-card > img {
+            display: block;
+            width: 100%;
+            height: 250px;
+            flex: 0 0 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .problem-card-content {
+            position: static;
+            inset: auto;
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 24px 24px 26px;
+            background: var(--saltwerk-pale-blue);
+            color: var(--saltwerk-blue);
+        }
+        .problem-card-line {
+            width: 42px;
+            height: 3px;
+            margin: 0 0 16px;
+            background: #b3262d;
+        }
+        .problem-card h3 {
+            margin: 0 0 12px;
+            color: var(--saltwerk-blue);
+            font-size: clamp(22px, 2.1vw, 28px);
+            line-height: 1.1;
+            letter-spacing: 2.5px;
+        }
+        .problem-card p {
+            margin: 0;
+            color: rgba(36,53,65,0.84);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        /* Keep the tagline, but make it a restrained close to the problem section. */
+        .problem-closing {
+            max-width: 900px;
+            margin: 58px auto 0;
+            padding: 0 12px;
+            text-align: center;
+        }
+        .problem-closing h2 {
+            font-size: clamp(22px, 3vw, 36px);
+            line-height: 1.2;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+            color: var(--saltwerk-blue);
+        }
+        .problem-closing-brand {
+            display: none;
+        }
+
+        /* Contact remains white at the bottom, with dark readable type. */
+        .contact-section {
+            background: #ffffff !important;
+            color: var(--saltwerk-blue) !important;
+            border-top-color: rgba(36,53,65,0.12);
+        }
+        .contact-eyebrow,
+        .contact-copy {
+            color: rgba(36,53,65,0.72) !important;
+        }
+        .contact-email {
+            color: var(--saltwerk-blue) !important;
+            border-color: rgba(36,53,65,0.42);
+        }
+        .contact-email:hover {
+            background: var(--saltwerk-blue) !important;
+            color: #ffffff !important;
+        }
+
+        @media (max-width: 700px) {
+            .tech-pack-showcase {
+                width: 100%;
+                padding: 7px;
+                margin-bottom: 32px;
+            }
+            .problem-card > img {
+                height: 220px;
+                flex-basis: 220px;
+            }
+            .problem-card-content {
+                padding: 21px 20px 23px;
+            }
+            .problem-closing {
+                margin-top: 42px;
+            }
+            .problem-closing h2 {
+                font-size: clamp(20px, 5.4vw, 29px);
+            }
+        }
+
     </style>
 
     <script type="application/ld+json">
