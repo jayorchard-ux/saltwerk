@@ -1603,6 +1603,194 @@
 
         }
 
+
+
+        /* =========================
+           RESPONSIVE LAYOUT SAFETY FIXES
+           Keep all content inside the viewport.
+        ========================= */
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: clip;
+        }
+
+        body {
+            min-width: 0;
+        }
+
+        img, video, iframe, svg, canvas {
+            max-width: 100%;
+        }
+
+        img, video {
+            height: auto;
+        }
+
+        section, header, footer, main, nav, div, article, figure {
+            min-width: 0;
+        }
+
+        .tech-pack-showcase,
+        .tech-pack-showcase img,
+        .story-video-wrap,
+        .story-video-wrap iframe,
+        .product-video-wrap,
+        .product-video,
+        .video-placeholder,
+        .story-text,
+        .product-text,
+        .community-survey-inner,
+        .community-social-inner,
+        .contact-inner {
+            max-width: 100%;
+        }
+
+        .tech-pack-showcase img {
+            display: block;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 700px) {
+            .nav {
+                left: 8px;
+                right: 8px;
+                width: auto;
+                max-width: calc(100% - 16px);
+                flex-wrap: wrap;
+                gap: 8px 13px;
+                padding: 0 4px;
+            }
+
+            .nav a {
+                white-space: normal;
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            h1 {
+                white-space: normal;
+                overflow-wrap: anywhere;
+                font-size: clamp(30px, 9vw, 41px);
+                letter-spacing: 1.5px;
+            }
+
+            .hero {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .tech-pack-showcase {
+                width: 100%;
+                padding: 4px;
+            }
+
+            .product,
+            .our-story,
+            .community,
+            .community-survey,
+            .community-social,
+            .problem,
+            .contact-section {
+                max-width: 100%;
+            }
+
+            .community-social-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+    
+
+        /* =========================
+           ALTERNATING SECTION PALETTE
+           Product: dark blue; Problem: white;
+           Our Story: dark blue; Community: white;
+           Contact: dark blue; Footer: white.
+        ========================= */
+        .product {
+            background: #243541;
+            color: #ffffff;
+        }
+
+        .product-eyebrow {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .product-text {
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .our-story {
+            background: #243541;
+            color: #ffffff;
+        }
+
+        .our-story h2,
+        .story-text {
+            color: #ffffff;
+        }
+
+        .video-placeholder {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .video-placeholder span {
+            color: #ffffff;
+        }
+
+        .community {
+            background: #ffffff;
+            color: #243541;
+        }
+
+        .community-survey {
+            background: #ffffff;
+            color: #243541;
+        }
+
+        .community-survey::after {
+            opacity: 0.45;
+        }
+
+        .contact-section {
+            background: #243541;
+            color: #ffffff;
+            border-top-color: rgba(255, 255, 255, 0.14);
+        }
+
+        .contact-eyebrow {
+            color: rgba(255, 255, 255, 0.68);
+        }
+
+        .contact-copy {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .contact-email {
+            border-color: rgba(255, 255, 255, 0.55);
+            color: #ffffff;
+        }
+
+        .contact-email:hover {
+            background: #ffffff;
+            color: #243541;
+        }
+
+        footer {
+            background: #ffffff;
+            color: #243541;
+        }
+
+        @media (max-width: 700px) {
+            .product, .our-story {
+                padding-top: 90px;
+                padding-bottom: 90px;
+            }
+        }
+
     </style>
 
     <script type="application/ld+json">
