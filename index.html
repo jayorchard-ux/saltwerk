@@ -223,12 +223,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            height: 190px;
+            height: 260px;
             background: linear-gradient(
                 to bottom,
-                rgba(24, 36, 43, 0),
-                rgba(24, 36, 43, 0.35) 35%,
-                #18242b 100%
+                rgba(242, 240, 234, 0) 0%,
+                rgba(242, 240, 234, 0.16) 35%,
+                rgba(242, 240, 234, 0.68) 72%,
+                #f2f0ea 100%
             );
             pointer-events: none;
             z-index: 1;
@@ -785,9 +786,9 @@
 
             padding: 120px 25px;
 
-            background: #243541;
+            background: #f2f0ea;
 
-            color: white;
+            color: #243541;
         }
 
         .product h2 {
@@ -872,8 +873,7 @@
 
             text-align: left;
 
-            color:
-                rgba(255, 255, 255, 0.9);
+            color: rgba(36, 53, 65, 0.88);
         }
 
 
@@ -906,9 +906,9 @@
             width: min(1100px, 94%);
             margin: 0 auto 55px;
             padding: 12px;
-            background: #f2f0ea;
-            border: 1px solid rgba(255,255,255,0.24);
-            box-shadow: 0 18px 55px rgba(0,0,0,0.22);
+            background: #ffffff;
+            border: 1px solid rgba(36,53,65,0.12);
+            box-shadow: 0 16px 42px rgba(36,53,65,0.12);
         }
 
         .tech-pack-showcase img {
@@ -1518,7 +1518,7 @@
             }
 
             .hero::after {
-                height: 150px;
+                height: 190px;
             }
 
             .hero-eyebrow {
@@ -1759,27 +1759,6 @@
                 letter-spacing: 4px;
 
                 margin-bottom: 40px;
-            }
-
-            .product-placeholder {
-                width: 100%;
-
-                margin-bottom: 40px;
-            }
-
-            .product-video-wrap {
-                width: min(100%, 390px);
-            }
-
-            .product-video {
-                width: 100%;
-                max-height: 650px;
-            }
-
-            .product-placeholder span {
-                font-size: 13px;
-
-                letter-spacing: 3px;
             }
 
             .product-text {
@@ -2072,26 +2051,6 @@
                 decoding="async">
         </div>
 
-        <div class="product-placeholder product-video-wrap">
-
-            <video
-                class="product-video"
-                controls
-                playsinline
-                preload="metadata"
-            >
-                <source
-                    src="SaltWerk%201st%20Post%20-%20Website.mp4"
-                    type="video/mp4"
-                >
-
-                Your browser does not support the video tag.
-
-            </video>
-
-        </div>
-
-
         <div class="product-text">
 
             <p>
@@ -2287,7 +2246,7 @@
         <div class="story-video-wrap">
             <iframe
                 id="founderVideo"
-                src="https://www.youtube.com/embed/tLyLZLsbSkE?autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;playsinline=1&amp;rel=0"
+                src="https://www.youtube.com/embed/tLyLZLsbSkE?autoplay=0&amp;mute=1&amp;enablejsapi=1&amp;playsinline=1&amp;rel=0"
                 title="SaltWërk founder story"
                 loading="lazy"
                 allow="autoplay; encrypted-media; picture-in-picture; web-share"
