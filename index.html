@@ -880,6 +880,102 @@
 
 
         /* =========================
+           FOUNDER VIDEO
+        ========================= */
+
+        .story-video-wrap {
+            width: min(900px, 90%);
+            aspect-ratio: 16 / 9;
+            margin-bottom: 55px;
+            background: #18242b;
+            box-shadow: 0 18px 50px rgba(24, 36, 43, 0.14);
+        }
+
+        .story-video-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* =========================
+           TECH PACK SHOWCASE
+        ========================= */
+
+        .tech-pack-showcase {
+            width: min(1100px, 94%);
+            margin: 0 auto 55px;
+            padding: 12px;
+            background: #f2f0ea;
+            border: 1px solid rgba(255,255,255,0.24);
+            box-shadow: 0 18px 55px rgba(0,0,0,0.22);
+        }
+
+        .tech-pack-showcase img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-section {
+            padding: 95px 7vw 100px;
+            background: #18242b;
+            color: white;
+            border-top: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .contact-inner {
+            width: min(1100px, 100%);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: end;
+        }
+
+        .contact-eyebrow {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 18px;
+        }
+
+        .contact-section h2 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 0.98;
+            letter-spacing: -1.5px;
+            font-weight: 500;
+        }
+
+        .contact-copy {
+            max-width: 460px;
+            margin-top: 22px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.72);
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 15px 20px;
+            border: 1px solid rgba(255,255,255,0.55);
+            color: white;
+            letter-spacing: 1.5px;
+            font-size: 13px;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        .contact-email:hover {
+            background: white;
+            color: #18242b;
+        }
+
+        /* =========================
            COMMUNITY
         ========================= */
 
@@ -1120,6 +1216,34 @@
             letter-spacing: 2px;
         }
 
+
+        /* =========================
+           PLAY FOUNDER VIDEO ONLY WHILE STORY IS VISIBLE
+        ========================= */
+
+        const storySection = document.getElementById("our-story");
+        const founderVideo = document.getElementById("founderVideo");
+
+        if (storySection && founderVideo) {
+            const sendVideoCommand = (func) => {
+                founderVideo.contentWindow.postMessage(
+                    JSON.stringify({ event: "command", func, args: [] }),
+                    "https://www.youtube.com"
+                );
+            };
+
+            const storyVideoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+                        sendVideoCommand("playVideo");
+                    } else {
+                        sendVideoCommand("pauseVideo");
+                    }
+                });
+            }, { threshold: [0, 0.35, 0.6] });
+
+            storyVideoObserver.observe(storySection);
+        }
 
         /* =========================
            SURVEY POPUP
@@ -1742,6 +1866,30 @@
             }
 
 
+            .story-video-wrap {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .tech-pack-showcase {
+                width: 100%;
+                padding: 5px;
+                margin-bottom: 40px;
+            }
+
+            .contact-section {
+                padding: 75px 20px 80px;
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .contact-section h2 {
+                font-size: clamp(42px, 12vw, 60px);
+            }
+
             /* =====================
                POPUP
             ===================== */
@@ -1824,16 +1972,16 @@
                 TRAILGUARD
             </a>
 
+            <a href="#product">
+                PRODUCT
+            </a>
+
             <a href="#the-problem">
                 THE PROBLEM
             </a>
 
             <a href="#our-story">
                 OUR STORY
-            </a>
-
-            <a href="#product">
-                PRODUCT
             </a>
 
             <a href="#community">
@@ -1895,7 +2043,67 @@
             </a>
         </div>
 
-        <a class="scroll-indicator" href="#the-problem" aria-label="Scroll to explore the trail protection challenges">SCROLL TO EXPLORE</a>
+        <a class="scroll-indicator" href="#product" aria-label="Scroll to explore TrailGuard">SCROLL TO EXPLORE</a>
+
+    </section>
+
+
+
+    <!-- =========================
+         PRODUCT
+    ========================= -->
+
+    <section
+        class="product"
+        id="product"
+    >
+
+
+        <h2>
+            PRODUCT
+        </h2>
+
+
+        <div class="tech-pack-showcase">
+            <img
+                src="AI%20Tech%20Pack%20Image.png"
+                alt="TrailGuard technical design showcase with front, lateral, and back calf sleeve views and knit construction details"
+                loading="eager"
+                decoding="async">
+        </div>
+
+        <div class="product-placeholder product-video-wrap">
+
+            <video
+                class="product-video"
+                controls
+                playsinline
+                preload="metadata"
+            >
+                <source
+                    src="SaltWerk%201st%20Post%20-%20Website.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support the video tag.
+
+            </video>
+
+        </div>
+
+
+        <div class="product-text">
+
+            <p>
+
+                SaltWerk is a startup launching TrailGuard, a
+                first-of-its-kind compression calf sleeve with snake,
+                tick, and abrasion protection for trail runners and hikers.
+
+            </p>
+
+        </div>
+
 
     </section>
 
@@ -2025,9 +2233,7 @@
                     </h3>
 
                     <p>
-                        Rocks, branches, and brush can scratch your lower legs.
-                        Poison oak can also cause an itchy skin rash after contact.
-                        Learn to recognize it, avoid touching unfamiliar plants, and stay on established trails.
+                        Rocks, branches, and brush can scratch your lower legs. Poison oak can also cause an itchy skin rash after contact.
                     </p>
 
                 </div>
@@ -2078,12 +2284,16 @@
         </h2>
 
 
-        <div class="video-placeholder">
-
-            <span>
-                VIDEO COMING SOON
-            </span>
-
+        <div class="story-video-wrap">
+            <iframe
+                id="founderVideo"
+                src="https://www.youtube.com/embed/tLyLZLsbSkE?autoplay=1&amp;mute=1&amp;enablejsapi=1&amp;playsinline=1&amp;rel=0"
+                title="SaltWërk founder story"
+                loading="lazy"
+                allow="autoplay; encrypted-media; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
         </div>
 
 
@@ -2101,58 +2311,6 @@
 
             </p>
 
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         PRODUCT
-    ========================= -->
-
-    <section
-        class="product"
-        id="product"
-    >
-
-
-        <h2>
-            PRODUCT
-        </h2>
-
-
-        <div class="product-placeholder product-video-wrap">
-
-            <video
-                class="product-video"
-                controls
-                playsinline
-                preload="metadata"
-            >
-                <source
-                    src="SaltWerk%201st%20Post%20-%20Website.mp4"
-                    type="video/mp4"
-                >
-
-                Your browser does not support the video tag.
-
-            </video>
-
-        </div>
-
-
-        <div class="product-text">
-
-            <p>
-
-                SaltWerk is a startup launching TrailGuard, a
-                first-of-its-kind compression calf sleeve with snake,
-                tick, and abrasion protection for trail runners and hikers.
-
-            </p>
 
         </div>
 
@@ -2308,6 +2466,26 @@
 
 
     <!-- =========================
+         CONTACT US
+    ========================= -->
+
+    <section class="contact-section" id="contact">
+        <div class="contact-inner">
+            <div>
+                <div class="contact-eyebrow">GET IN TOUCH</div>
+                <h2>CONTACT<br>US.</h2>
+            </div>
+            <div>
+                <p class="contact-copy">
+                    Have a question about SaltWërk or TrailGuard? We’d love to hear from you.
+                    Our contact details are being finalized, so check back soon.
+                </p>
+                <span class="contact-email">EMAIL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
          FOOTER
     ========================= -->
 
@@ -2398,6 +2576,34 @@
             problemRevealObserver.observe(element);
         });
 
+
+        /* =========================
+           PLAY FOUNDER VIDEO ONLY WHILE STORY IS VISIBLE
+        ========================= */
+
+        const storySection = document.getElementById("our-story");
+        const founderVideo = document.getElementById("founderVideo");
+
+        if (storySection && founderVideo) {
+            const sendVideoCommand = (func) => {
+                founderVideo.contentWindow.postMessage(
+                    JSON.stringify({ event: "command", func, args: [] }),
+                    "https://www.youtube.com"
+                );
+            };
+
+            const storyVideoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+                        sendVideoCommand("playVideo");
+                    } else {
+                        sendVideoCommand("pauseVideo");
+                    }
+                });
+            }, { threshold: [0, 0.35, 0.6] });
+
+            storyVideoObserver.observe(storySection);
+        }
 
         /* =========================
            SURVEY POPUP
