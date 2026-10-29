@@ -2108,7 +2108,93 @@
             }
         }
 
-    </style>
+    
+
+        /* Final polish: consistent dark-blue header with a fine light-blue edge. */
+        header {
+            background: rgba(36, 53, 65, 0.98) !important;
+            border-bottom: 2px solid #91a6b7 !important;
+        }
+
+        /* Keep the community headline and copy to the left of the contour artwork. */
+        .community-survey-inner {
+            width: min(1100px, 100%);
+            margin-left: 0;
+            margin-right: auto;
+            text-align: left;
+        }
+        .community-survey h2 {
+            max-width: 720px;
+            font-size: clamp(48px, 6.8vw, 92px);
+            letter-spacing: -2px;
+        }
+        .community-survey-copy {
+            max-width: 570px;
+        }
+
+        /* Contact: remove the eyebrow and add subtle topographic linework. */
+        .contact-section {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: #ffffff !important;
+            color: var(--saltwerk-blue) !important;
+        }
+        .contact-section::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -90px;
+            right: -50px;
+            width: min(54vw, 720px);
+            height: calc(100% + 180px);
+            opacity: 0.58;
+            pointer-events: none;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='700' viewBox='0 0 720 700'%3E%3Cg fill='none' stroke='%23969a84' stroke-width='1.2' opacity='.65'%3E%3Cpath d='M150 -20C270 45 285 145 405 130S570 45 760 90'/%3E%3Cpath d='M110 65C245 135 285 230 415 210S590 130 760 175'/%3E%3Cpath d='M80 155C220 220 300 315 430 290S605 220 760 260'/%3E%3Cpath d='M40 250C200 315 310 400 445 370S615 310 760 345'/%3E%3Cpath d='M0 355C170 410 315 490 455 455S625 400 760 435'/%3E%3Cpath d='M-20 470C160 520 315 590 470 555S630 500 760 535'/%3E%3Cpath d='M-30 590C160 630 325 700 485 660S645 610 760 640'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .contact-inner {
+            position: relative;
+            z-index: 1;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: clamp(28px, 5vw, 70px);
+            align-items: center;
+        }
+        .contact-section h2 {
+            max-width: 520px;
+            text-align: left;
+            font-size: clamp(48px, 6vw, 78px);
+            line-height: 0.98;
+            letter-spacing: -1.8px;
+        }
+        .contact-copy {
+            margin-top: 0;
+        }
+        @media (max-width: 700px) {
+            .community-survey h2 {
+                font-size: clamp(46px, 11vw, 68px);
+                letter-spacing: -1.5px;
+            }
+            .community-survey::after {
+                right: -210px;
+                opacity: 0.18;
+            }
+            .contact-section::before {
+                width: 95vw;
+                right: -160px;
+                opacity: 0.28;
+            }
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .contact-section h2 {
+                font-size: clamp(46px, 12vw, 64px);
+            }
+        }
+
+</style>
 
     <script type="application/ld+json">
     {
@@ -2641,7 +2727,6 @@
     <section class="contact-section" id="contact">
         <div class="contact-inner">
             <div>
-                <div class="contact-eyebrow">GET IN TOUCH</div>
                 <h2>CONTACT<br>US.</h2>
             </div>
             <div>
