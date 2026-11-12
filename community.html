@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Community | SaltWërk</title>
-<meta content="Connect with the SaltWërk trail-running community and follow our updates." name="description"/>
+<meta content="Explore TrailGuard product concepts, design details, and proposed colorways." name="description"/>
 <meta content="index, follow" name="robots"/>
 <meta content="trail running protection, snake protection for hikers, snake protection for trail runners, tick protection, abrasion protection, protective calf sleeve, TrailGuard, SaltWërk" name="keywords"/>
 <meta content="SaltWërk TrailGuard | Protective Trail Performance Gear" property="og:title"/>
@@ -944,34 +945,6 @@
             letter-spacing: 2px;
         }
 
-
-        /* =========================
-           PLAY FOUNDER VIDEO ONLY WHILE STORY IS VISIBLE
-        ========================= */
-
-        const storySection = document.getElementById("our-story");
-        const founderVideo = document.getElementById("founderVideo");
-
-        if (storySection && founderVideo) {
-            const sendVideoCommand = (func) => {
-                founderVideo.contentWindow.postMessage(
-                    JSON.stringify({ event: "command", func, args: [] }),
-                    "https://www.youtube.com"
-                );
-            };
-
-            const storyVideoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
-                        sendVideoCommand("playVideo");
-                    } else {
-                        sendVideoCommand("pauseVideo");
-                    }
-                });
-            }, { threshold: [0, 0.35, 0.6] });
-
-            storyVideoObserver.observe(storySection);
-        }
 
         /* =========================
            SURVEY POPUP
@@ -2348,6 +2321,78 @@
             }
         }
 
+
+/* Shared contact footer */
+footer { padding:54px 7vw 32px !important; background:#142D35 !important; color:#F7F6F1 !important; }
+.footer-contact { max-width:760px; margin:0 auto 38px; text-align:center; }
+.footer-contact-eyebrow { margin:0 0 12px; color:#A9B99A; font-size:11px; letter-spacing:3px; }
+.footer-contact h2 { margin:0 0 12px; color:#F7F6F1; font-size:clamp(28px,4vw,42px); font-weight:400; letter-spacing:2px; }
+.footer-email { display:inline-block; color:#D8D0BD; font-size:16px; letter-spacing:1px; text-decoration:none; border-bottom:1px solid #526B50; padding-bottom:5px; }
+.footer-email:hover { color:#fff; }
+.footer-brand { margin-top:28px; font-size:12px; letter-spacing:5px; color:rgba(247,246,241,.72); }
+.site-footer-nav { margin-top:18px; }
+.site-footer-nav a { color:rgba(247,246,241,.75); text-decoration:none; }
+.site-footer-nav a:hover { color:#fff; }
+.home-feature { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:.9fr 1.1fr; align-items:center; gap:clamp(30px,6vw,80px); text-align:left; }
+.home-feature-copy h2 { color:#142D35; font-size:clamp(34px,5vw,58px); font-weight:400; letter-spacing:1px; margin:12px 0; }
+.home-feature-copy p { max-width:520px; color:#52616a; line-height:1.8; }
+.home-product-visual { background:#F7F6F1; border-radius:8px; overflow:hidden; }
+.home-product-visual img { display:block; width:100%; height:auto; }
+.concept-note { margin:0; padding:13px 17px; color:#52616a; font-size:10px; letter-spacing:2px; }
+.home-founder { margin:55px auto 0; padding:72px 20px 85px; background:#142D35; color:#F7F6F1; text-align:center; }
+.home-founder .eyebrow { color:#A9B99A; }
+.home-founder h2 { margin:12px 0; font-size:clamp(32px,4vw,48px); font-weight:400; letter-spacing:2px; }
+.home-founder > p { color:rgba(247,246,241,.78); margin:0 auto 28px; }
+.home-founder .story-video-wrap { width:min(900px,92%); aspect-ratio:16/9; margin:0 auto 28px; background:#0d1d24; box-shadow:0 18px 50px rgba(0,0,0,.22); }
+.home-founder .story-video-wrap iframe { display:block; width:100%; height:100%; border:0; }
+.home-founder .page-cta { background:#526B50; color:#fff; }
+.inat-panel { max-width:1100px; margin:58px auto 0; padding:28px; background:#F7F6F1; border:1px solid rgba(20,45,53,.13); border-radius:8px; }
+.inat-panel .problem-map-heading { margin-bottom:18px; }
+.inat-widget { width:100%; min-height:120px; padding:10px; background:#fff; border-radius:6px; font-family:Georgia,serif; }
+.inat-widget img { max-width:100%; height:auto; }
+.inat-credit { margin:14px 0 0; font-size:12px; text-align:right; }
+.inat-credit a { color:#526B50; }
+.product-gallery figcaption { display:none !important; }
+@media(max-width:760px) {
+ .home-feature { grid-template-columns:1fr; text-align:center; }
+ .home-feature-copy p { margin-left:auto; margin-right:auto; }
+ .home-founder { margin-top:35px; padding:52px 12px 60px; }
+ .inat-panel { padding:15px; margin-top:42px; }
+}
+
+/* Consistent four-page navigation */
+header nav.nav { display:flex; align-items:center; justify-content:center; gap:clamp(18px,3vw,42px); }
+header nav.nav a { white-space:nowrap; }
+@media(max-width:760px) {
+  header nav.nav { gap:12px; flex-wrap:wrap; }
+  header nav.nav a { font-size:10px; letter-spacing:1px; }
+}
+
+/* Community page */
+.community-page { background:#F7F6F1; color:#142D35; padding:clamp(65px,9vw,115px) 6vw 80px; }
+.community-hero { max-width:850px; margin:0 auto 58px; text-align:center; }
+.community-eyebrow { color:#526B50; font-size:11px; letter-spacing:4px; margin-bottom:20px; }
+.community-hero h1 { margin:0; color:#142D35; font-size:clamp(48px,8vw,92px); line-height:.98; letter-spacing:1px; font-weight:400; }
+.community-hero h1 span { color:#526B50; }
+.community-hero p { max-width:650px; margin:25px auto 0; color:#59666b; font-size:17px; line-height:1.8; }
+.community-social-grid { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+.community-platform-card { min-height:340px; padding:34px 30px 28px; display:flex; flex-direction:column; text-decoration:none; color:#F7F6F1; background:#142D35; border-radius:7px; border:1px solid rgba(20,45,53,.12); transition:transform .25s ease, box-shadow .25s ease; }
+.community-platform-card:hover { transform:translateY(-6px); box-shadow:0 18px 36px rgba(20,45,53,.16); }
+.instagram-card { background:linear-gradient(145deg,#263B42,#142D35 72%); }
+.tiktok-card { background:linear-gradient(145deg,#304047,#17272E 72%); }
+.youtube-card { background:linear-gradient(145deg,#3A4545,#142D35 72%); }
+.platform-icon { width:52px; height:52px; border:1px solid rgba(247,246,241,.45); border-radius:50%; display:grid; place-items:center; margin-bottom:34px; }
+.platform-icon svg { width:24px; height:24px; fill:none; stroke:#D8D0BD; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.tiktok-icon svg,.youtube-icon svg { fill:#D8D0BD; stroke:none; }
+.platform-icon .icon-fill { fill:#D8D0BD; stroke:none; }
+.platform-label { color:#A9B99A; font-size:10px; letter-spacing:2.5px; }
+.community-platform-card h2 { margin:10px 0 12px; color:#F7F6F1; font-size:27px; font-weight:400; letter-spacing:3px; }
+.community-platform-card p { margin:0; color:rgba(247,246,241,.76); font-size:14px; line-height:1.75; }
+.platform-handle { margin-top:auto; padding-top:28px; color:#D8D0BD; font-size:12px; letter-spacing:1px; border-top:1px solid rgba(247,246,241,.2); }
+.platform-handle b { float:right; font-size:18px; font-weight:400; }
+.community-bottom-line { max-width:1160px; margin:70px auto 0; padding-top:22px; border-top:1px solid rgba(20,45,53,.2); display:flex; justify-content:space-between; gap:20px; color:#526B50; font-size:10px; letter-spacing:3px; }
+@media(max-width:850px) { .community-social-grid { grid-template-columns:1fr; max-width:560px; } .community-platform-card { min-height:280px; } }
+@media(max-width:560px) { .community-page { padding-left:5vw; padding-right:5vw; } .community-hero p { font-size:15px; } .community-bottom-line { flex-direction:column; text-align:center; } }
 </style>
 <script type="application/ld+json">
     {
@@ -2389,104 +2434,67 @@ header{background:rgba(20,45,53,.96);}
 <body>
 <header>
 <!-- LOGO -->
-<a aria-label="SaltWërk" class="logo-link" href="#trailguard">
+<a aria-label="SaltWërk" class="logo-link" href="index.html">
 <img alt="SaltWërk" class="logo" src="SW_Stacked_White@1200px.png"/>
 </a>
 <!-- NAVIGATION -->
-<nav class="nav"><a href="index.html">HOME</a><a href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a href="our-story.html">OUR STORY</a><a aria-current="page" href="community.html">COMMUNITY</a><a href="contact.html">CONTACT</a></nav>
+<nav class="nav"><a href="index.html">HOME</a><a href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a aria-current="page" href="community.html">COMMUNITY</a></nav>
 <!-- SURVEY -->
 <a class="survey-link" href="https://forms.gle/atvUJcnE9CpMFzQM8" rel="noopener" target="_blank">
             TAKE OUR SURVEY
         </a>
 </header>
-<section class="community" id="community">
-<div class="community-survey">
-<div class="community-survey-inner">
-<div class="community-eyebrow">
-                    YOUR FEEDBACK MATTERS
-                </div>
-<h2>
-                    HELP BUILD<br/>
-<span>TRAILGUARD</span>
-</h2>
-<p class="community-survey-copy">
-                    We’re building TrailGuard for the people who actually
-                    spend time on the trail. Tell us what you think, what
-                    you need, and what would make your gear better.
-                </p>
-<a class="community-survey-button" href="https://forms.gle/atvUJcnE9CpMFzQM8" rel="noopener" target="_blank">
-                    TAKE THE SURVEY   →
-                </a>
-<div class="community-benefits">
-<div class="community-benefit">
-<strong>REAL RUNNERS</strong>
-<span>Share feedback from the trail.</span>
+<section class="page-content">
+<section class="community-page">
+<div class="community-hero">
+<div class="community-eyebrow">THE SALTWËRK COMMUNITY</div>
+<h1>FIND YOUR<br/><span>PEOPLE.</span></h1>
+<p>Follow the miles, the ideas, and the people behind SaltWërk. Join us as we build gear for the unpredictable parts of the trail.</p>
 </div>
-<div class="community-benefit">
-<strong>SHAPE THE PRODUCT</strong>
-<span>Help us build gear people actually need.</span>
-</div>
-<div class="community-benefit">
-<strong>BETTER TRAILS</strong>
-<span>More miles, more confidence, more exploration.</span>
-</div>
-</div>
-</div>
-</div>
-<div class="community-social">
-<div class="community-social-inner">
-<div class="community-eyebrow">
-                    FOLLOW THE JOURNEY
-                </div>
-<h3>
-                    BUILT ON THE TRAIL.<br/>
-<span>SHARED ALONG THE WAY.</span>
-</h3>
-<p class="community-social-copy">
-                    Follow SaltWërk as we test, explore, and build TrailGuard.
-                </p>
 <div class="community-social-grid">
-<div class="community-social-card">
-<div class="community-social-card-top">
-<div class="community-social-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3 3Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"></path>
-</svg>
+<a class="community-platform-card instagram-card" href="https://www.instagram.com/saltwerktrail/" rel="noopener" target="_blank">
+<div aria-hidden="true" class="platform-icon instagram-icon">
+<svg viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle class="icon-fill" cx="18" cy="6" r="1"></circle></svg>
 </div>
-<div>
-<div class="community-social-name">INSTAGRAM</div>
-<div class="community-social-handle">@saltwerktrail</div>
+<div class="platform-label">FOLLOW ALONG</div>
+<h2>INSTAGRAM</h2>
+<p>Trail moments, product development, and a closer look at the SaltWërk journey.</p>
+<span class="platform-handle">@saltwerktrail <b>↗</b></span>
+</a>
+<a class="community-platform-card tiktok-card" href="https://www.tiktok.com/@saltwerktrail" rel="noopener" target="_blank">
+<div aria-hidden="true" class="platform-icon tiktok-icon">
+<svg viewbox="0 0 24 24"><path d="M14 3v11.2a4.2 4.2 0 1 1-3.5-4.1v3.2a1.2 1.2 0 1 0 .5 1V3h3zm0 0c.4 2.8 2.1 4.5 5 4.8v3.1c-2-.1-3.7-.8-5-2.1"></path></svg>
 </div>
+<div class="platform-label">SEE WHAT WE'RE UP TO</div>
+<h2>TIKTOK</h2>
+<p>Short-form trail content, behind-the-scenes clips, and the process of building TrailGuard.</p>
+<span class="platform-handle">@saltwerktrail <b>↗</b></span>
+</a>
+<a class="community-platform-card youtube-card" href="https://www.youtube.com/@SaltwerkTrail" rel="noopener" target="_blank">
+<div aria-hidden="true" class="platform-icon youtube-icon">
+<svg viewbox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"></path></svg>
 </div>
-<a class="community-social-button" href="https://www.instagram.com/saltwerktrail/" rel="noopener" target="_blank">
-                            FOLLOW ON INSTAGRAM   →
-                        </a>
+<div class="platform-label">WATCH THE STORY</div>
+<h2>YOUTUBE</h2>
+<p>Longer videos, founder perspectives, and the story behind what we're creating.</p>
+<span class="platform-handle">@SaltwerkTrail <b>↗</b></span>
+</a>
 </div>
-<div class="community-social-card">
-<div class="community-social-card-top">
-<div class="community-social-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M16.5 2h3c.2 1.8 1.2 3.5 2.8 4.5v3.1c-1.6-.1-3.1-.6-4.5-1.5v6.7c0 4.1-2.8 7-6.9 7-3.7 0-6.4-2.7-6.4-6.2 0-3.8 3.1-6.4 6.8-6.4.5 0 1 .1 1.5.2v3.2c-.5-.2-1-.3-1.5-.3-1.9 0-3.4 1.2-3.4 3.1 0 1.7 1.3 3.1 3.1 3.1 2 0 3.5-1.3 3.5-3.8V2h2Z"></path>
-</svg>
-</div>
-<div>
-<div class="community-social-name">TIKTOK</div>
-<div class="community-social-handle">@saltwerktrail</div>
-</div>
-</div>
-<a class="community-social-button" href="https://www.tiktok.com/@saltwerktrail" rel="noopener" target="_blank">
-                            FOLLOW ON TIKTOK   →
-                        </a>
-</div>
-</div>
-</div>
+<div class="community-bottom-line">
+<span>BUILT FOR THE MILES AHEAD</span>
+<span>SEE YOU OUT THERE.</span>
 </div>
 </section>
+</section>
 <footer>
-
-        SALTWËRK
-
-    <nav class="site-footer-nav"><a href="index.html">HOME</a><a href="trailguard.html">TRAILGUARD</a><a href="explore.html">EXPLORE</a><a href="our-story.html">OUR STORY</a><a href="community.html">COMMUNITY</a><a href="contact.html">CONTACT</a></nav></footer>
+<div class="footer-contact">
+<p class="footer-contact-eyebrow">HAVE A QUESTION?</p>
+<h2>LET'S TALK TRAILS.</h2>
+<a class="footer-email" href="mailto:daren@saltwerk.com">daren@saltwerk.com</a>
+</div>
+<div class="footer-brand">SALTWËRK</div>
+<nav class="site-footer-nav"><a href="index.html">HOME</a><a href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a href="community.html">COMMUNITY</a></nav>
+</footer>
 <div class="survey-popup" id="surveyPopup">
 <button aria-label="Close" class="close-popup" id="closePopup">
             ×
@@ -2535,34 +2543,6 @@ header{background:rgba(20,45,53,.96);}
             problemRevealObserver.observe(element);
         });
 
-
-        /* =========================
-           PLAY FOUNDER VIDEO ONLY WHILE STORY IS VISIBLE
-        ========================= */
-
-        const storySection = document.getElementById("our-story");
-        const founderVideo = document.getElementById("founderVideo");
-
-        if (storySection && founderVideo) {
-            const sendVideoCommand = (func) => {
-                founderVideo.contentWindow.postMessage(
-                    JSON.stringify({ event: "command", func, args: [] }),
-                    "https://www.youtube.com"
-                );
-            };
-
-            const storyVideoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
-                        sendVideoCommand("playVideo");
-                    } else {
-                        sendVideoCommand("pauseVideo");
-                    }
-                });
-            }, { threshold: [0, 0.35, 0.6] });
-
-            storyVideoObserver.observe(storySection);
-        }
 
         /* =========================
            SURVEY POPUP
