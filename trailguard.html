@@ -2367,6 +2367,32 @@ header nav.nav a { white-space:nowrap; }
   header nav.nav { gap:12px; flex-wrap:wrap; }
   header nav.nav a { font-size:10px; letter-spacing:1px; }
 }
+
+/* TrailGuard product gallery: larger, vertically stacked concepts */
+.product-gallery {
+  max-width: 1320px;
+  margin: 48px auto 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+.product-gallery figure {
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.product-gallery img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+@media(max-width:760px) {
+  .product-gallery { width:100%; margin:32px auto 48px; gap:24px; }
+}
 </style>
 <script type="application/ld+json">
     {
@@ -2420,12 +2446,7 @@ header{background:rgba(20,45,53,.96);}
 </header>
 <section class="page-content">
 <div class="page-intro" style="padding:15px 0 20px;background:transparent;"><div class="eyebrow">DESIGNED FOR THE UNPREDICTABLE</div><h1>TRAILGUARD</h1><p>A protective calf sleeve concept built around the demands of rugged trail environments. Explore the current design direction and proposed colorways.</p></div>
-<div class="product-gallery">
-<figure><img alt="Existing TrailGuard AI product concept from the original website" loading="lazy" src="AI%20Tech%20Pack%20Image.png"/></figure>
-<figure><img alt="TrailGuard proposed colorway concepts" loading="lazy" src="TrailGuard Colors.png"/></figure>
-</div>
-<figure class="product-techpack"><img alt="TrailGuard technical design concept board" loading="lazy" src="TrailGuard%20Compression%20Sleeve%20Tech%20Board(1).png"/><figcaption>TrailGuard technical design concept — development reference</figcaption></figure>
-<p style="max-width:900px;margin:25px auto 0;color:#68777b;line-height:1.7;font-size:13px;">Images are conceptual AI-assisted product visuals and do not represent finalized materials, construction, or tested protective performance.</p>
+<div class="product-gallery"><figure><img alt="TrailGuard proposed colorway concepts" loading="lazy" src="TrailGuard Colors.png"/></figure><figure><img alt="Existing TrailGuard AI product concept from the original website" loading="lazy" src="AI%20Tech%20Pack%20Image.png"/></figure></div>
 </section>
 <footer>
 <div class="footer-contact">
