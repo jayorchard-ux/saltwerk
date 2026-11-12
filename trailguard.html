@@ -2359,6 +2359,14 @@ footer { padding:54px 7vw 32px !important; background:#142D35 !important; color:
  .home-founder { margin-top:35px; padding:52px 12px 60px; }
  .inat-panel { padding:15px; margin-top:42px; }
 }
+
+/* Consistent four-page navigation */
+header nav.nav { display:flex; align-items:center; justify-content:center; gap:clamp(18px,3vw,42px); }
+header nav.nav a { white-space:nowrap; }
+@media(max-width:760px) {
+  header nav.nav { gap:12px; flex-wrap:wrap; }
+  header nav.nav a { font-size:10px; letter-spacing:1px; }
+}
 </style>
 <script type="application/ld+json">
     {
@@ -2404,7 +2412,7 @@ header{background:rgba(20,45,53,.96);}
 <img alt="SaltWërk" class="logo" src="SW_Stacked_White@1200px.png"/>
 </a>
 <!-- NAVIGATION -->
-<nav class="nav"><a href="index.html">HOME</a><a aria-current="page" href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a href="our-story.html">OUR STORY</a></nav>
+<nav class="nav"><a href="index.html">HOME</a><a aria-current="page" href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a href="community.html">COMMUNITY</a></nav>
 <!-- SURVEY -->
 <a class="survey-link" href="https://forms.gle/atvUJcnE9CpMFzQM8" rel="noopener" target="_blank">
             TAKE OUR SURVEY
@@ -2426,12 +2434,7 @@ header{background:rgba(20,45,53,.96);}
 <a class="footer-email" href="mailto:daren@saltwerk.com">daren@saltwerk.com</a>
 </div>
 <div class="footer-brand">SALTWËRK</div>
-<nav class="site-footer-nav">
-<a href="index.html">HOME</a>
-<a href="trailguard.html">TRAILGUARD</a>
-<a href="explore.html">THE PROBLEM</a>
-<a href="our-story.html">OUR STORY</a>
-</nav>
+<nav class="site-footer-nav"><a href="index.html">HOME</a><a href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a href="community.html">COMMUNITY</a></nav>
 </footer>
 <div class="survey-popup" id="surveyPopup">
 <button aria-label="Close" class="close-popup" id="closePopup">
