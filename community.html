@@ -2426,6 +2426,47 @@ header nav.nav a { white-space:nowrap; }
 .community-social-arrow { color:#A9B99A; font-size:30px; line-height:1; font-weight:300; }
 @media(max-width:900px) { .community-social-grid { grid-template-columns:1fr; max-width:650px; } .community-social-link { min-height:106px; } }
 @media(max-width:600px) { .community-hero { height:290px; } .community-hero-overlay h1 { letter-spacing:6px; } .community-brand-mark { letter-spacing:5px; } .community-social-section { padding:32px 5vw 0; } .community-social-section > h2 { margin-bottom:20px; } .community-social-link { padding:18px; gap:16px; } }
+
+/* Community page — closely matched to approved SaltWërk mockup */
+.community-page { padding:0; margin:0; background:#F7F6F1; }
+.community-hero { position:relative; width:100%; height:clamp(360px,42vw,570px); overflow:hidden; }
+.community-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(8,19,22,.20),rgba(8,19,22,.34)); }
+.community-hero > img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 52%; }
+.community-hero-overlay { position:absolute; z-index:1; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:24px; color:#F7F6F1; }
+.community-hero-brand { display:flex; align-items:center; gap:20px; margin:0 0 28px; color:#F7F6F1; font-size:clamp(13px,1.4vw,19px); font-weight:400; letter-spacing:9px; }
+.community-hero-brand span { display:inline-block; width:78px; height:2px; background:#A9B99A; }
+.community-hero-overlay h1 { margin:0; color:#fff; font-size:clamp(48px,7vw,88px); line-height:1; font-weight:400; letter-spacing:clamp(9px,1.8vw,22px); text-shadow:0 2px 16px rgba(0,0,0,.20); }
+.community-social-section { max-width:1600px; margin:0 auto; padding:48px 6vw 54px; background:#F7F6F1; }
+.community-social-section > h2 { margin:0 0 38px; color:#405449; font-size:clamp(17px,1.8vw,25px); font-weight:600; letter-spacing:6px; }
+.community-social-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:center; }
+.community-social-link { min-width:0; min-height:92px; display:flex; align-items:center; gap:24px; padding:10px 34px; color:#263B35; text-decoration:none; border-right:1px solid #B8C0B1; transition:opacity .2s ease; }
+.community-social-link:first-child { padding-left:8px; }
+.community-social-link:last-child { border-right:0; }
+.community-social-link:hover { opacity:.72; }
+.social-icon { display:block; flex:0 0 38px; width:38px; height:38px; fill:none; stroke:#34483F; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.social-icon.tiktok,.social-icon.youtube { fill:#34483F; stroke:none; }
+.social-icon .icon-fill { fill:#34483F; stroke:none; }
+.social-copy { min-width:0; display:flex; flex:1; flex-direction:column; gap:7px; }
+.social-copy strong { color:#263B35; font-size:clamp(13px,1.45vw,21px); font-weight:700; letter-spacing:4px; white-space:nowrap; }
+.social-copy small { color:#74816F; font-size:clamp(12px,1.3vw,19px); letter-spacing:.2px; white-space:nowrap; }
+.social-arrow { color:#71836C; font-size:38px; line-height:1; font-weight:300; }
+@media(max-width:900px) {
+  .community-hero { height:400px; }
+  .community-social-section { padding:38px 5vw 42px; }
+  .community-social-row { grid-template-columns:1fr; }
+  .community-social-link,.community-social-link:first-child { min-height:84px; padding:14px 8px; border-right:0; border-bottom:1px solid #B8C0B1; }
+  .community-social-link:last-child { border-bottom:0; }
+  .social-copy strong { font-size:16px; }
+  .social-copy small { font-size:14px; }
+}
+@media(max-width:560px) {
+  .community-hero { height:300px; }
+  .community-hero-brand { letter-spacing:6px; margin-bottom:20px; }
+  .community-hero-brand span { width:48px; }
+  .community-hero-overlay h1 { letter-spacing:6px; font-size:43px; }
+  .community-social-section { padding:30px 6vw 36px; }
+  .community-social-section > h2 { font-size:15px; letter-spacing:4px; margin-bottom:20px; }
+}
 </style>
 <script type="application/ld+json">
     {
@@ -2482,33 +2523,27 @@ header{background:rgba(20,45,53,.96);}
 <div class="community-hero">
 <img alt="Red rock mountain landscape" loading="eager" src="Red%20Rock%20Mountains.jpg"/>
 <div class="community-hero-overlay">
-<div class="community-brand-mark">SALTWËRK <span></span></div>
+<div class="community-hero-brand">SALTWËRK <span aria-hidden="true"></span></div>
 <h1>COMMUNITY</h1>
 </div>
 </div>
-<section class="community-social-section">
+<section aria-label="SaltWërk social media" class="community-social-section">
 <h2>FOLLOW THE JOURNEY</h2>
-<div class="community-social-grid">
+<div class="community-social-row">
 <a aria-label="Follow SaltWërk on Instagram" class="community-social-link" href="https://www.instagram.com/saltwerktrail/" rel="noopener" target="_blank">
-<span aria-hidden="true" class="community-social-icon instagram-icon">
-<svg viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle class="icon-fill" cx="18" cy="6" r="1"></circle></svg>
-</span>
-<span class="community-social-copy"><strong>INSTAGRAM</strong><small>@saltwerktrail</small></span>
-<span aria-hidden="true" class="community-social-arrow">↗</span>
+<svg aria-hidden="true" class="social-icon instagram" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle class="icon-fill" cx="18" cy="6" r="1"></circle></svg>
+<span class="social-copy"><strong>INSTAGRAM</strong><small>@saltwerktrail</small></span>
+<span aria-hidden="true" class="social-arrow">↗</span>
 </a>
 <a aria-label="Follow SaltWërk on TikTok" class="community-social-link" href="https://www.tiktok.com/@saltwerktrail" rel="noopener" target="_blank">
-<span aria-hidden="true" class="community-social-icon tiktok-icon">
-<svg viewbox="0 0 24 24"><path d="M14 3v11.2a4.2 4.2 0 1 1-3.5-4.1v3.2a1.2 1.2 0 1 0 .5 1V3h3zm0 0c.4 2.8 2.1 4.5 5 4.8v3.1c-2-.1-3.7-.8-5-2.1"></path></svg>
-</span>
-<span class="community-social-copy"><strong>TIKTOK</strong><small>@saltwerktrail</small></span>
-<span aria-hidden="true" class="community-social-arrow">↗</span>
+<svg aria-hidden="true" class="social-icon tiktok" viewbox="0 0 24 24"><path d="M14 3v11.2a4.2 4.2 0 1 1-3.5-4.1v3.2a1.2 1.2 0 1 0 .5 1V3h3zm0 0c.4 2.8 2.1 4.5 5 4.8v3.1c-2-.1-3.7-.8-5-2.1"></path></svg>
+<span class="social-copy"><strong>TIKTOK</strong><small>@saltwerktrail</small></span>
+<span aria-hidden="true" class="social-arrow">↗</span>
 </a>
 <a aria-label="Follow SaltWërk on YouTube" class="community-social-link" href="https://www.youtube.com/@SaltwerkTrail" rel="noopener" target="_blank">
-<span aria-hidden="true" class="community-social-icon youtube-icon">
-<svg viewbox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"></path></svg>
-</span>
-<span class="community-social-copy"><strong>YOUTUBE</strong><small>@SaltwerkTrail</small></span>
-<span aria-hidden="true" class="community-social-arrow">↗</span>
+<svg aria-hidden="true" class="social-icon youtube" viewbox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"></path></svg>
+<span class="social-copy"><strong>YOUTUBE</strong><small>@SaltwerkTrail</small></span>
+<span aria-hidden="true" class="social-arrow">↗</span>
 </a>
 </div>
 </section>
