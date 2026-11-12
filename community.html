@@ -2401,6 +2401,31 @@ header nav.nav a { white-space:nowrap; }
 .community-social-grid { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
 @media(max-width:850px) { .community-social-grid { grid-template-columns:1fr; max-width:560px; } }
 @media(max-width:560px) { .community-page { padding:0 5vw 48px; } .community-photo { height:220px; margin-bottom:28px; } }
+
+/* Community hero and social links — SaltWërk editorial layout */
+.community-page { padding:0 0 76px; background:#F7F6F1; }
+.community-hero { position:relative; width:100%; height:clamp(300px,38vw,510px); overflow:hidden; }
+.community-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,20,24,.43),rgba(8,20,24,.23) 50%,rgba(8,20,24,.43)); }
+.community-hero > img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 52%; }
+.community-hero-overlay { position:absolute; z-index:1; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:24px; color:#F7F6F1; }
+.community-brand-mark { display:flex; align-items:center; gap:18px; margin-bottom:22px; font-size:clamp(11px,1.2vw,16px); letter-spacing:7px; font-weight:400; }
+.community-brand-mark span { display:inline-block; width:64px; height:2px; background:#A9B99A; }
+.community-hero-overlay h1 { margin:0; color:#fff; font-size:clamp(42px,7vw,82px); line-height:1; font-weight:400; letter-spacing:clamp(7px,1.6vw,19px); text-shadow:0 2px 18px rgba(0,0,0,.22); }
+.community-social-section { max-width:1450px; margin:0 auto; padding:42px 5.5vw 0; }
+.community-social-section > h2 { margin:0 0 28px; color:#344A42; font-size:clamp(13px,1.4vw,18px); font-weight:600; letter-spacing:5px; }
+.community-social-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.community-social-link { min-height:128px; display:flex; align-items:center; gap:22px; padding:24px 26px; color:#F7F6F1; text-decoration:none; background:#142D35; border:1px solid rgba(20,45,53,.12); border-radius:9px; transition:transform .2s ease,background .2s ease,box-shadow .2s ease; }
+.community-social-link:hover { transform:translateY(-4px); background:#1C3940; box-shadow:0 14px 28px rgba(20,45,53,.14); }
+.community-social-icon { flex:0 0 54px; width:54px; height:54px; display:grid; place-items:center; border-right:1px solid rgba(216,208,189,.35); padding-right:18px; box-sizing:content-box; }
+.community-social-icon svg { width:29px; height:29px; fill:none; stroke:#D8D0BD; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.community-social-icon.tiktok-icon svg,.community-social-icon.youtube-icon svg { fill:#D8D0BD; stroke:none; }
+.community-social-icon .icon-fill { fill:#D8D0BD; stroke:none; }
+.community-social-copy { display:flex; min-width:0; flex:1; flex-direction:column; gap:7px; }
+.community-social-copy strong { color:#F7F6F1; font-size:clamp(12px,1.15vw,16px); font-weight:600; letter-spacing:3px; }
+.community-social-copy small { color:#A9B99A; font-size:clamp(11px,1vw,14px); letter-spacing:.5px; }
+.community-social-arrow { color:#A9B99A; font-size:30px; line-height:1; font-weight:300; }
+@media(max-width:900px) { .community-social-grid { grid-template-columns:1fr; max-width:650px; } .community-social-link { min-height:106px; } }
+@media(max-width:600px) { .community-hero { height:290px; } .community-hero-overlay h1 { letter-spacing:6px; } .community-brand-mark { letter-spacing:5px; } .community-social-section { padding:32px 5vw 0; } .community-social-section > h2 { margin-bottom:20px; } .community-social-link { padding:18px; gap:16px; } }
 </style>
 <script type="application/ld+json">
     {
@@ -2454,29 +2479,39 @@ header{background:rgba(20,45,53,.96);}
 </header>
 <section class="page-content">
 <section class="community-page">
-<div class="community-photo">
-<img alt="Red rock mountain landscape" loading="lazy" src="Red%20Rock%20Mountains.jpg"/>
+<div class="community-hero">
+<img alt="Red rock mountain landscape" loading="eager" src="Red%20Rock%20Mountains.jpg"/>
+<div class="community-hero-overlay">
+<div class="community-brand-mark">SALTWËRK <span></span></div>
+<h1>COMMUNITY</h1>
 </div>
+</div>
+<section class="community-social-section">
+<h2>FOLLOW THE JOURNEY</h2>
 <div class="community-social-grid">
-<a class="community-platform-card instagram-card" href="https://www.instagram.com/saltwerktrail/" rel="noopener" target="_blank">
-<div aria-hidden="true" class="platform-icon instagram-icon"><svg viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle class="icon-fill" cx="18" cy="6" r="1"></circle></svg></div>
-<div class="platform-label">FOLLOW ALONG</div><h2>INSTAGRAM</h2>
-<p>Trail moments, product development, and a closer look at the SaltWërk journey.</p>
-<span class="platform-handle">@saltwerktrail <b>↗</b></span>
+<a aria-label="Follow SaltWërk on Instagram" class="community-social-link" href="https://www.instagram.com/saltwerktrail/" rel="noopener" target="_blank">
+<span aria-hidden="true" class="community-social-icon instagram-icon">
+<svg viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle class="icon-fill" cx="18" cy="6" r="1"></circle></svg>
+</span>
+<span class="community-social-copy"><strong>INSTAGRAM</strong><small>@saltwerktrail</small></span>
+<span aria-hidden="true" class="community-social-arrow">↗</span>
 </a>
-<a class="community-platform-card tiktok-card" href="https://www.tiktok.com/@saltwerktrail" rel="noopener" target="_blank">
-<div aria-hidden="true" class="platform-icon tiktok-icon"><svg viewbox="0 0 24 24"><path d="M14 3v11.2a4.2 4.2 0 1 1-3.5-4.1v3.2a1.2 1.2 0 1 0 .5 1V3h3zm0 0c.4 2.8 2.1 4.5 5 4.8v3.1c-2-.1-3.7-.8-5-2.1"></path></svg></div>
-<div class="platform-label">SEE WHAT WE'RE UP TO</div><h2>TIKTOK</h2>
-<p>Short-form trail content, behind-the-scenes clips, and the process of building TrailGuard.</p>
-<span class="platform-handle">@saltwerktrail <b>↗</b></span>
+<a aria-label="Follow SaltWërk on TikTok" class="community-social-link" href="https://www.tiktok.com/@saltwerktrail" rel="noopener" target="_blank">
+<span aria-hidden="true" class="community-social-icon tiktok-icon">
+<svg viewbox="0 0 24 24"><path d="M14 3v11.2a4.2 4.2 0 1 1-3.5-4.1v3.2a1.2 1.2 0 1 0 .5 1V3h3zm0 0c.4 2.8 2.1 4.5 5 4.8v3.1c-2-.1-3.7-.8-5-2.1"></path></svg>
+</span>
+<span class="community-social-copy"><strong>TIKTOK</strong><small>@saltwerktrail</small></span>
+<span aria-hidden="true" class="community-social-arrow">↗</span>
 </a>
-<a class="community-platform-card youtube-card" href="https://www.youtube.com/@SaltwerkTrail" rel="noopener" target="_blank">
-<div aria-hidden="true" class="platform-icon youtube-icon"><svg viewbox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"></path></svg></div>
-<div class="platform-label">WATCH THE STORY</div><h2>YOUTUBE</h2>
-<p>Longer videos, founder perspectives, and the story behind what we're creating.</p>
-<span class="platform-handle">@SaltwerkTrail <b>↗</b></span>
+<a aria-label="Follow SaltWërk on YouTube" class="community-social-link" href="https://www.youtube.com/@SaltwerkTrail" rel="noopener" target="_blank">
+<span aria-hidden="true" class="community-social-icon youtube-icon">
+<svg viewbox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"></path></svg>
+</span>
+<span class="community-social-copy"><strong>YOUTUBE</strong><small>@SaltwerkTrail</small></span>
+<span aria-hidden="true" class="community-social-arrow">↗</span>
 </a>
 </div>
+</section>
 </section>
 </section>
 <footer>
