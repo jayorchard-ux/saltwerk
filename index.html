@@ -2391,6 +2391,14 @@ footer { padding:54px 7vw 32px !important; background:#142D35 !important; color:
 .home-founder-story-copy { max-width: 820px; margin: 26px auto 0; }
 .home-founder-story-copy p { margin: 0; color: rgba(247,246,241,.82); font-size: 16px; line-height: 1.85; }
 @media(max-width:760px) { .home-founder-story-copy { padding: 0 8px; } }
+
+/* Consistent four-page navigation */
+header nav.nav { display:flex; align-items:center; justify-content:center; gap:clamp(18px,3vw,42px); }
+header nav.nav a { white-space:nowrap; }
+@media(max-width:760px) {
+  header nav.nav { gap:12px; flex-wrap:wrap; }
+  header nav.nav a { font-size:10px; letter-spacing:1px; }
+}
 </style>
 <script type="application/ld+json">
     {
@@ -2436,7 +2444,7 @@ header{background:rgba(20,45,53,.96);}
 <img alt="SaltWërk" class="logo" src="SW_Stacked_White@1200px.png"/>
 </a>
 <!-- NAVIGATION -->
-<nav class="nav"><a aria-current="page" href="index.html">HOME</a><a href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a></nav>
+<nav class="nav"><a aria-current="page" href="index.html">HOME</a><a href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a href="community.html">COMMUNITY</a></nav>
 <!-- SURVEY -->
 <a class="survey-link" href="https://forms.gle/atvUJcnE9CpMFzQM8" rel="noopener" target="_blank">
             TAKE OUR SURVEY
@@ -2495,7 +2503,6 @@ header{background:rgba(20,45,53,.96);}
                 miles, more confidence, more exploration.
 
             </p></div>
-
 </section>
 </section>
 <footer>
@@ -2505,12 +2512,7 @@ header{background:rgba(20,45,53,.96);}
 <a class="footer-email" href="mailto:daren@saltwerk.com">daren@saltwerk.com</a>
 </div>
 <div class="footer-brand">SALTWËRK</div>
-<nav class="site-footer-nav">
-<a href="index.html">HOME</a>
-<a href="trailguard.html">TRAILGUARD</a>
-<a href="explore.html">THE PROBLEM</a>
-
-</nav>
+<nav class="site-footer-nav"><a href="index.html">HOME</a><a href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a href="community.html">COMMUNITY</a></nav>
 </footer>
 <div class="survey-popup" id="surveyPopup">
 <button aria-label="Close" class="close-popup" id="closePopup">
