@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -944,34 +945,6 @@
             letter-spacing: 2px;
         }
 
-
-        /* =========================
-           PLAY FOUNDER VIDEO ONLY WHILE STORY IS VISIBLE
-        ========================= */
-
-        const storySection = document.getElementById("our-story");
-        const founderVideo = document.getElementById("founderVideo");
-
-        if (storySection && founderVideo) {
-            const sendVideoCommand = (func) => {
-                founderVideo.contentWindow.postMessage(
-                    JSON.stringify({ event: "command", func, args: [] }),
-                    "https://www.youtube.com"
-                );
-            };
-
-            const storyVideoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
-                        sendVideoCommand("playVideo");
-                    } else {
-                        sendVideoCommand("pauseVideo");
-                    }
-                });
-            }, { threshold: [0, 0.35, 0.6] });
-
-            storyVideoObserver.observe(storySection);
-        }
 
         /* =========================
            SURVEY POPUP
@@ -2348,6 +2321,44 @@
             }
         }
 
+
+/* Shared contact footer */
+footer { padding:54px 7vw 32px !important; background:#142D35 !important; color:#F7F6F1 !important; }
+.footer-contact { max-width:760px; margin:0 auto 38px; text-align:center; }
+.footer-contact-eyebrow { margin:0 0 12px; color:#A9B99A; font-size:11px; letter-spacing:3px; }
+.footer-contact h2 { margin:0 0 12px; color:#F7F6F1; font-size:clamp(28px,4vw,42px); font-weight:400; letter-spacing:2px; }
+.footer-email { display:inline-block; color:#D8D0BD; font-size:16px; letter-spacing:1px; text-decoration:none; border-bottom:1px solid #526B50; padding-bottom:5px; }
+.footer-email:hover { color:#fff; }
+.footer-brand { margin-top:28px; font-size:12px; letter-spacing:5px; color:rgba(247,246,241,.72); }
+.site-footer-nav { margin-top:18px; }
+.site-footer-nav a { color:rgba(247,246,241,.75); text-decoration:none; }
+.site-footer-nav a:hover { color:#fff; }
+.home-feature { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:.9fr 1.1fr; align-items:center; gap:clamp(30px,6vw,80px); text-align:left; }
+.home-feature-copy h2 { color:#142D35; font-size:clamp(34px,5vw,58px); font-weight:400; letter-spacing:1px; margin:12px 0; }
+.home-feature-copy p { max-width:520px; color:#52616a; line-height:1.8; }
+.home-product-visual { background:#F7F6F1; border-radius:8px; overflow:hidden; }
+.home-product-visual img { display:block; width:100%; height:auto; }
+.concept-note { margin:0; padding:13px 17px; color:#52616a; font-size:10px; letter-spacing:2px; }
+.home-founder { margin:55px auto 0; padding:72px 20px 85px; background:#142D35; color:#F7F6F1; text-align:center; }
+.home-founder .eyebrow { color:#A9B99A; }
+.home-founder h2 { margin:12px 0; font-size:clamp(32px,4vw,48px); font-weight:400; letter-spacing:2px; }
+.home-founder > p { color:rgba(247,246,241,.78); margin:0 auto 28px; }
+.home-founder .story-video-wrap { width:min(900px,92%); aspect-ratio:16/9; margin:0 auto 28px; background:#0d1d24; box-shadow:0 18px 50px rgba(0,0,0,.22); }
+.home-founder .story-video-wrap iframe { display:block; width:100%; height:100%; border:0; }
+.home-founder .page-cta { background:#526B50; color:#fff; }
+.inat-panel { max-width:1100px; margin:58px auto 0; padding:28px; background:#F7F6F1; border:1px solid rgba(20,45,53,.13); border-radius:8px; }
+.inat-panel .problem-map-heading { margin-bottom:18px; }
+.inat-widget { width:100%; min-height:120px; padding:10px; background:#fff; border-radius:6px; font-family:Georgia,serif; }
+.inat-widget img { max-width:100%; height:auto; }
+.inat-credit { margin:14px 0 0; font-size:12px; text-align:right; }
+.inat-credit a { color:#526B50; }
+.product-gallery figcaption { display:none !important; }
+@media(max-width:760px) {
+ .home-feature { grid-template-columns:1fr; text-align:center; }
+ .home-feature-copy p { margin-left:auto; margin-right:auto; }
+ .home-founder { margin-top:35px; padding:52px 12px 60px; }
+ .inat-panel { padding:15px; margin-top:42px; }
+}
 </style>
 <script type="application/ld+json">
     {
@@ -2389,11 +2400,11 @@ header{background:rgba(20,45,53,.96);}
 <body>
 <header>
 <!-- LOGO -->
-<a aria-label="SaltWërk" class="logo-link" href="#trailguard">
+<a aria-label="SaltWërk" class="logo-link" href="index.html">
 <img alt="SaltWërk" class="logo" src="SW_Stacked_White@1200px.png"/>
 </a>
 <!-- NAVIGATION -->
-<nav class="nav"><a href="index.html">HOME</a><a aria-current="page" href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a href="our-story.html">OUR STORY</a><a href="community.html">COMMUNITY</a><a href="contact.html">CONTACT</a></nav>
+<nav class="nav"><a href="index.html">HOME</a><a aria-current="page" href="trailguard.html">TRAILGUARD</a><a href="explore.html">THE PROBLEM</a><a href="our-story.html">OUR STORY</a></nav>
 <!-- SURVEY -->
 <a class="survey-link" href="https://forms.gle/atvUJcnE9CpMFzQM8" rel="noopener" target="_blank">
             TAKE OUR SURVEY
@@ -2402,18 +2413,26 @@ header{background:rgba(20,45,53,.96);}
 <section class="page-content">
 <div class="page-intro" style="padding:15px 0 20px;background:transparent;"><div class="eyebrow">DESIGNED FOR THE UNPREDICTABLE</div><h1>TRAILGUARD</h1><p>A protective calf sleeve concept built around the demands of rugged trail environments. Explore the current design direction and proposed colorways.</p></div>
 <div class="product-gallery">
-<figure><img src="AI%20Tech%20Pack%20Image.png" alt="Existing TrailGuard AI product concept from the original website" loading="lazy"><figcaption>TrailGuard — original product concept</figcaption></figure>
-<figure><img src="TrailGuard Calf Sleeve Green.png" alt="TrailGuard green and navy calf sleeve design concept" loading="lazy"><figcaption>Forest green — product concept</figcaption></figure>
-<figure><img src="TrailGuard Colors.png" alt="TrailGuard proposed colorway concepts" loading="lazy"><figcaption>Proposed TrailGuard colorways</figcaption></figure>
+<figure><img alt="Existing TrailGuard AI product concept from the original website" loading="lazy" src="AI%20Tech%20Pack%20Image.png"/></figure>
+<figure><img alt="TrailGuard proposed colorway concepts" loading="lazy" src="TrailGuard Colors.png"/></figure>
 </div>
-<figure class="product-techpack"><img src="TrailGuard%20Compression%20Sleeve%20Tech%20Board(1).png" alt="TrailGuard technical design concept board" loading="lazy"><figcaption>TrailGuard technical design concept — development reference</figcaption></figure>
+<figure class="product-techpack"><img alt="TrailGuard technical design concept board" loading="lazy" src="TrailGuard%20Compression%20Sleeve%20Tech%20Board(1).png"/><figcaption>TrailGuard technical design concept — development reference</figcaption></figure>
 <p style="max-width:900px;margin:25px auto 0;color:#68777b;line-height:1.7;font-size:13px;">Images are conceptual AI-assisted product visuals and do not represent finalized materials, construction, or tested protective performance.</p>
 </section>
 <footer>
-
-        SALTWËRK
-
-    <nav class="site-footer-nav"><a href="index.html">HOME</a><a href="trailguard.html">TRAILGUARD</a><a href="explore.html">EXPLORE</a><a href="our-story.html">OUR STORY</a><a href="community.html">COMMUNITY</a><a href="contact.html">CONTACT</a></nav></footer>
+<div class="footer-contact">
+<p class="footer-contact-eyebrow">HAVE A QUESTION?</p>
+<h2>LET'S TALK TRAILS.</h2>
+<a class="footer-email" href="mailto:daren@saltwerk.com">daren@saltwerk.com</a>
+</div>
+<div class="footer-brand">SALTWËRK</div>
+<nav class="site-footer-nav">
+<a href="index.html">HOME</a>
+<a href="trailguard.html">TRAILGUARD</a>
+<a href="explore.html">THE PROBLEM</a>
+<a href="our-story.html">OUR STORY</a>
+</nav>
+</footer>
 <div class="survey-popup" id="surveyPopup">
 <button aria-label="Close" class="close-popup" id="closePopup">
             ×
@@ -2462,34 +2481,6 @@ header{background:rgba(20,45,53,.96);}
             problemRevealObserver.observe(element);
         });
 
-
-        /* =========================
-           PLAY FOUNDER VIDEO ONLY WHILE STORY IS VISIBLE
-        ========================= */
-
-        const storySection = document.getElementById("our-story");
-        const founderVideo = document.getElementById("founderVideo");
-
-        if (storySection && founderVideo) {
-            const sendVideoCommand = (func) => {
-                founderVideo.contentWindow.postMessage(
-                    JSON.stringify({ event: "command", func, args: [] }),
-                    "https://www.youtube.com"
-                );
-            };
-
-            const storyVideoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
-                        sendVideoCommand("playVideo");
-                    } else {
-                        sendVideoCommand("pauseVideo");
-                    }
-                });
-            }, { threshold: [0, 0.35, 0.6] });
-
-            storyVideoObserver.observe(storySection);
-        }
 
         /* =========================
            SURVEY POPUP
