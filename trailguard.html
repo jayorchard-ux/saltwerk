@@ -2393,6 +2393,24 @@ header nav.nav a { white-space:nowrap; }
 @media(max-width:760px) {
   .product-gallery { width:100%; margin:32px auto 48px; gap:24px; }
 }
+
+/* Force TrailGuard product concepts to stack vertically on every screen size */
+.page-content .product-gallery {
+  display:flex !important; flex-direction:column !important; align-items:stretch !important;
+  width:min(1320px,96%) !important; max-width:1320px !important;
+  margin:48px auto 72px !important; gap:38px !important;
+}
+.page-content .product-gallery figure {
+  display:block !important; width:100% !important; max-width:none !important;
+  margin:0 !important; padding:0 !important; background:transparent !important;
+}
+.page-content .product-gallery img {
+  display:block !important; width:100% !important; max-width:none !important;
+  height:auto !important; object-fit:contain !important;
+}
+@media(max-width:760px) {
+  .page-content .product-gallery { width:100% !important; margin:32px auto 48px !important; gap:24px !important; }
+}
 </style>
 <script type="application/ld+json">
     {
