@@ -2504,6 +2504,87 @@ header{background:rgba(20,45,53,.96);}
 .page-cta{display:inline-block;margin-top:24px;padding:14px 22px;background:var(--sw-green);color:white;letter-spacing:1.5px;font-size:12px;}
 .site-footer-nav{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:18px;font-size:11px;letter-spacing:1.5px;}
 @media(max-width:760px){header{height:auto;min-height:78px;padding:18px 16px;flex-wrap:wrap;gap:16px}.logo-link{position:static;transform:none;margin-right:auto}.logo{width:110px}.nav{order:3;width:100%;gap:15px;justify-content:center;flex-wrap:wrap}.nav a{font-size:10px;letter-spacing:1px}.survey-link{position:static;font-size:9px;padding:9px 10px}.product-gallery{grid-template-columns:1fr;margin:35px auto 55px}.problem-map-frame{height:560px}.page-intro{padding:65px 6vw 35px}}
+
+/* FINAL OVERRIDE: clean, unboxed social links */
+#community-social-links-clean {
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:0 !important;
+  align-items:stretch !important;
+  background:transparent !important;
+  border:0 !important;
+}
+#community-social-links-clean > a.community-social-link {
+  display:flex !important;
+  align-items:center !important;
+  gap:22px !important;
+  min-height:104px !important;
+  width:auto !important;
+  margin:0 !important;
+  padding:16px 28px !important;
+  background:transparent !important;
+  background-color:transparent !important;
+  color:#263B35 !important;
+  border:0 !important;
+  border-right:1px solid #C8CBBF !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  text-decoration:none !important;
+  transform:none !important;
+}
+#community-social-links-clean > a.community-social-link:first-child { padding-left:8px !important; }
+#community-social-links-clean > a.community-social-link:last-child { border-right:0 !important; }
+#community-social-links-clean > a.community-social-link:hover {
+  background:transparent !important;
+  background-color:transparent !important;
+  box-shadow:none !important;
+  opacity:.68 !important;
+  transform:none !important;
+}
+#community-social-links-clean .social-icon {
+  flex:0 0 32px !important;
+  width:32px !important;
+  height:32px !important;
+  fill:none !important;
+  stroke:#34483F !important;
+  stroke-width:2 !important;
+}
+#community-social-links-clean .social-icon.tiktok,
+#community-social-links-clean .social-icon.youtube {
+  fill:#34483F !important;
+  stroke:none !important;
+}
+#community-social-links-clean .social-icon .icon-fill { fill:#34483F !important; stroke:none !important; }
+#community-social-links-clean .social-copy { display:flex !important; flex:1 1 auto !important; flex-direction:column !important; gap:7px !important; }
+#community-social-links-clean .social-copy strong {
+  color:#263B35 !important;
+  font-size:16px !important;
+  font-weight:700 !important;
+  letter-spacing:3px !important;
+  white-space:nowrap !important;
+}
+#community-social-links-clean .social-copy small {
+  color:#71806F !important;
+  font-size:14px !important;
+  letter-spacing:0 !important;
+  white-space:nowrap !important;
+}
+#community-social-links-clean .social-arrow {
+  color:#71836C !important;
+  font-size:30px !important;
+  line-height:1 !important;
+}
+@media(max-width:900px) {
+  #community-social-links-clean { grid-template-columns:1fr !important; }
+  #community-social-links-clean > a.community-social-link,
+  #community-social-links-clean > a.community-social-link:first-child {
+    min-height:78px !important;
+    padding:12px 8px !important;
+    border-right:0 !important;
+    border-bottom:1px solid #C8CBBF !important;
+  }
+  #community-social-links-clean > a.community-social-link:last-child { border-bottom:0 !important; }
+}
 </style></head>
 <body>
 <header>
@@ -2529,7 +2610,7 @@ header{background:rgba(20,45,53,.96);}
 </div>
 <section aria-label="SaltWërk social media" class="community-social-section">
 <h2>FOLLOW THE JOURNEY</h2>
-<div class="community-social-row">
+<div class="community-social-row" id="community-social-links-clean">
 <a aria-label="Follow SaltWërk on Instagram" class="community-social-link" href="https://www.instagram.com/saltwerktrail/" rel="noopener" target="_blank">
 <svg aria-hidden="true" class="social-icon instagram" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle class="icon-fill" cx="18" cy="6" r="1"></circle></svg>
 <span class="social-copy"><strong>INSTAGRAM</strong><small>@saltwerktrail</small></span>
